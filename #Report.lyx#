@@ -334,21 +334,27 @@ contact traces
  every time instant.
  In its, simplest form, contacts can be implied by close proximity, although
  this is not the best model to consider and needs to be replaced with more
- accurate models based o the requirements of the study 
-\backslash
-cite{kotz2003mistaken}.
- Contacts are typically traced by using Bluetooth or WLAN in an infrastructurele
-ss mode.
- All other devices in range are seen as a contact
-\backslash
-cite{aschenbruck2011trace}.
- The problem with contact traces is that by measuring mere contact opportunities
- from an experiment with mobile devices, a lot of information is irretrievably
- lost
-\backslash
-cite{whitbeck2011encounters}.Collecting contact traces is also challenging,
- however, as it requires instrumenting nodes with collection capability
- and conducting a well-planned and coordinated collection 
+ accurate models based o the requirements of the study
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+.
+ Contacts are typically traced by using Bluetooth or WLAN in an infra-structurel
+ess mode.
+ All other devices in range are seen as a contact 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "aschenbruck2011trace"
+
+\end_inset
+
+.
+ Collecting contact traces challenging, however, as it requires instrumenting
+ nodes with collection capability and conducting a well-planned and coordinated
+ collection 
 \begin_inset Quotes eld
 \end_inset
 
@@ -403,6 +409,19 @@ key "aschenbruck2009modeling"
  No information on exact location an velocity of the nodes can be retrieved.
  Besides, as time elapses, this amount of information decreases and becomes
  more and more difficult to even relatively locate the nodes.
+ The value of such traces makes them only representative of the particular
+ context in which they are measured.
+ For example, a WiFi radio contact trace seems not to be appropriate to
+ study a scenario possessing the same characteristics in every aspect, except
+ a Bluetooth radio without running the entire trace collection experiment
+ again which carries a significant organizational overhead in preparing,
+ distributing and collecting contact loggers, not to mention non-technical
+ issues related to legality and participant consent.
+ In a similar fashion, every small change in the contact scenario necessitates
+ repetition of the whole collection process.
+ It seems that if fine-grained mobility information is available for such
+ contact traces, it is possible to re-use the same dataset for a slightly
+ different scenario without inuring the burden of data collection repeatedly.
 \end_layout
 
 \begin_layout Standard
@@ -435,12 +454,16 @@ Our proposed algorithm uses the limited information from the contacts to
  channel.
 \end_layout
 
-\begin_layout Section
-Previous Work
+\begin_layout Standard
+Contributions of this work are summarized as follows:
 \end_layout
 
 \begin_layout Standard
-text text text text text text text text text text text text text text text
+
+\end_layout
+
+\begin_layout Section
+Previous Work
 \end_layout
 
 \begin_layout Subsection
