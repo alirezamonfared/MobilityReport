@@ -382,6 +382,30 @@ key "aschenbruck2009modeling"
 \end_inset
 
  has summarized these types of datasets.
+ When we measure contact opportunities among the nodes, a lot of information
+ is irretrievably lost.
+ A contact model, can only roughly tell if two nodes are in vicinity of
+ each other or not.
+ No information on exact location an velocity of the nodes can be retrieved.
+ Besides, as time elapses, this amount of information decreases and becomes
+ more and more difficult to even relatively locate the nodes.
+\end_layout
+
+\begin_layout Standard
+Although it is not possible to find the original locations of the nodes,
+ given only their relative contacts, it is still possible to find a plausible
+ mobility, that could have generated the same contact trace, or a trace
+ very similar to it.
+ It can be discussed that the exact locations of the nodes is not required
+ in most the experiments, unless the researcher has access to a 
+\begin_inset Quotes eld
+\end_inset
+
+valid
+\begin_inset Quotes erd
+\end_inset
+
+ mobility trace presenting the same characteristics.
  
 \end_layout
 
