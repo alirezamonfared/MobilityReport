@@ -332,9 +332,23 @@ contact traces
  Contact traces can record on-off timing information about links, hence
  they can be more compact than mobility traces that must record data at
  every time instant.
- Collecting contact traces is also challenging, however, as it requires
- instrumenting nodes with collection capability and conducting a well-planned
- and coordinated collection 
+ In its, simplest form, contacts can be implied by close proximity, although
+ this is not the best model to consider and needs to be replaced with more
+ accurate models based o the requirements of the study 
+\backslash
+cite{kotz2003mistaken}.
+ Contacts are typically traced by using Bluetooth or WLAN in an infrastructurele
+ss mode.
+ All other devices in range are seen as a contact
+\backslash
+cite{aschenbruck2011trace}.
+ The problem with contact traces is that by measuring mere contact opportunities
+ from an experiment with mobile devices, a lot of information is irretrievably
+ lost
+\backslash
+cite{whitbeck2011encounters}.Collecting contact traces is also challenging,
+ however, as it requires instrumenting nodes with collection capability
+ and conducting a well-planned and coordinated collection 
 \begin_inset Quotes eld
 \end_inset
 
@@ -411,8 +425,14 @@ valid
 \end_layout
 
 \begin_layout Standard
-Our porposed algorithm uses the limited infroamtion from the contacts to
- infer the mobility
+Our proposed algorithm uses the limited information from the contacts to
+ infer the mobility.
+ Benefits of this is an ability to visualize the movements of the node that
+ can give the researcher an ability to view the node dynamics.
+ It also allows to perform transformations on the contact traces, such as
+ changing node density, adding nodes, changing the transmission range, etc.
+ Finally, a plausible mobility trace allows a finer simulation if the radio
+ channel.
 \end_layout
 
 \begin_layout Section
