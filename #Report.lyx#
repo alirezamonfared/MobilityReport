@@ -392,7 +392,27 @@ key "aschenbruck2009modeling"
 \end_layout
 
 \begin_layout Standard
-Although it is not 
+Although it is not possible to find the original locations of the nodes,
+ given only their relative contacts, it is still possible to find a plausible
+ mobility, that could have generated the same contact trace, or a trace
+ very similar to it.
+ It can be discussed that the exact locations of the nodes is not required
+ in most the experiments that deal with studying mobility or modifying contacts
+ , unless the researcher has access to a 
+\begin_inset Quotes eld
+\end_inset
+
+valid
+\begin_inset Quotes erd
+\end_inset
+
+ mobility trace presenting the same characteristics.
+ 
+\end_layout
+
+\begin_layout Standard
+Our porposed algorithm uses the limited infroamtion from the contacts to
+ infer the mobility
 \end_layout
 
 \begin_layout Section
