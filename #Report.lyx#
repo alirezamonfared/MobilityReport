@@ -458,8 +458,14 @@ Our proposed algorithm uses the limited information from the contacts to
 Contributions of this work are summarized as follows:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
+An algorithm to infer mobility information based on mere contact traces
+ that enables richer understanding of mobile networks.
+\end_layout
 
+\begin_layout Itemize
+Application of multiple inputs for the proposed algorithm to enhance re-usabilit
+y of the output trace.
 \end_layout
 
 \begin_layout Section
@@ -478,155 +484,6 @@ another subsection
 Methodology
 \end_layout
 
-\begin_layout Theorem
-\begin_inset Argument
-status collapsed
-
-\begin_layout Plain Layout
-Theorem name
-\end_layout
-
-\end_inset
-
-For a named theorem or theorem-like environment you need to insert the name
- through 
-\family sans
-Insert\SpecialChar \menuseparator
-Short Title
-\family default
-, as done here.
-\end_layout
-
-\begin_layout Lemma
-If you don't want a theorem or lemma name don't add one.
-\end_layout
-
-\begin_layout Proof
-And here's the proof!
-\end_layout
-
-\begin_layout Section
-Results
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement htbp
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-
-\family sans
-A single column figure goes here
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Captions go 
-\emph on
-under
-\emph default
- the figure
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float table
-placement htbp
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Table captions go 
-\emph on
-above
-\emph default
- the table
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-delete
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-this
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-example
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-table
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Conclusions
-\end_layout
-
 \begin_layout Standard
 bla bla
 \end_layout
@@ -642,25 +499,6 @@ Don't add text here!
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-First appendix
-\end_layout
-
-\begin_layout Standard
-Citation: 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "IEEEexample:beebe_archive"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Second appendix
 \end_layout
 
 \begin_layout Section*
