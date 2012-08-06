@@ -752,7 +752,27 @@ key "conf/cocoon/Koren03"
 \end_inset
 
 .
- SGD, and DN-SGD have
+ SGD, and DN-SGD have been shown to be solvable by finding the generalized
+ eigenvalues of the matrices 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $K$
+\end_inset
+
+.
+ Broxten et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "journals/sigmobile/BroxtonLP06"
+
+\end_inset
+
+ have shown that for DN-SGD to perform reasonably on static sensor network
+ localization, a two-step localization, followed by a post-processing to
+ filter outliers 
 \end_layout
 
 \begin_layout Subsection
