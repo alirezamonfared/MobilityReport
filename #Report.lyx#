@@ -733,7 +733,26 @@ s.t.\quad X^{T}X=1
 The second constraint in the above equation, ensures that the trivial solution
  of all nodes in the same place is not chosen in favor of the others.
  The selection of variance in this constraint is arbitrary.
- The second constraint, ensures the invarianc
+ The second constraint, ensures the invariance of the solution under transitions
+ by setting a mean of zero.
+ Koren 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/cocoon/Koren03"
+
+\end_inset
+
+ argues that like classical MDS, SGD tends to draw the nodes to the center,
+ and hence has a poor performance on irregularly-shaped graphs.
+ A variant of SGD, called degree normalized spectral graph drawing (DN-SGD)
+ is proposed, which updates the second constraint of original SGD with weights
+ proportional to degrees, i.e.
+ 
+\begin_inset Formula $X^{T}KX=1$
+\end_inset
+
+.
+ SGD, and DN-SGD have
 \end_layout
 
 \begin_layout Subsection
