@@ -533,12 +533,31 @@ key "nphard"
 \begin_layout Standard
 Multidimensional Scaling (MDS) is a statistical technique used for exploring
  the similarities or dissimilarities in data.
- to find an embedding 
+ To find an embedding 
 \begin_inset Formula $X=[x_{1}...x_{m}]^{T}$
 \end_inset
 
 of 
 \begin_inset Formula $n$
+\end_inset
+
+ vertices in 
+\begin_inset Formula $\mathbb{R^{d}}$
+\end_inset
+
+, and given a known distance matrix 
+\begin_inset Formula $D$
+\end_inset
+
+, multidimensional scaling, seeks to minimize a stress function as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underset{x_{1}...x_{m}}{min}\underset{i<j}{\sum\quad(||x_{i}-)}
+\]
+
 \end_inset
 
 
