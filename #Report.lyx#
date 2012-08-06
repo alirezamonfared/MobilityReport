@@ -861,6 +861,23 @@ key "biswas2004semidefinite,journals/tosn/BiswasLWY06"
  
 \end_layout
 
+\begin_layout Standard
+The problem of mobility inversion, though, is different from the localization
+ problem, in the sense that it combines a contact model, and a contact trace
+ showing the opportunities among nodes to get in touch to obtain a mobility
+ trace showing their locations using no further information
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+These concepts will be more formally defined in the next section
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 subsection
 \end_layout
