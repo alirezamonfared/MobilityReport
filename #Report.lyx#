@@ -518,7 +518,30 @@ Given a graph
 \end_layout
 
 \begin_layout Standard
-This problem is proved to be NP-Hard in general case
+Next, we will briefly review three widely used proposed solutions for the
+ graph realization problem, which is proved to be NP-Hard in general case
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nphard"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Multidimensional Scaling (MDS) is a statistical technique used for exploring
+ the similarities or dissimilarities in data.
+ to find an embedding 
+\begin_inset Formula $X=[x_{1}...x_{m}]^{T}$
+\end_inset
+
+of 
+\begin_inset Formula $n$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
