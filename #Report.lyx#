@@ -783,7 +783,42 @@ Finally, the localization problem has been formulated as a Semidefinite
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{split}find\; X\in\mathbb{R}^{(n+2)\times(n+2)}\\
+s.t. & (1;0;\mathbf{0})^{T}X(1;0;\mathbf{0})=1\\
+ & (0;1;\mathbf{0})^{T}X(0;1;\mathbf{0})=1\\
+ & (1;1;\mathbf{0})^{T}X(1;1;\mathbf{0})=2\\
+ & (0;e_{i}-e_{j})^{T}X(0;e_{i}-e_{j})=d_{ji}^{2}\;\forall(j,i)\in V_{x}\\
+ & (a_{k}-e_{j})^{T}X(a_{k}-e_{j})=d_{jk}^{2}\;\forall(j,k)\in V_{a}\\
+ & X\succcurlyeq0
+\end{split}
+\]
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $V_{x}\subseteq V$
+\end_inset
+
+ is the set of nodes with unknown locations, and 
+\begin_inset Formula $V_{a}\subseteq V$
+\end_inset
+
+ is the set of nodes with known locations (anchors).
+ and 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+is a vector of all zero entries except 
+\begin_inset Formula $i^{th}$
+\end_inset
+
+-entry, 
 \end_layout
 
 \begin_layout Subsection
