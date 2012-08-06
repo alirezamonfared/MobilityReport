@@ -476,7 +476,15 @@ Previous Work
 \begin_layout Standard
 Localization has been a well-studied problem in various disciplines of networkin
 g.
- In wireless sensor networks, the problem is mostly stated as follows:
+ In wireless sensor networks, the problem also called the 
+\begin_inset Quotes eld
+\end_inset
+
+graph realization
+\begin_inset Quotes erd
+\end_inset
+
+ problem, is mostly stated as follows:
 \end_layout
 
 \begin_layout Standard
@@ -494,11 +502,15 @@ height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
-Given a 
+Given a graph 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ such that V is the set of n vertices (nodes), and D is an 
 \begin_inset Formula $n\times n$
 \end_inset
 
- matrix, 
+ matrix of pairwise distances between nodes, find a 
 \end_layout
 
 \end_inset
