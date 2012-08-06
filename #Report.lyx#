@@ -779,6 +779,18 @@ key "journals/sigmobile/BroxtonLP06"
 Finally, the localization problem has been formulated as a Semidefinite
  program (SDP), which a specific type of convex optimization which can be
  solved by interior methods.
+ An SDP feasibility is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\\
+\end{eqnarray*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
