@@ -488,20 +488,8 @@ graph realization
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
 
-\begin_layout Plain Layout
+\emph on
 Given a graph 
 \begin_inset Formula $G=(V,E)$
 \end_inset
@@ -510,7 +498,11 @@ Given a graph
 \begin_inset Formula $V$
 \end_inset
 
- is the set of n vertices (nodes), and D is an 
+ is the set of n vertices (nodes), and 
+\begin_inset Formula $D$
+\end_inset
+
+ is an 
 \begin_inset Formula $n\times n$
 \end_inset
 
@@ -518,12 +510,7 @@ Given a graph
 \begin_inset Formula $d-dimensional$
 \end_inset
 
- 
-\end_layout
-
-\end_inset
-
-
+ re
 \end_layout
 
 \begin_layout Subsection
