@@ -466,10 +466,342 @@ An algorithm to infer mobility information based on mere contact traces
 \begin_layout Itemize
 Application of multiple inputs for the proposed algorithm to enhance re-usabilit
 y of the output trace.
+ 
 \end_layout
 
 \begin_layout Section
 Previous Work
+\end_layout
+
+\begin_layout Standard
+A closely related problem to our mobility inversion, localization has been
+ a well-studied problem in various disciplines of networking.
+ In wireless sensor networks, the problem also called the 
+\begin_inset Quotes eld
+\end_inset
+
+graph realization
+\begin_inset Quotes erd
+\end_inset
+
+ problem, is mostly stated as follows:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Given a graph 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ such that 
+\begin_inset Formula $V$
+\end_inset
+
+ is the set of n vertices (nodes), and 
+\begin_inset Formula $D$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix of pairwise distances between nodes, find a 
+\begin_inset Formula $d-dimensional$
+\end_inset
+
+ embedding that preserves 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Next, we will briefly review three widely used proposed solutions for the
+ graph realization problem, which is proved to be NP-Hard in general case
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nphard"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Multidimensional Scaling (MDS) is a statistical technique used for exploring
+ the similarities or dissimilarities in data.
+ To find an embedding 
+\begin_inset Formula $X=[x_{1}...x_{m}]^{T}$
+\end_inset
+
+of 
+\begin_inset Formula $n$
+\end_inset
+
+ vertices in 
+\begin_inset Formula $\mathbb{R^{d}}$
+\end_inset
+
+, and given a known distance matrix 
+\begin_inset Formula $D$
+\end_inset
+
+, multidimensional scaling, seeks to minimize a stress function as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underset{x_{1}...x_{m}}{min}\underset{i<j}{\sum}\quad(||x_{i}-x_{j}||-d_{ij})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Classical MDS requires distances between every pair of nodes, Shang et.al
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/ShangR04"
+
+\end_inset
+
+ have proposed to use shortest paths computed from a connectivity matrix
+ instead of the distance matrix in their MDS-MAP
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Connectivity matrix is defined similar to an adjacency matrix.
+ For a graph 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ connectivity matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is defined such that 
+\begin_inset Formula $A_{ij}$
+\end_inset
+
+is 1 whenever nodes i and j are within transmission range of each other
+ and 0 otherwise.
+\end_layout
+
+\end_inset
+
+.
+ MDS yields a relative map of locations of the nodes, and given d anchor
+ nodes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Nodes with known locations.
+\end_layout
+
+\end_inset
+
+, this can be turned into an absolute map, which the target embedding 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ MDS, has the disadvantage of pulling nodes towards the center of the area,
+ and thus performs poorly on irregularly-shaped graphs.
+ To overcome this problem, Shang et.al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/ShangR04"
+
+\end_inset
+
+, have produced a version of the algorithm, MDS-MAP(p) in which MDS is applied
+ for the subgraph of a given number of hops around each node to produce
+ a local map for that node, and then these nodes are merged to produce a
+ global relative map.
+\end_layout
+
+\begin_layout Standard
+Spectral Graph Drawing (SGD) is another solution that is proposed for the
+ graph realization problem.
+ SGD also defines a minimization problem based on the Laplacian matrix,
+ L.
+ this matrix is defined as follows:
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=K-W
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=[w_{ij}]=\frac{1}{1+d_{ij}}\quad or\quad e^{-d_{ij}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K=diag(k_{ii})=\underset{j\epsilon N(i)}{\sum}w_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $W$
+\end_inset
+
+ is a weighting matrix, inversely proportional to the pair-wise distances
+ 
+\begin_inset Formula $D$
+\end_inset
+
+, and 
+\begin_inset Formula $K$
+\end_inset
+
+ is the diagonal matrix of node degrees.
+ SGD solves the following optimization problem to find 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X^{*}=\underset{X}{argmin}[X^{T}LX]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s.t.\quad X^{T}X=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\quad\quad X^{T}\mathbf{1}_{n}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second constraint in the above equation, ensures that the trivial solution
+ of all nodes in the same place is not chosen in favor of the others.
+ The selection of variance in this constraint is arbitrary.
+ The second constraint, ensures the invariance of the solution under transitions
+ by setting a mean of zero.
+ Koren 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/cocoon/Koren03"
+
+\end_inset
+
+ argues that like classical MDS, SGD tends to draw the nodes to the center,
+ and hence has a poor performance on irregularly-shaped graphs.
+ A variant of SGD, called degree normalized spectral graph drawing (DN-SGD)
+ is proposed, which updates the second constraint of original SGD with weights
+ proportional to degrees, i.e.
+ 
+\begin_inset Formula $X^{T}KX=1$
+\end_inset
+
+.
+ SGD, and DN-SGD have been shown to be solvable by finding the generalized
+ eigenvalues of the matrices 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $K$
+\end_inset
+
+.
+ Broxten et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "journals/sigmobile/BroxtonLP06"
+
+\end_inset
+
+ have shown that for DN-SGD to perform reasonably on static sensor network
+ localization, a two-step localization, followed by a post-processing to
+ filter outliers are required.
+\end_layout
+
+\begin_layout Standard
+Finally, the localization problem has been formulated as a Semidefinite
+ program (SDP), which a specific type of convex optimization which can be
+ solved by interior methods.
+ An SDP feasibility is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{split}find\; X\in\mathbb{R}^{(n+2)\times(n+2)}\\
+s.t. & (1;0;\mathbf{0})^{T}X(1;0;\mathbf{0})=1\\
+ & (0;1;\mathbf{0})^{T}X(0;1;\mathbf{0})=1\\
+ & (1;1;\mathbf{0})^{T}X(1;1;\mathbf{0})=2\\
+ & (0;e_{i}-e_{j})^{T}Z(0;e_{i}-e_{j})=d_{ji}^{2}\;\forall(j,i)\in N_{x}\\
+ & (a_{k}-e_{j})^{T}Z(a_{k}-e_{j})=d_{jk}^{2}\;\forall(j,k)\in N_{a}\\
+ & Z\succcurlyeq0
+\end{split}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -482,155 +814,6 @@ another subsection
 
 \begin_layout Section
 Methodology
-\end_layout
-
-\begin_layout Theorem
-\begin_inset Argument
-status collapsed
-
-\begin_layout Plain Layout
-Theorem name
-\end_layout
-
-\end_inset
-
-For a named theorem or theorem-like environment you need to insert the name
- through 
-\family sans
-Insert\SpecialChar \menuseparator
-Short Title
-\family default
-, as done here.
-\end_layout
-
-\begin_layout Lemma
-If you don't want a theorem or lemma name don't add one.
-\end_layout
-
-\begin_layout Proof
-And here's the proof!
-\end_layout
-
-\begin_layout Section
-Results
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement htbp
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-
-\family sans
-A single column figure goes here
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Captions go 
-\emph on
-under
-\emph default
- the figure
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float table
-placement htbp
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Table captions go 
-\emph on
-above
-\emph default
- the table
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-delete
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-this
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-example
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-table
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Conclusions
 \end_layout
 
 \begin_layout Standard
@@ -648,25 +831,6 @@ Don't add text here!
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-First appendix
-\end_layout
-
-\begin_layout Standard
-Citation: 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "IEEEexample:beebe_archive"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Second appendix
 \end_layout
 
 \begin_layout Section*
