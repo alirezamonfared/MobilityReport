@@ -341,3 +341,37 @@ k-space is strongly NP-hard}",
 	year = "1980"
 }
 
+@inproceedings{conf/infocom/ShangR04,
+	abstract = "dblp",
+	added-at = "2005-04-18T00:00:00.000+0200",
+	author = "Shang, Yi and Ruml, Wheeler",
+	biburl = "http://www.bibsonomy.org/bibtex/2ea27c206c25484b670f84b63acea4d9d/dblp",
+	booktitle = "{INFOCOM}",
+	date = "2005-04-18",
+	ee = "http://www.ieee-infocom.org/2004/Papers/55_1.PDF",
+	interhash = "7c142ea7df7d5c6c6f502339acf45c1f",
+	intrahash = "ea27c206c25484b670f84b63acea4d9d",
+	keywords = "dblp",
+	title = "{Improved MDS-Based Localization.}",
+	url = "http://dblp.uni-trier.de/db/conf/infocom/infocom2004.html#ShangR04",
+	x-fetchedfrom = "Bibsonomy",
+	year = 2004
+}
+
+@inproceedings{conf/infocom/ShangR04,
+	abstract = "dblp",
+	added-at = "2005-04-18T00:00:00.000+0200",
+	author = "Shang, Yi and Ruml, Wheeler",
+	biburl = "http://www.bibsonomy.org/bibtex/2ea27c206c25484b670f84b63acea4d9d/dblp",
+	booktitle = "{INFOCOM}",
+	date = "2005-04-18",
+	ee = "http://www.ieee-infocom.org/2004/Papers/55_1.PDF",
+	interhash = "7c142ea7df7d5c6c6f502339acf45c1f",
+	intrahash = "ea27c206c25484b670f84b63acea4d9d",
+	keywords = "dblp",
+	title = "{Improved MDS-Based Localization.}",
+	url = "http://dblp.uni-trier.de/db/conf/infocom/infocom2004.html#ShangR04",
+	x-fetchedfrom = "Bibsonomy",
+	year = 2004
+}
+

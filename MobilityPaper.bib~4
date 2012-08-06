@@ -1,27 +1,5 @@
 @comment{x-kbibtex-personnameformatting=<%l><, %f>}
 
-@inproceedings{conf/cocoon/Koren03,
-	added-at = "2011-07-05T00:00:00.000+0200",
-	author = "Koren, Yehuda",
-	biburl = "http://www.bibsonomy.org/bibtex/22b2a4d0d0658672e3fb99afa2cbbfcc5/dblp",
-	booktitle = "{COCOON}",
-	crossref = "conf/cocoon/2003",
-	editor = "Warnow, Tandy and Zhu, Binhai",
-	ee = "http://dx.doi.org/10.1007/3-540-45071-8_50",
-	interhash = "175f0de4174d6c6131e9f828fe2e75cb",
-	intrahash = "2b2a4d0d0658672e3fb99afa2cbbfcc5",
-	isbn = "3-540-40534-8",
-	keywords = "dblp",
-	pages = "496--508",
-	publisher = "Springer",
-	series = "{Lecture Notes in Computer Science}",
-	title = "{On Spectral Graph Drawing.}",
-	url = "http://dblp.uni-trier.de/db/conf/cocoon/cocoon2003.html#Koren03",
-	volume = 2697,
-	x-fetchedfrom = "Bibsonomy",
-	year = 2003
-}
-
 @article{kotz2003mistaken,
 	author = "Kotz, D. and Newport, C. and Elliot, C.",
 	journal = "Computer Science Department",
@@ -352,68 +330,5 @@
 	volume = 19,
 	x-fetchedfrom = "Bibsonomy",
 	year = 2011
-}
-
-@article{nphard,
-	author = "Saxe, J. B",
-	publisher = "Carnegie-Mellon
-University, Dept. of Computer Science",
-	title = "{Embeddability of weighted graphs in
-k-space is strongly NP-hard}",
-	year = "1980"
-}
-
-@inproceedings{conf/infocom/ShangR04,
-	abstract = "dblp",
-	added-at = "2005-04-18T00:00:00.000+0200",
-	author = "Shang, Yi and Ruml, Wheeler",
-	biburl = "http://www.bibsonomy.org/bibtex/2ea27c206c25484b670f84b63acea4d9d/dblp",
-	booktitle = "{INFOCOM}",
-	date = "2005-04-18",
-	ee = "http://www.ieee-infocom.org/2004/Papers/55_1.PDF",
-	interhash = "7c142ea7df7d5c6c6f502339acf45c1f",
-	intrahash = "ea27c206c25484b670f84b63acea4d9d",
-	keywords = "dblp",
-	title = "{Improved MDS-Based Localization.}",
-	url = "http://dblp.uni-trier.de/db/conf/infocom/infocom2004.html#ShangR04",
-	x-fetchedfrom = "Bibsonomy",
-	year = 2004
-}
-
-@inproceedings{conf/infocom/ShangR04,
-	abstract = "dblp",
-	added-at = "2005-04-18T00:00:00.000+0200",
-	author = "Shang, Yi and Ruml, Wheeler",
-	biburl = "http://www.bibsonomy.org/bibtex/2ea27c206c25484b670f84b63acea4d9d/dblp",
-	booktitle = "{INFOCOM}",
-	date = "2005-04-18",
-	ee = "http://www.ieee-infocom.org/2004/Papers/55_1.PDF",
-	interhash = "7c142ea7df7d5c6c6f502339acf45c1f",
-	intrahash = "ea27c206c25484b670f84b63acea4d9d",
-	keywords = "dblp",
-	title = "{Improved MDS-Based Localization.}",
-	url = "http://dblp.uni-trier.de/db/conf/infocom/infocom2004.html#ShangR04",
-	x-fetchedfrom = "Bibsonomy",
-	year = 2004
-}
-
-@article{journals/sigmobile/BroxtonLP06,
-	abstract = "dblp",
-	added-at = "2006-08-23T00:00:00.000+0200",
-	author = "Broxton, Michael and Lifton, Joshua and Paradiso, Joseph A.",
-	biburl = "http://www.bibsonomy.org/bibtex/292667298cff830775c3ddb12339981fa/dblp",
-	date = "2006-08-23",
-	ee = "http://doi.acm.org/10.1145/1119759.1119760",
-	interhash = "cc8b16ba75f569a32a5f53ba244ee0f9",
-	intrahash = "92667298cff830775c3ddb12339981fa",
-	journal = "Mobile Computing and Communications Review",
-	keywords = "dblp",
-	number = 1,
-	pages = "1--12",
-	title = "{Localization on the pushpin computing sensor network using spectral graph drawing and mesh relaxation.}",
-	url = "http://dblp.uni-trier.de/db/journals/sigmobile/sigmobile10.html#BroxtonLP06",
-	volume = 10,
-	x-fetchedfrom = "Bibsonomy",
-	year = 2006
 }
 

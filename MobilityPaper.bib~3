@@ -332,3 +332,12 @@
 	year = 2011
 }
 
+@article{nphard,
+	author = "Saxe, J. B",
+	publisher = "Carnegie-Mellon
+University, Dept. of Computer Science",
+	title = "{Embeddability of weighted graphs in
+k-space is strongly NP-hard}",
+	year = "1980"
+}
+
