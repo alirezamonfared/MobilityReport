@@ -474,8 +474,8 @@ Previous Work
 \end_layout
 
 \begin_layout Standard
-Localization has been a well-studied problem in various disciplines of networkin
-g.
+A closely related problem to our mobility inversion, localization has been
+ a well-studied problem in various disciplines of networking.
  In wireless sensor networks, the problem also called the 
 \begin_inset Quotes eld
 \end_inset
