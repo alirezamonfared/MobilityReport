@@ -730,14 +730,10 @@ s.t.\quad X^{T}X=1
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-fgf
-\end{multline*}
-
-\end_inset
-
- 
+The second constraint in the above equation, ensures that the trivial solution
+ of all nodes in the same place is not chosen in favor of the others.
+ The selection of variance in this constraint is arbitrary.
+ The second constraint, ensures the invarianc
 \end_layout
 
 \begin_layout Subsection
