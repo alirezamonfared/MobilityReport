@@ -721,12 +721,23 @@ s.t.\quad X^{T}X=1
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\quad\quad X^{T}\mathbf{1}_{n}=1
+\quad\quad X^{T}\mathbf{1}_{n}=0
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+fgf
+\end{multline*}
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Subsection
