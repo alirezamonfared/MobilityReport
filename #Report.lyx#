@@ -573,7 +573,7 @@ key "conf/infocom/ShangR04"
 \end_inset
 
  have proposed to use shortest paths computed from a connectivity matrix
- instead of the distance matrix
+ instead of the distance matrix in their MDS-MAP
 \begin_inset Foot
 status collapsed
 
@@ -599,6 +599,22 @@ is 1 whenever nodes i and j are within transmission range of each other
  and 0 otherwise.
 \end_layout
 
+\end_inset
+
+.
+ MDS yields a relative map of locations of the nodes, and given d anchor
+ nodes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Nodes with known locations.
+\end_layout
+
+\end_inset
+
+, this can be turned into an absolute map, which the target embedding 
+\begin_inset Formula $X$
 \end_inset
 
 .
