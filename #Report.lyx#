@@ -618,7 +618,25 @@ Nodes with known locations.
 \end_inset
 
 .
- 
+ MDS, has the disadvantage of pulling nodes towards the center of the area,
+ and thus performs poorly on irregularly-shaped graphs.
+ To overcome this problem, Shang et.al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/ShangR04"
+
+\end_inset
+
+, have produced a version of the algorithm, MDS-MAP(p) in which MDS is applied
+ for the subgraph of a given number of hops around each node to produce
+ a local map for that node, and then these nodes are merged to produce a
+ global relative map.
+\end_layout
+
+\begin_layout Standard
+Spectral Graph Drawing (SGD) is another solution that is proposed for the
+ graph realization problem.
+ SGD 
 \end_layout
 
 \begin_layout Subsection
