@@ -510,7 +510,15 @@ Given a graph
 \begin_inset Formula $d-dimensional$
 \end_inset
 
- re
+ embedding that preserves 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This problem is proved to be NP-Hard in general case
 \end_layout
 
 \begin_layout Subsection
