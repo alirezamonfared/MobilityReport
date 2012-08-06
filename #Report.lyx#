@@ -573,7 +573,36 @@ key "conf/infocom/ShangR04"
 \end_inset
 
  have proposed to use shortest paths computed from a connectivity matrix
- instead of the distance matrix 
+ instead of the distance matrix
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Connectivity matrix is defined similar to an adjacency matrix.
+ For a graph 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ connectivity matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is defined such that 
+\begin_inset Formula $A_{ij}$
+\end_inset
+
+is 1 whenever nodes i and j are within transmission range of each other
+ and 0 otherwise.
+\end_layout
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Subsection
