@@ -563,6 +563,19 @@ of
 
 \end_layout
 
+\begin_layout Standard
+Classical MDS requires distances between every pair of nodes, Shang et.al
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/ShangR04"
+
+\end_inset
+
+ have proposed to use shortest paths computed from a connectivity matrix
+ instead of the distance matrix 
+\end_layout
+
 \begin_layout Subsection
 subsection
 \end_layout
