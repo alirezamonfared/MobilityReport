@@ -555,7 +555,7 @@ of
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\underset{x_{1}...x_{m}}{min}\underset{i<j}{\sum\quad(||x_{i}-)}
+\underset{x_{1}...x_{m}}{min}\underset{i<j}{\sum}\quad(||x_{i}-x_{j}||-d_{ij})^{2}
 \]
 
 \end_inset
