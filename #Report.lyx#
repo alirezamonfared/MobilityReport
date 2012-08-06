@@ -783,18 +783,6 @@ Finally, the localization problem has been formulated as a Semidefinite
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{eqnarray*}
-find\qquad X\in\mathbb{R}^{(n+2)\times(n+2)}\\
- & s.t. & (1;0;\mathbf{0})^{T}X(1;0;\mathbf{0})=1\\
- &  & (0;1;\mathbf{0})^{T}X(0;1;\mathbf{0})=1\\
- &  & (1;1;\mathbf{0})^{T}X(1;1;\mathbf{0})=2\\
- &  & (0;e_{i}-e_{j})^{T}Z(0;e_{i}-e_{j})=d_{ji}^{2}\;\forall(i.j)\in N_{x}\\
- &  & (a_{k}-e_{j})^{T}Z(a_{k}-e_{j})=d_{jk}^{2}\;\forall(i.j)\in
-\end{eqnarray*}
-
-\end_inset
-
 
 \end_layout
 
