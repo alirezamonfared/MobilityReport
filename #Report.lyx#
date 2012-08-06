@@ -772,7 +772,13 @@ key "journals/sigmobile/BroxtonLP06"
 
  have shown that for DN-SGD to perform reasonably on static sensor network
  localization, a two-step localization, followed by a post-processing to
- filter outliers 
+ filter outliers are required.
+\end_layout
+
+\begin_layout Standard
+Finally, the localization problem has been formulated as a Semidefinite
+ program (SDP), which a specific type of convex optimization which can be
+ solved by interior methods.
 \end_layout
 
 \begin_layout Subsection
