@@ -636,7 +636,42 @@ key "conf/infocom/ShangR04"
 \begin_layout Standard
 Spectral Graph Drawing (SGD) is another solution that is proposed for the
  graph realization problem.
- SGD 
+ SGD also defines a minimization problem based on the Laplacian matrix,
+ L.
+ this matrix is defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=K-W
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=[w_{ij}]=\frac{1}{1+d_{ij}}\quad or\quad e^{-d_{ij}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K=[k_{ij}]
+\]
+
+\end_inset
+
+= 
 \end_layout
 
 \begin_layout Subsection
