@@ -666,12 +666,67 @@ W=[w_{ij}]=\frac{1}{1+d_{ij}}\quad or\quad e^{-d_{ij}}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-K=[k_{ij}]
+K=diag(k_{ii})=\underset{j\epsilon N(i)}{\sum}w_{ij}
 \]
 
 \end_inset
 
-= 
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $W$
+\end_inset
+
+ is a weighting matrix, inversely proportional to the pair-wise distances
+ 
+\begin_inset Formula $D$
+\end_inset
+
+, and 
+\begin_inset Formula $K$
+\end_inset
+
+ is the diagonal matrix of node degrees.
+ SGD solves the following optimization problem to find 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X^{*}=\underset{X}{argmin}[X^{T}LX]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s.t.\quad X^{T}X=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\quad\quad X^{T}\mathbf{1}_{n}=1
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
