@@ -818,7 +818,47 @@ is a vector of all zero entries except
 \begin_inset Formula $i^{th}$
 \end_inset
 
--entry, 
+-entry, and 
+\begin_inset Formula $a_{k}\quad\forall k=1...m$
+\end_inset
+
+ is the locations of the anchor nodes, and the last constraint requires,
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ to be a positive semidefinite matrix
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A matrix, 
+\begin_inset Formula $M$
+\end_inset
+
+, is positive semidefinite, if 
+\begin_inset Formula $z^{T}Mz\geq0$
+\end_inset
+
+ for all non-zero column vectors 
+\begin_inset Formula $z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.Biswas et.al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "biswas2004semidefinite,journals/tosn/BiswasLWY06"
+
+\end_inset
+
+ have discussed details of using semidefinite programming for solving the
+ localization problem.
+ 
 \end_layout
 
 \begin_layout Subsection
