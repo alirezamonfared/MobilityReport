@@ -466,6 +466,7 @@ An algorithm to infer mobility information based on mere contact traces
 \begin_layout Itemize
 Application of multiple inputs for the proposed algorithm to enhance re-usabilit
 y of the output trace.
+ 
 \end_layout
 
 \begin_layout Section
@@ -475,6 +476,34 @@ Previous Work
 \begin_layout Standard
 Localization has been a well-studied problem in various disciplines of networkin
 g.
+ In wireless sensor networks, the problem is mostly stated as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Given a 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix, 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
