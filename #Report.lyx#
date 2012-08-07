@@ -1099,7 +1099,14 @@ A contact trace is a log of contact-start and contact-end events, each labeled
 \emph on
 evolving graphs
 \emph default
- ~
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+~
 \backslash
 cite{bui2003evolving}.
  We are interested in contact traces collected in the course of an experiment.
