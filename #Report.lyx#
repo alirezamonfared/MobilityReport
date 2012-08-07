@@ -1083,6 +1083,35 @@ In this section, we define the basic concepts of mobility and contacts as
  they have been used in our proposed algorithm, and provide the background
  knowledge required for understanding the context and technical details
  of our mobility inversion algorithm.
+ We start this section by a few definitions.
+\end_layout
+
+\begin_layout Subsubsection*
+Contact Trace
+\end_layout
+
+\begin_layout Standard
+A contact trace is a log of contact-start and contact-end events, each labeled
+ with a time stamp and with the identifiers of the two nodes involved in
+ the contact event.
+ Mathematically, contact traces can be represented using a sequence of graphs
+ showing the connections over time, which are called {
+\backslash
+em evolving graphs}~
+\backslash
+cite{bui2003evolving}.
+ We are interested in contact traces collected in the course of an experiment.
+ In such experiments, mobile devices equipped with a wireless interface
+ are attached to moving entities (e.g., people or vehicles).
+ These mobile devices sample their environments periodically and log the
+ presence of neighboring nodes.
+ At the conclusion of the experiment these logs are collected and a contact
+ trace is constructed from them.
+ 
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Appendices
