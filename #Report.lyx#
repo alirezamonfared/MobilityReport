@@ -1166,7 +1166,76 @@ Mobility Inversion Algorithm
 \end_layout
 
 \begin_layout Standard
+In this section, we define the problem and its solution in a mathematical
+ framework.
+ Let 
+\begin_inset Formula $N$
+\end_inset
 
+ be the number of nodes that reside in a field of size 
+\begin_inset Formula $L\times L$
+\end_inset
+
+.
+ We assume each node has a location in 
+\begin_inset Formula $d$
+\end_inset
+
+ dimensions, with 
+\begin_inset Formula $d=2$
+\end_inset
+
+ in our simulations.
+ A contact trace in this setting, corresponds to an 
+\begin_inset Formula $N\times N\times T_{m}$
+\end_inset
+
+ matrix of adjacencies of its corresponding evolving graph 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+ where 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ is the length of the trace .
+ A mobility trace is is a 
+\begin_inset Formula $d\times N\times T_{m}$
+\end_inset
+
+ matrix, where its element 
+\begin_inset Formula $(:,i,t)$
+\end_inset
+
+ is the location of node 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ in both dimensions.
+\end_layout
+
+\begin_layout Standard
+The front end of our algorithm is similar to the algorithm of Whitbeck Et
+ sal except that instead of one contact trace, we can take one or more contact
+ traces, their corresponding radio ranges, and an upper bound on speed of
+ movements as input and infer a mobility trace that can generate these contacts.
+ We take one or more contact traces 
+\backslash
+footnote{As it will be more clear later, the number of inputs is usually
+ two due to practical considerations} as input, invert the inputs into a
+ mobility trace, and infer a new contact trace for a different transmission
+ range from this output.
+ Figure~
+\backslash
+ref{fig:BlkDiagram} depicts the process by which we transform the given
+ contact traces.
 \end_layout
 
 \begin_layout Appendices
