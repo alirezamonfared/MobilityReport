@@ -911,13 +911,51 @@ key "whitbeck2011encounters"
 
  has proposed a complete algorithm for the mobility inversion problem inspired
  by the work in dynamic graph drawing.
- They define three fundamental constraints on the mobility of the nodes,
- first of which states that no node can move faster than a maximum speed
+ They define three fundamental constraints on the mobility of the nodes
+ as follows
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+||x_{i}(t+\Delta t)-x_{i}(t)||_{2}^{2}\leq v_{max}\Delta t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r-2v_{max}min\{t-p_{ij}^{\uparrow},n_{ij}^{\downarrow}-t\}\leq d_{ij}(t)\leq r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r\leq d_{ij}(t)\leq r+2v_{max}min\{t-p_{ij}^{}\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+, first of which states that no node can move faster than a maximum speed
  
 \begin_inset Formula $v_{max}$
 \end_inset
 
-, and the other two confines the distance between two nodes to 
+, and the other two confines the distance between two nodes based on their
+ previous and future contact opportunities.
 \end_layout
 
 \begin_layout Subsection
