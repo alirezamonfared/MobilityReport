@@ -876,6 +876,32 @@ These concepts will be more formally defined in the next section
 \end_inset
 
 .
+ Few solutions have been proposed for this specific problem.
+ Wang et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wang2011automatic"
+
+\end_inset
+
+ solves the same problem by dividing it into smaller subproblems, and relying
+ on decreasing number of possibilities.
+ Our analysis of such approach has proven that the complexity of such solution
+ grows exponentially with increasing number of nodes, and hence is only
+ applicable to small scenarios.
+ Ristanovic et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ristanovic2010tracking"
+
+\end_inset
+
+ suggests a solution that relies on knowledge of some anchor nodes, with
+ fixed and known location, which can give a rough estimate of location of
+ mobile Bluetooth devices that have a low range.
+ The immediate downside is the dependence on the location of devices and
+ the underlying technologies used.
+ 
 \end_layout
 
 \begin_layout Subsection
