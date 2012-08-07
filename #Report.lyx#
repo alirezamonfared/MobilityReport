@@ -1065,23 +1065,24 @@ drag
  force to prevent nodes going excessively away from each other when borders
  are not obvious.
  Equilibrium of these forces on each node, determines its location.
- Together, this gives a relative set of locations s
-\end_layout
-
-\begin_layout Subsection
-subsection
-\end_layout
-
-\begin_layout Subsection
-another subsection
+ Together, this gives a relative set of locations satisfying the given contacts.
+ A major disadvantage of this approach is the necessity of a smart choice
+ of many constants involved in the calculation of the forces.
+ Since there is no rule of thumb for many of these parameters, the performance
+ of the application becomes dependent of the specific scenario under study,
+ and it may become a series of trial and errors when such information is
+ not available.
 \end_layout
 
 \begin_layout Section
-Methodology
+Background 
 \end_layout
 
 \begin_layout Standard
-bla bla
+In this section, we define the basic concepts of mobility and contacts as
+ they have been used in our proposed algorithm, and provide the background
+ knowledge required for understanding the context and technical details
+ of our mobility inversion algorithm.
 \end_layout
 
 \begin_layout Appendices
@@ -1098,7 +1099,7 @@ Don't add text here!
 \end_layout
 
 \begin_layout Section*
-Acknowlegment
+Acknowledgment
 \end_layout
 
 \begin_layout Standard
