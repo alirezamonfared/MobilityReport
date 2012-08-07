@@ -1106,9 +1106,7 @@ key "bui2003evolving"
 
 \end_inset
 
-~
-\backslash
-cite{bui2003evolving}.
+.
  We are interested in contact traces collected in the course of an experiment.
  In such experiments, mobile devices equipped with a wireless interface
  are attached to moving entities (e.g., people or vehicles).
