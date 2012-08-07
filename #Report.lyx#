@@ -1117,6 +1117,23 @@ key "bui2003evolving"
  
 \end_layout
 
+\begin_layout Standard
+Contact-start events occur when two mobile devices come within radio range
+ of each other.
+ Contact-end events occur when two mobile devices who were previously in
+ contact are not within the radio range of each other's devices.
+ Many aspects of the radio environment can affect these events.
+ In this work we are interested a primary factor: the radio range.
+ Our goal is to develop a method that takes a contact trace collected in
+ an experiment using devices with a certain radio range, and produce the
+ contact trace had the 
+\emph on
+same experiment
+\emph default
+ been conducted with devices with a new different radio range.
+ 
+\end_layout
+
 \begin_layout Appendices
 \begin_inset Note Note
 status open
