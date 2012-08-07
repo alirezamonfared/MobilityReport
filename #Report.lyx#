@@ -1123,15 +1123,25 @@ Contact-start events occur when two mobile devices come within radio range
  Contact-end events occur when two mobile devices who were previously in
  contact are not within the radio range of each other's devices.
  Many aspects of the radio environment can affect these events.
- In this work we are interested a primary factor: the radio range.
- Our goal is to develop a method that takes a contact trace collected in
- an experiment using devices with a certain radio range, and produce the
- contact trace had the 
-\emph on
-same experiment
-\emph default
- been conducted with devices with a new different radio range.
+ In general, contact trace becomes meaningful when studied along with a
  
+\emph on
+contact model.
+
+\emph default
+ In the simplest model, we define any two nodes to be in contact or connected
+ whenever their distance is less than a given transmission range, and disconnect
+ed otherwise.
+ While there is debate that this model is too simplistic due to many reasons
+ including the existence of obstacles, lack of symmetry in real contacts,
+ inequality of signal strength inside the assumed transmission circle, etc
+ 
+\backslash
+cite{kotz2003mistaken}, we use this model in our work so that we can focus
+ on other, perhaps more significant factors on transforming a contact trace
+ for another transmission range.
+ Nevertheless, we keep our model modular and flexible so that it can incorporate
+ more sophisticated models for the contacts later.
 \end_layout
 
 \begin_layout Appendices
