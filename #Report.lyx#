@@ -1129,19 +1129,36 @@ Contact-start events occur when two mobile devices come within radio range
 contact model.
 
 \emph default
- In the simplest model, we define any two nodes to be in contact or connected
- whenever their distance is less than a given transmission range, and disconnect
-ed otherwise.
- While there is debate that this model is too simplistic due to many reasons
+ In the simplest model, two nodes are defined to be in contact whenever
+ their distance is less than a given transmission range, and disconnected
+ otherwise.
+ There is a debate that this model is too simplistic due to many reasons
  including the existence of obstacles, lack of symmetry in real contacts,
  inequality of signal strength inside the assumed transmission circle, etc
  
-\backslash
-cite{kotz2003mistaken}, we use this model in our work so that we can focus
- on other, perhaps more significant factors on transforming a contact trace
- for another transmission range.
- Nevertheless, we keep our model modular and flexible so that it can incorporate
- more sophisticated models for the contacts later.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+, but this model has been used extensively due its simplicity and the fact
+ that it allows to focus on other, perhaps more significant factors in the
+ experiment.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Mobility Trace
+\end_layout
+
+\begin_layout Standard
+A mobility trace is a log of locations of nodes over time.
+ Similar to a contact trace, a mobility trace can also be unsynchronized
+ or synchronized, synthetically modeled or corresponding to real data from
+ GPS equipped devices or association to the base stations of a 3G/WiFi network.
+ 
 \end_layout
 
 \begin_layout Appendices
