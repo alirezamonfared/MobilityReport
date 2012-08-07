@@ -1095,9 +1095,11 @@ A contact trace is a log of contact-start and contact-end events, each labeled
  with a time stamp and with the identifiers of the two nodes involved in
  the contact event.
  Mathematically, contact traces can be represented using a sequence of graphs
- showing the connections over time, which are called {
-\backslash
-em evolving graphs}~
+ showing the connections over time, which are called 
+\emph on
+evolving graphs
+\emph default
+ ~
 \backslash
 cite{bui2003evolving}.
  We are interested in contact traces collected in the course of an experiment.
@@ -1108,10 +1110,6 @@ cite{bui2003evolving}.
  At the conclusion of the experiment these logs are collected and a contact
  trace is constructed from them.
  
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Appendices
