@@ -940,7 +940,7 @@ r-2v_{max}min\{t-p_{ij}^{\uparrow},n_{ij}^{\downarrow}-t\}\leq d_{ij}(t)\leq r
 \begin_layout Standard
 \begin_inset Formula 
 \[
-r\leq d_{ij}(t)\leq r+2v_{max}min\{t-p_{ij}^{}\}
+r\leq d_{ij}(t)\leq r+2v_{max}min\{t-p_{ij}^{\downarrow},n_{ik}^{\uparrow}-t\}
 \]
 
 \end_inset
@@ -949,8 +949,76 @@ r\leq d_{ij}(t)\leq r+2v_{max}min\{t-p_{ij}^{}\}
 \end_layout
 
 \begin_layout Standard
-, first of which states that no node can move faster than a maximum speed
- 
+Where 
+\begin_inset Formula $x_{i}(t)$
+\end_inset
+
+ and 
+\begin_inset Formula $d_{ij}(t)$
+\end_inset
+
+ are the location of node 
+\begin_inset Formula $i$
+\end_inset
+
+ and distance between nodes 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ at time
+\begin_inset Formula $t$
+\end_inset
+
+ respectively, 
+\begin_inset Formula $p_{ij}^{\uparrow}$
+\end_inset
+
+and 
+\begin_inset Formula $n_{ij}^{\uparrow}$
+\end_inset
+
+are the previous and the next time that node 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ will be in contact , 
+\begin_inset Formula $p_{ij}^{\downarrow}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{ij}^{\downarrow}$
+\end_inset
+
+are the previous and the next time that node 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ will be lose their contact, all relative to the current time 
+\begin_inset Formula $t$
+\end_inset
+
+, and 
+\begin_inset Formula $r$
+\end_inset
+
+ de
+\end_layout
+
+\begin_layout Standard
+The first constraint states that no node can move faster than a maximum
+ speed 
 \begin_inset Formula $v_{max}$
 \end_inset
 
