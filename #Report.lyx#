@@ -1590,10 +1590,6 @@ Contact Trace
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset space \qquad{}
-\end_inset
-
-
 \begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
 \end_inset
 
@@ -1601,9 +1597,6 @@ Contact Trace
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset space \qquad{}
-\end_inset
-
 Find a set of initial locations 
 \begin_inset Formula $X_{0}$
 \end_inset
@@ -1651,7 +1644,7 @@ for
 do
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Description
 \begin_inset space \qquad{}
 \end_inset
 
@@ -1670,15 +1663,7 @@ reference "fig:algorithm"
 \begin_inset Formula $G^{t}$
 \end_inset
 
-is the graph 
-\begin_inset space \qquad{}
-\end_inset
-
-
-\begin_inset space \qquad{}
-\end_inset
-
-corresponding to adjacency 
+ is the graph corresponding to adjacency 
 \begin_inset Formula $C(:,:,t)$
 \end_inset
 
