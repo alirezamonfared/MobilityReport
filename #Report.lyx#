@@ -1590,6 +1590,10 @@ Contact Trace
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
 \begin_inset Formula $X\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
 \end_inset
 
@@ -1597,6 +1601,9 @@ Contact Trace
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
 Find a set of initial locations 
 \begin_inset Formula $X_{0}$
 \end_inset
@@ -1605,7 +1612,34 @@ Find a set of initial locations
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
 \begin_inset Formula $X(:,:,0)\leftarrow X_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+for 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\begin_inset Formula $:=$
+\end_inset
+
+
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $T$
 \end_inset
 
 
