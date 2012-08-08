@@ -1762,7 +1762,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Figures/ReportAlgorithmBasic.eps
+	filename Figures/ReportAlgorithmMulti.eps
 	width 40text%
 
 \end_inset
@@ -1842,7 +1842,8 @@ key "zhu1997algorithm"
 \end_inset
 
  which solves a nonlinear optimization or feasibility problem with simple
- bounds on variable
+ bounds on variable.
+ the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
 \end_layout
 
 \begin_layout Section*
