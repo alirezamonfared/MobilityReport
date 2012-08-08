@@ -1844,7 +1844,38 @@ key "zhu1997algorithm"
  which solves a nonlinear optimization or feasibility problem with simple
  bounds on variable.
  the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
- (BFGS), an approximation of Newton's method that 
+ (BFGS), an approximation of Newton's method that seeks the stationary point
+ of a function by finding the zero of its derivative.
+ l-BFGS-B, needs an initial point to seek this stationary point, which is
+ the value 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+given to it in algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To solve the equation for the first iteration, we use the same method as
+ above, except that only constraints corresponding to ranges, and residence
+ of locations in the simulations will be considered, and the maximum speed
+ constraint, which necessitates a reasonable set of 
+\begin_inset Quotes eld
+\end_inset
+
+previous
+\begin_inset Quotes erd
+\end_inset
+
+ locations, will be ignored.
+ Since l-BFGS-B still needs an inital point to seek the srtationary point
+ of the functuion
 \end_layout
 
 \begin_layout Section*
