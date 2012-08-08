@@ -1083,6 +1083,157 @@ In this section, we define the basic concepts of mobility and contacts as
  they have been used in our proposed algorithm, and provide the background
  knowledge required for understanding the context and technical details
  of our mobility inversion algorithm.
+ We start this section by a few definitions.
+\end_layout
+
+\begin_layout Subsubsection*
+Contact Trace
+\end_layout
+
+\begin_layout Standard
+A contact trace is a log of contact-start and contact-end events, each labeled
+ with a time stamp and with the identifiers of the two nodes involved in
+ the contact event.
+ Mathematically, contact traces can be represented using a sequence of graphs
+ showing the connections over time, which are called 
+\emph on
+evolving graphs
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+.
+ We are interested in contact traces collected in the course of an experiment.
+ In such experiments, mobile devices equipped with a wireless interface
+ are attached to moving entities (e.g., people or vehicles).
+ These mobile devices sample their environments periodically and log the
+ presence of neighboring nodes.
+ At the conclusion of the experiment these logs are collected and a contact
+ trace is constructed from them.
+ 
+\end_layout
+
+\begin_layout Standard
+Contact-start events occur when two mobile devices come within radio range
+ of each other.
+ Contact-end events occur when two mobile devices who were previously in
+ contact are not within the radio range of each other's devices.
+ Many aspects of the radio environment can affect these events.
+ In general, contact trace becomes meaningful when studied along with a
+ 
+\emph on
+contact model.
+
+\emph default
+ In the simplest model, two nodes are defined to be in contact whenever
+ their distance is less than a given transmission range, and disconnected
+ otherwise.
+ There is a debate that this model is too simplistic due to many reasons
+ including the existence of obstacles, lack of symmetry in real contacts,
+ inequality of signal strength inside the assumed transmission circle, etc
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+, but this model has been used extensively due its simplicity and the fact
+ that it allows to focus on other, perhaps more significant factors in the
+ experiment.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Mobility Trace
+\end_layout
+
+\begin_layout Standard
+A mobility trace is a log of locations of nodes over time.
+ Similar to a contact trace, a mobility trace can also be unsynchronized
+ or synchronized, synthetically modeled or corresponding to real data from
+ GPS equipped devices or association to the base stations of a 3G/WiFi network.
+ 
+\end_layout
+
+\begin_layout Section
+Mobility Inversion Algorithm
+\end_layout
+
+\begin_layout Standard
+In this section, we define the problem and its solution in a mathematical
+ framework.
+ Let 
+\begin_inset Formula $N$
+\end_inset
+
+ be the number of nodes that reside in a field of size 
+\begin_inset Formula $L\times L$
+\end_inset
+
+.
+ We assume each node has a location in 
+\begin_inset Formula $d$
+\end_inset
+
+ dimensions, with 
+\begin_inset Formula $d=2$
+\end_inset
+
+ in our simulations.
+ A contact trace in this setting, corresponds to an 
+\begin_inset Formula $N\times N\times T_{m}$
+\end_inset
+
+ matrix of adjacencies of its corresponding evolving graph 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+ where 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ is the length of the trace .
+ A mobility trace is is a 
+\begin_inset Formula $d\times N\times T_{m}$
+\end_inset
+
+ matrix, where its element 
+\begin_inset Formula $(:,i,t)$
+\end_inset
+
+ is the location of node 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ in both dimensions.
+\end_layout
+
+\begin_layout Standard
+The front end of our algorithm is similar to the algorithm of Whitbeck et
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+ except that instead of one contact trace, we can take one or more contact
+ traces, their corresponding radio ranges, and an upper bound on speed of
+ movements as input and infer a mobility trace that can generate these contacts.
 \end_layout
 
 \begin_layout Appendices
@@ -1098,8 +1249,37 @@ Don't add text here!
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Figures/Algorithm.eps
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
-Acknowlegment
+Acknowledgment
 \end_layout
 
 \begin_layout Standard
