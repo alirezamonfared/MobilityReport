@@ -1302,7 +1302,11 @@ Number of nodes
 \begin_inset Text
 
 \begin_layout Plain Layout
-Transmission Range of ith Input 
+Transmission Range of 
+\begin_inset Formula $i^{th}$
+\end_inset
+
+ Input 
 \end_layout
 
 \end_inset
