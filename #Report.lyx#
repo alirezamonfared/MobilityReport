@@ -1616,6 +1616,10 @@ Contact Trace
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
 \end_inset
 
@@ -1658,7 +1662,7 @@ for
 \begin_inset Formula $T_{m}$
 \end_inset
 
-
+ 
 \series bold
 do
 \end_layout
@@ -1798,7 +1802,43 @@ Optimization algorithm takes a contact traces along with its corresponding
 \end_layout
 
 \begin_layout Standard
-T
+To complete our description of algorithm
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+, we need to clarify how we find the initial value of 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+ and how we solve the nonlinear optimization of figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To solve the optimization problem, proposed in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+, which is done in every iteration of algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section*
