@@ -1147,7 +1147,7 @@ key "kotz2003mistaken"
  experiment.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 
 \emph on
 Mobility Trace
@@ -1219,6 +1219,215 @@ key "bui2003evolving"
 \end_inset
 
  in both dimensions.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:params"
+
+\end_inset
+
+ describes the parameters used in the above description.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of nodes 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transmission Range of ith Input 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum Speed 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trace Length in Time 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dimensions of the problem (2 in our case) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Size of the Simulation Field (square) Side 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:params"
+
+\end_inset
+
+Summary of basic parameters used in the algorithm 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1233,20 +1442,112 @@ key "whitbeck2011encounters"
 
  except that instead of one contact trace, we can take one or more contact
  traces, their corresponding radio ranges, and an upper bound on speed of
- movements as input and infer a mobility trace that can generate these contacts.
+ movements as input and infer a mobility trace that can generate these contacts.O
+ur algorithm does not use any initial information or assumption about the
+ mobility model of the individuals.
+ The only assumptions made are the following:
 \end_layout
 
-\begin_layout Appendices
-\begin_inset Note Note
-status open
+\begin_layout Itemize
+Two nodes 
+\begin_inset Formula $x_{i}$
+\end_inset
 
-\begin_layout Plain Layout
-Don't add text here!
+ and 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ are in contact once their distance, 
+\begin_inset Formula $||x_{i}-x_{j}||_{2}^{2}$
+\end_inset
+
+ is less than a given radio range, 
+\begin_inset Formula $R$
+\end_inset
+
+, and are out of contact if this distance is larger than 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
 \end_layout
 
+\begin_layout Itemize
+Nodes move slower than a given maximum speed 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+, i.e.
+ , the distance between the location of a node 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ and 
+\begin_inset Formula $t+1$
+\end_inset
+
+, 
+\begin_inset Formula $||x_{i}^{t}-x_{i}^{t+1}||_{2}^{2}$
+\end_inset
+
+ is smaller than 
+\begin_inset Formula $v_{m}\times\Delta t$
+\end_inset
+
+ where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Delta t$
 \end_inset
 
 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is the difference between snapshots.
+ 
+\end_layout
+
+\begin_layout Itemize
+Nodes are always confined inside the mobility field.
+\end_layout
+
+\begin_layout Standard
+This front end is depicted in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+, where we use the notation 
+\begin_inset Formula $G_{t}=(V,E)$
+\end_inset
+
+ for the evolving graph corresponding to the input contact 
 \end_layout
 
 \begin_layout Standard
@@ -1256,16 +1557,31 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Figures/Algorithm.eps
-	width 50text%
+	width 40text%
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:algorithm"
+
+\end_inset
+
+Optimization algorithm takes two contact traces along with their corresponding
+ radio ranges and a value of maximum speed to infer a re-usable mobility
+ in an iterative manner.
+ Inferred locations for each time step are given as an initial point of
+ the solver for the next step.
 \end_layout
 
 \end_inset
@@ -1288,7 +1604,7 @@ bla bla
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Remember though that your final submission is supposed to have all the bibliogra
