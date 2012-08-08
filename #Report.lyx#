@@ -1834,7 +1834,15 @@ reference "alg:Basic"
 
 \end_inset
 
-,
+, we use Limited-memory Broyden–Fletcher–Goldfarb–Shanno (l-BFGS-B) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zhu1997algorithm"
+
+\end_inset
+
+ which solves a nonlinear optimization or feasibility problem with simple
+ bounds on variable
 \end_layout
 
 \begin_layout Section*
