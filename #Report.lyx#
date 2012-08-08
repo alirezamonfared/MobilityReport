@@ -1112,8 +1112,8 @@ key "bui2003evolving"
  are attached to moving entities (e.g., people or vehicles).
  These mobile devices sample their environments periodically and log the
  presence of neighboring nodes.
- At the conclusion of the experiment these logs are collected and a contact
- trace is constructed from them.
+ At the conclusion oکشتی f the experiment these logs are collected and a
+ contact trace is constructed from them.
  
 \end_layout
 
@@ -1248,10 +1248,6 @@ As it will be more clear later, the number of inputs is usually two due
  as input, invert the inputs into a mobility trace, and infer a new contact
  trace for a different transmission range from this output.
  
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Appendices
