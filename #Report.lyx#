@@ -1222,20 +1222,36 @@ key "bui2003evolving"
 \end_layout
 
 \begin_layout Standard
-The front end of our algorithm is similar to the algorithm of Whitbeck Et
- sal except that instead of one contact trace, we can take one or more contact
+The front end of our algorithm is similar to the algorithm of Whitbeck et
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+ except that instead of one contact trace, we can take one or more contact
  traces, their corresponding radio ranges, and an upper bound on speed of
  movements as input and infer a mobility trace that can generate these contacts.
  We take one or more contact traces 
-\backslash
-footnote{As it will be more clear later, the number of inputs is usually
- two due to practical considerations} as input, invert the inputs into a
- mobility trace, and infer a new contact trace for a different transmission
- range from this output.
- Figure~
-\backslash
-ref{fig:BlkDiagram} depicts the process by which we transform the given
- contact traces.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+As it will be more clear later, the number of inputs is usually two due
+ to practical considerations
+\end_layout
+
+\end_inset
+
+ as input, invert the inputs into a mobility trace, and infer a new contact
+ trace for a different transmission range from this output.
+ 
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Appendices
