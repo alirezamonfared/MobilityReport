@@ -1559,8 +1559,30 @@ es of graphs
 \end_inset
 
  .
- We use the notation The algorithm works in an iterative manner to find
- the locations of the nodes at each time step of the contact trace.
+ We use the notation 
+\begin_inset Formula $G\Leftrightarrow C$
+\end_inset
+
+ to show that the evolving graph 
+\begin_inset Formula $G$
+\end_inset
+
+ has the corresponding adjacency matrix 
+\begin_inset Formula $C$
+\end_inset
+
+ , which is a contact trace as defined above, this means that the graphs
+ 
+\begin_inset Formula $G^{t}$
+\end_inset
+
+ have adjacencies 
+\begin_inset Formula $C(:,:,t)$
+\end_inset
+
+.
+ The algorithm works in an iterative manner to find the locations of the
+ nodes at each time step of the contact trace.
 \end_layout
 
 \begin_layout Standard
@@ -1584,6 +1606,10 @@ Contact Trace
 
 , Maximum speed 
 \begin_inset Formula $v_{m}$
+\end_inset
+
+, number of dimensions 
+\begin_inset Formula $d=2$
 \end_inset
 
 
@@ -1650,11 +1676,19 @@ reference "fig:algorithm"
 \end_inset
 
  with 
-\begin_inset Formula $G^{t}$
+\begin_inset Formula $G^{t}\Longleftrightarrow C(:,:,t)$
 \end_inset
 
- is the graph corresponding to adjacency 
-\begin_inset Formula $C(:,:,t)$
+ , 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $R$
+\end_inset
+
+, 
+\begin_inset Formula $v_{m}$
 \end_inset
 
 
@@ -1662,6 +1696,13 @@ reference "fig:algorithm"
 
 \begin_layout Description
 \begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{0}\leftarrow X$
 \end_inset
 
 
@@ -1679,7 +1720,7 @@ end for
 Output:
 \series default
  
-\begin_inset Formula $X_{fina;}$
+\begin_inset Formula $X_{final}$
 \end_inset
 
 
@@ -1689,6 +1730,12 @@ Output:
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Basic"
+
+\end_inset
+
 Basic mobility inversion algorithm with one input contact trace
 \end_layout
 
@@ -1748,6 +1795,10 @@ Optimization algorithm takes a contact traces along with its corresponding
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+T
 \end_layout
 
 \begin_layout Section*
