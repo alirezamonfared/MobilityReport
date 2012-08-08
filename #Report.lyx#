@@ -1233,8 +1233,75 @@ key "whitbeck2011encounters"
 
  except that instead of one contact trace, we can take one or more contact
  traces, their corresponding radio ranges, and an upper bound on speed of
- movements as input and infer a mobility trace that can generate these contacts.
- This front end is depicted in figure 
+ movements as input and infer a mobility trace that can generate these contacts.O
+ur algorithm does not use any initial information or assumption about the
+ mobility model of the individuals.
+ The only assumptions made are the following:
+\end_layout
+
+\begin_layout Itemize
+Two nodes 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ are in contact once their distance, 
+\begin_inset Formula $||x_{i}-x_{j}||_{2}^{2}$
+\end_inset
+
+ is less than a given radio range, 
+\begin_inset Formula $R$
+\end_inset
+
+, and are out of contact if this distance is larger than 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Nodes move slower than a given maximum speed 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+, i.e.
+ , the distance between the location of a node 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ and 
+\begin_inset Formula $t+1$
+\end_inset
+
+, 
+\begin_inset Formula $||x_{i}^{t}-x_{i}^{t+1}||_{2}^{2}$
+\end_inset
+
+ is smaller than 
+\begin_inset Formula $v_{m}\times\Delta t$
+\end_inset
+
+ where $
+\backslash
+Delta t$ is the difference between snapshots.
+ 
+\end_layout
+
+\begin_layout Itemize
+Nodes are always confined inside the mobility field.
+\end_layout
+
+\begin_layout Standard
+This front end is depicted in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
@@ -1252,13 +1319,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:algorithm"
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename Figures/Algorithm.eps
 	width 40text%
@@ -1272,6 +1332,12 @@ name "fig:algorithm"
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:algorithm"
+
+\end_inset
+
 Optimization algorithm takes two contact traces along with their corresponding
  radio ranges and a value of maximum speed to infer a re-usable mobility
  in an iterative manner.
