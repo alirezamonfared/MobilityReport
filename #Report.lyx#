@@ -1559,8 +1559,8 @@ es of graphs
 \end_inset
 
  .
- The algorithm works in an iterative manner to find the locations of the
- nodes at each time step of the contact trace.
+ We use the notation The algorithm works in an iterative manner to find
+ the locations of the nodes at each time step of the contact trace.
 \end_layout
 
 \begin_layout Standard
@@ -1605,10 +1605,6 @@ Find a set of initial locations
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset space \qquad{}
-\end_inset
-
-
 \begin_inset Formula $X_{final}(:,:,0)\leftarrow X_{0}$
 \end_inset
 
@@ -1616,9 +1612,6 @@ Find a set of initial locations
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset space \qquad{}
-\end_inset
-
 
 \series bold
 for
@@ -1645,14 +1638,11 @@ do
 \end_layout
 
 \begin_layout Description
-\begin_inset space \qquad{}
-\end_inset
 
-
-\begin_inset space \qquad{}
-\end_inset
-
-solve the nonlinear optimization problem in figure 
+\series medium
+solve
+\series default
+ the nonlinear optimization problem in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
@@ -1670,15 +1660,7 @@ reference "fig:algorithm"
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset space \qquad{}
-\end_inset
-
-
-\begin_inset space \qquad{}
-\end_inset
-
-
+\begin_layout Description
 \begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
 \end_inset
 
@@ -1686,12 +1668,21 @@ reference "fig:algorithm"
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset space \qquad{}
-\end_inset
-
 
 \series bold
 end for
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Output:
+\series default
+ 
+\begin_inset Formula $X_{fina;}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
