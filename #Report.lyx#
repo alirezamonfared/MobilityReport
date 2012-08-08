@@ -1147,7 +1147,7 @@ key "kotz2003mistaken"
  experiment.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 
 \emph on
 Mobility Trace
@@ -1236,19 +1236,6 @@ key "whitbeck2011encounters"
  movements as input and infer a mobility trace that can generate these contacts.
 \end_layout
 
-\begin_layout Appendices
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Don't add text here!
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -1256,10 +1243,16 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "Fig:algorithm"
+
+\end_inset
+
+
 \begin_inset Caption
 
 \begin_layout Plain Layout
-First figure
 \begin_inset Graphics
 	filename Figures/Algorithm.eps
 	width 40text%
@@ -1289,7 +1282,7 @@ bla bla
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Remember though that your final submission is supposed to have all the bibliogra
