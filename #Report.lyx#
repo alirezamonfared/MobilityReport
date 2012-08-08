@@ -1561,8 +1561,6 @@ es of graphs
  .
  The algorithm works in an iterative manner to find the locations of the
  nodes at each time step of the contact trace.
- Initial locations of the nodes are determined using MDS.
- 
 \end_layout
 
 \begin_layout Standard
