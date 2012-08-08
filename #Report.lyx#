@@ -1844,6 +1844,7 @@ key "zhu1997algorithm"
  which solves a nonlinear optimization or feasibility problem with simple
  bounds on variable.
  the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
+ (BFGS), an approximation of Newton's method that 
 \end_layout
 
 \begin_layout Section*
