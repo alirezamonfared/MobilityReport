@@ -1234,9 +1234,62 @@ key "whitbeck2011encounters"
  except that instead of one contact trace, we can take one or more contact
  traces, their corresponding radio ranges, and an upper bound on speed of
  movements as input and infer a mobility trace that can generate these contacts.
+ This front end is depicted in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:algorithm"
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Figures/Algorithm.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Optimization algorithm takes two contact traces along with their corresponding
+ radio ranges and a value of maximum speed to infer a re-usable mobility
+ in an iterative manner.
+ Inferred locations for each time step are given as an initial point of
+ the solver for the next step.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
