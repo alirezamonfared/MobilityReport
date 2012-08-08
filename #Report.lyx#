@@ -1219,7 +1219,14 @@ key "bui2003evolving"
 \end_inset
 
  in both dimensions.
- Table ?? describes the parameters used in the above description.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:params"
+
+\end_inset
+
+ describes the parameters used in the above description.
 \end_layout
 
 \begin_layout Standard
@@ -1229,6 +1236,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -1340,7 +1348,7 @@ Maximum Speed
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Trace Length in Time 
 \end_layout
 
 \end_inset
@@ -1363,7 +1371,7 @@ Maximum Speed
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Dimensions of the problem (2 in our case) 
 \end_layout
 
 \end_inset
@@ -1386,7 +1394,7 @@ Maximum Speed
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Size of the Simulation Field (square) Side 
 \end_layout
 
 \end_inset
@@ -1403,6 +1411,12 @@ Maximum Speed
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:params"
+
+\end_inset
+
 Summary of basic parameters used in the algorithm 
 \end_layout
 
@@ -1529,7 +1543,11 @@ reference "fig:algorithm"
 
 \end_inset
 
+, where we use the notation 
+\begin_inset Formula $G_{t}=(V,E)$
+\end_inset
 
+ for the evolving graph corresponding to the input contact 
 \end_layout
 
 \begin_layout Standard
@@ -1571,12 +1589,12 @@ Optimization algorithm takes two contact traces along with their corresponding
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
-\end_inset
-
+\begin_layout Standard
 
 \end_layout
 
