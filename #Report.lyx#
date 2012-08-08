@@ -1,0 +1,1641 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass IEEEtran
+\begin_preamble
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding default
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement tbh
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Your Title"
+\pdf_author "Your Name"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+This is a template LyX file for articles to be submitted to journals of
+ the Institute of Electrical and Electronics Engineers (IEEE).
+ For general infos see 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://wiki.lyx.org/Examples/IEEE
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+You find the IEEEtran document class documentation here: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://mirror.ctan.org/macros/latex/contrib/IEEEtran/IEEEtran_HOWTO.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Plausible Mobility Inference from Contacts Using a Simple Optimization
+\end_layout
+
+\begin_layout Author
+Alirea k.Monfared,
+\begin_inset space ~
+\end_inset
+
+ Mostafa Ammar,
+\begin_inset space ~
+\end_inset
+
+ and
+\begin_inset space ~
+\end_inset
+
+Ellen Zegura,
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Alireza K.Monfared is with the Department of Computer Science, Georgia Institute
+ of Technology, Atlanta, GA, e-mail: 
+\begin_inset CommandInset href
+LatexCommand href
+target "alireza@gatech.edu"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Mostafa Ammar is with the Department of Computer Science, Georgia Institute
+ of Technology, Atlanta, GA, e-mail:
+\begin_inset CommandInset href
+LatexCommand href
+target "ammar@gatech.edu"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Ellen Zegura is with the Department of Computer Science, Georgia Institute
+ of Technology, Atlanta, GA, e-mail: 
+\begin_inset CommandInset href
+LatexCommand href
+target "ewz@cc.gatech.edu"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Recording locations of mobile nodes and connectivity between them is essential
+ in the study of various types of wireless networks, including but not limited
+ to opportunistic networks.
+ Working with mobility information gives an extra degree of freedom in the
+ study of such networks, while in a contact log, a lot of information like
+ the locations of the nodes and their velocities is irretrievably lost.
+ On the other hand, contact information can be measured more easily compared
+ to detailed locations of the nodes.
+ In this paper, we present a solution for inferring mobility from contact
+ information.
+ This technique uses a simple non-linear optimization approach to solve
+ the problem as a feasibility problem with fundamental constraints on the
+ mobility of the nodes.
+ The main contribution of this solution is the possibility to apply more
+ than one contact trace as input to enhance the 
+\begin_inset Quotes eld
+\end_inset
+
+quality
+\begin_inset Quotes erd
+\end_inset
+
+ of the inferred mobility.
+ 
+\end_layout
+
+\begin_layout Keywords
+mobility trace, contact trace, plausible mobility
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The 
+\series bold
+
+\backslash
+IEEEPARstart
+\series default
+ command is needed in the first paragraph fo the document.
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+IEEEPARstart{
+\end_layout
+
+\end_inset
+
+S
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\end_inset
+
+tudies
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ of mobile wireless protocols benefit from real-world traces that measure
+ and record node locations over time.
+ These 
+\emph on
+mobility traces
+\emph default
+ can be combined with radio models to produce network connectivity for simulatio
+n studies.
+ Measuring node locations with fine-grained time and space granularity is
+ challenging, however.
+ Outdoor positioning systems are sensitive to weather and obstacles, while
+ indoor positioning systems generally rely on availability of WiFi or other
+ signal infrastructure that may not be available.
+ On top of this, to capture all the contact opportunities between nodes,
+ a large number of GPS devices may be needed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "journals/ton/RheeSHLKC11"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As an alternative, 
+\emph on
+contact traces
+\emph default
+ measure and record pairwise node connectivity over time and do not require
+ accurate positioning systems.
+ Because they come from radio transmissions, contact traces are able to
+ capture environmental effects on communication capability, such as obstacle
+ effects, that are missing from mobility traces.
+ Contact traces can record on-off timing information about links, hence
+ they can be more compact than mobility traces that must record data at
+ every time instant.
+ In its, simplest form, contacts can be implied by close proximity, although
+ this is not the best model to consider and needs to be replaced with more
+ accurate models based o the requirements of the study
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+.
+ Contacts are typically traced by using Bluetooth or WLAN in an infra-structurel
+ess mode.
+ All other devices in range are seen as a contact 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "aschenbruck2011trace"
+
+\end_inset
+
+.
+ Collecting contact traces challenging, however, as it requires instrumenting
+ nodes with collection capability and conducting a well-planned and coordinated
+ collection 
+\begin_inset Quotes eld
+\end_inset
+
+run
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Contact trace collection and analysis have been reported in the literature
+ and have been used extensively to study mobile networks for various settings
+ ranging from a campus scenario 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pmtr2008"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nus2006"
+
+\end_inset
+
+ to a conference 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "infocom2006"
+
+\end_inset
+
+ to urban scenarios 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "natarajan2007understanding"
+
+\end_inset
+
+ or a disaster area.
+ Aschenbruck et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "aschenbruck2009modeling"
+
+\end_inset
+
+ has summarized these types of datasets.
+ When we measure contact opportunities among the nodes, a lot of information
+ is irretrievably lost.
+ A contact model, can only roughly tell if two nodes are in vicinity of
+ each other or not.
+ No information on exact location an velocity of the nodes can be retrieved.
+ Besides, as time elapses, this amount of information decreases and becomes
+ more and more difficult to even relatively locate the nodes.
+ The value of such traces makes them only representative of the particular
+ context in which they are measured.
+ For example, a WiFi radio contact trace seems not to be appropriate to
+ study a scenario possessing the same characteristics in every aspect, except
+ a Bluetooth radio without running the entire trace collection experiment
+ again which carries a significant organizational overhead in preparing,
+ distributing and collecting contact loggers, not to mention non-technical
+ issues related to legality and participant consent.
+ In a similar fashion, every small change in the contact scenario necessitates
+ repetition of the whole collection process.
+ It seems that if fine-grained mobility information is available for such
+ contact traces, it is possible to re-use the same dataset for a slightly
+ different scenario without inuring the burden of data collection repeatedly.
+\end_layout
+
+\begin_layout Standard
+Although it is not possible to find the original locations of the nodes,
+ given only their relative contacts, it is still possible to find a plausible
+ mobility, that could have generated the same contact trace, or a trace
+ very similar to it.
+ It can be discussed that the exact locations of the nodes is not required
+ in most the experiments that deal with studying mobility or modifying contacts
+ , unless the researcher has access to a 
+\begin_inset Quotes eld
+\end_inset
+
+valid
+\begin_inset Quotes erd
+\end_inset
+
+ mobility trace presenting the same characteristics.
+ 
+\end_layout
+
+\begin_layout Standard
+Our proposed algorithm uses the limited information from the contacts to
+ infer the mobility.
+ Benefits of this is an ability to visualize the movements of the node that
+ can give the researcher an ability to view the node dynamics.
+ It also allows to perform transformations on the contact traces, such as
+ changing node density, adding nodes, changing the transmission range, etc.
+ Finally, a plausible mobility trace allows a finer simulation if the radio
+ channel.
+\end_layout
+
+\begin_layout Standard
+Contributions of this work are summarized as follows:
+\end_layout
+
+\begin_layout Itemize
+An algorithm to infer mobility information based on mere contact traces
+ that enables richer understanding of mobile networks.
+\end_layout
+
+\begin_layout Itemize
+Application of multiple inputs for the proposed algorithm to enhance re-usabilit
+y of the output trace.
+ 
+\end_layout
+
+\begin_layout Section
+Previous Work
+\end_layout
+
+\begin_layout Standard
+A closely related problem to our mobility inversion, localization has been
+ a well-studied problem in various disciplines of networking.
+ In wireless sensor networks, the problem also called the 
+\begin_inset Quotes eld
+\end_inset
+
+graph realization
+\begin_inset Quotes erd
+\end_inset
+
+ problem, is mostly stated as follows:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Given a graph 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ such that 
+\begin_inset Formula $V$
+\end_inset
+
+ is the set of n vertices (nodes), and 
+\begin_inset Formula $D$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix of pairwise distances between nodes, find a 
+\begin_inset Formula $d-dimensional$
+\end_inset
+
+ embedding that preserves 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Next, we will briefly review three widely used proposed solutions for the
+ graph realization problem, which is proved to be NP-Hard in general case
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nphard"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Multidimensional Scaling (MDS) is a statistical technique used for exploring
+ the similarities or dissimilarities in data.
+ To find an embedding 
+\begin_inset Formula $X=[x_{1}...x_{m}]^{T}$
+\end_inset
+
+of 
+\begin_inset Formula $n$
+\end_inset
+
+ vertices in 
+\begin_inset Formula $\mathbb{R^{d}}$
+\end_inset
+
+, and given a known distance matrix 
+\begin_inset Formula $D$
+\end_inset
+
+, multidimensional scaling, seeks to minimize a stress function as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underset{x_{1}...x_{m}}{min}\underset{i<j}{\sum}\quad(||x_{i}-x_{j}||-d_{ij})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Classical MDS requires distances between every pair of nodes, Shang et.al
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/ShangR04"
+
+\end_inset
+
+ have proposed to use shortest paths computed from a connectivity matrix
+ instead of the distance matrix in their MDS-MAP
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Connectivity matrix is defined similar to an adjacency matrix.
+ For a graph 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ connectivity matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is defined such that 
+\begin_inset Formula $A_{ij}$
+\end_inset
+
+is 1 whenever nodes i and j are within transmission range of each other
+ and 0 otherwise.
+\end_layout
+
+\end_inset
+
+.
+ MDS yields a relative map of locations of the nodes, and given d anchor
+ nodes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Nodes with known locations.
+\end_layout
+
+\end_inset
+
+, this can be turned into an absolute map, which the target embedding 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ MDS, has the disadvantage of pulling nodes towards the center of the area,
+ and thus performs poorly on irregularly-shaped graphs.
+ To overcome this problem, Shang et.al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/ShangR04"
+
+\end_inset
+
+, have produced a version of the algorithm, MDS-MAP(p) in which MDS is applied
+ for the subgraph of a given number of hops around each node to produce
+ a local map for that node, and then these nodes are merged to produce a
+ global relative map.
+\end_layout
+
+\begin_layout Standard
+Spectral Graph Drawing (SGD) is another solution that is proposed for the
+ graph realization problem.
+ SGD also defines a minimization problem based on the Laplacian matrix,
+ L.
+ this matrix is defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=K-W
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=[w_{ij}]=\frac{1}{1+d_{ij}}\quad or\quad e^{-d_{ij}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K=diag(k_{ii})=\underset{j\epsilon N(i)}{\sum}w_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $W$
+\end_inset
+
+ is a weighting matrix, inversely proportional to the pair-wise distances
+ 
+\begin_inset Formula $D$
+\end_inset
+
+, and 
+\begin_inset Formula $K$
+\end_inset
+
+ is the diagonal matrix of node degrees.
+ SGD solves the following optimization problem to find 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X^{*}=\underset{X}{argmin}[X^{T}LX]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s.t.\quad X^{T}X=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\quad\quad X^{T}\mathbf{1}_{n}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second constraint in the above equation, ensures that the trivial solution
+ of all nodes in the same place is not chosen in favor of the others.
+ The selection of variance in this constraint is arbitrary.
+ The second constraint, ensures the invariance of the solution under transitions
+ by setting a mean of zero.
+ Koren 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/cocoon/Koren03"
+
+\end_inset
+
+ argues that like classical MDS, SGD tends to draw the nodes to the center,
+ and hence has a poor performance on irregularly-shaped graphs.
+ A variant of SGD, called degree normalized spectral graph drawing (DN-SGD)
+ is proposed, which updates the second constraint of original SGD with weights
+ proportional to degrees, i.e.
+ 
+\begin_inset Formula $X^{T}KX=1$
+\end_inset
+
+.
+ SGD, and DN-SGD have been shown to be solvable by finding the generalized
+ eigenvalues of the matrices 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $K$
+\end_inset
+
+.
+ Broxten et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "journals/sigmobile/BroxtonLP06"
+
+\end_inset
+
+ have shown that for DN-SGD to perform reasonably on static sensor network
+ localization, a two-step localization, followed by a post-processing to
+ filter outliers are required.
+\end_layout
+
+\begin_layout Standard
+Finally, the localization problem has been formulated as a Semidefinite
+ program (SDP), which a specific type of convex optimization which can be
+ solved by interior methods.
+ An SDP feasibility is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{split}find\; X\in\mathbb{R}^{(n+2)\times(n+2)}\\
+s.t. & (1;0;\mathbf{0})^{T}X(1;0;\mathbf{0})=1\\
+ & (0;1;\mathbf{0})^{T}X(0;1;\mathbf{0})=1\\
+ & (1;1;\mathbf{0})^{T}X(1;1;\mathbf{0})=2\\
+ & (0;e_{i}-e_{j})^{T}X(0;e_{i}-e_{j})=d_{ji}^{2}\;\forall(j,i)\in V_{x}\\
+ & (a_{k}-e_{j})^{T}X(a_{k}-e_{j})=d_{jk}^{2}\;\forall(j,k)\in V_{a}\\
+ & X\succcurlyeq0
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $V_{x}\subseteq V$
+\end_inset
+
+ is the set of nodes with unknown locations, and 
+\begin_inset Formula $V_{a}\subseteq V$
+\end_inset
+
+ is the set of nodes with known locations (anchors).
+ and 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+is a vector of all zero entries except 
+\begin_inset Formula $i^{th}$
+\end_inset
+
+-entry, and 
+\begin_inset Formula $a_{k}\quad\forall k=1...m$
+\end_inset
+
+ is the locations of the anchor nodes, and the last constraint requires,
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ to be a positive semidefinite matrix
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A matrix, 
+\begin_inset Formula $M$
+\end_inset
+
+, is positive semidefinite, if 
+\begin_inset Formula $z^{T}Mz\geq0$
+\end_inset
+
+ for all non-zero column vectors 
+\begin_inset Formula $z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.Biswas et.al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "biswas2004semidefinite,journals/tosn/BiswasLWY06"
+
+\end_inset
+
+ have discussed details of using semidefinite programming for solving the
+ localization problem.
+ 
+\end_layout
+
+\begin_layout Standard
+The problem of mobility inversion, though, is different from the localization
+ problem, in the sense that it combines a contact model, and a contact trace
+ showing the opportunities among nodes to get in touch to obtain a mobility
+ trace showing their locations using no further information
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+These concepts will be more formally defined in the next section
+\end_layout
+
+\end_inset
+
+.
+ Few solutions have been proposed for this specific problem.
+ Wang et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wang2011automatic"
+
+\end_inset
+
+ solves the same problem by dividing it into smaller subproblems, and relying
+ on decreasing number of possibilities.
+ Our analysis of such approach has proven that the complexity of such solution
+ grows exponentially with increasing number of nodes, and hence is only
+ applicable to small scenarios.
+ Ristanovic et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ristanovic2010tracking"
+
+\end_inset
+
+ suggests a solution that relies on knowledge of some anchor nodes, with
+ fixed and known location, which can give a rough estimate of location of
+ mobile Bluetooth devices that have a low range.
+ The immediate downside is the dependence on the location of devices and
+ the underlying technologies used.
+ Whitbeck et.
+ al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+ has proposed a complete algorithm for the mobility inversion problem inspired
+ by the work in dynamic graph drawing.
+ They define three fundamental constraints on the mobility of the nodes
+ as follows
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+||x_{i}(t+\Delta t)-x_{i}(t)||_{2}^{2}\leq v_{max}\Delta t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r-2v_{max}min\{t-p_{ij}^{\uparrow},n_{ij}^{\downarrow}-t\}\leq d_{ij}(t)\leq r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r\leq d_{ij}(t)\leq r+2v_{max}min\{t-p_{ij}^{\downarrow},n_{ik}^{\uparrow}-t\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $x_{i}(t)$
+\end_inset
+
+ and 
+\begin_inset Formula $d_{ij}(t)$
+\end_inset
+
+ are the location of node 
+\begin_inset Formula $i$
+\end_inset
+
+ and distance between nodes 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ at time
+\begin_inset Formula $t$
+\end_inset
+
+ respectively, 
+\begin_inset Formula $p_{ij}^{\uparrow}$
+\end_inset
+
+and 
+\begin_inset Formula $n_{ij}^{\uparrow}$
+\end_inset
+
+are the previous and the next time that node 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ will be in contact , 
+\begin_inset Formula $p_{ij}^{\downarrow}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{ij}^{\downarrow}$
+\end_inset
+
+are the previous and the next time that node 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ will be lose their contact, all relative to the current time 
+\begin_inset Formula $t$
+\end_inset
+
+, and 
+\begin_inset Formula $r$
+\end_inset
+
+ denotes the transmission range of the nodes 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The paper assumes a simple circular transmission range for the all nodes,
+ which is used for the sake of simplicity in many works, but is not the
+ best model.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The first constraint states that no node can move faster than a maximum
+ speed 
+\begin_inset Formula $v_{max}$
+\end_inset
+
+, and the other two confines the distance between two nodes based on their
+ previous and future contact opportunities.
+ The authors then define, an attractive force, similar to the classical
+ 
+\begin_inset Quotes eld
+\end_inset
+
+spring
+\begin_inset Quotes erd
+\end_inset
+
+ force on each node from all of its contacts, as well as a repulsive force,
+ similar to the classical 
+\begin_inset Quotes eld
+\end_inset
+
+Coulomb
+\begin_inset Quotes erd
+\end_inset
+
+ force, as well as a 
+\begin_inset Quotes eld
+\end_inset
+
+drag
+\begin_inset Quotes erd
+\end_inset
+
+ force to prevent nodes going excessively away from each other when borders
+ are not obvious.
+ Equilibrium of these forces on each node, determines its location.
+ Together, this gives a relative set of locations satisfying the given contacts.
+ A major disadvantage of this approach is the necessity of a smart choice
+ of many constants involved in the calculation of the forces.
+ Since there is no rule of thumb for many of these parameters, the performance
+ of the application becomes dependent of the specific scenario under study,
+ and it may become a series of trial and errors when such information is
+ not available.
+\end_layout
+
+\begin_layout Section
+Background 
+\end_layout
+
+\begin_layout Standard
+In this section, we define the basic concepts of mobility and contacts as
+ they have been used in our proposed algorithm, and provide the background
+ knowledge required for understanding the context and technical details
+ of our mobility inversion algorithm.
+ We start this section by a few definitions.
+\end_layout
+
+\begin_layout Subsubsection*
+Contact Trace
+\end_layout
+
+\begin_layout Standard
+A contact trace is a log of contact-start and contact-end events, each labeled
+ with a time stamp and with the identifiers of the two nodes involved in
+ the contact event.
+ Mathematically, contact traces can be represented using a sequence of graphs
+ showing the connections over time, which are called 
+\emph on
+evolving graphs
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+.
+ We are interested in contact traces collected in the course of an experiment.
+ In such experiments, mobile devices equipped with a wireless interface
+ are attached to moving entities (e.g., people or vehicles).
+ These mobile devices sample their environments periodically and log the
+ presence of neighboring nodes.
+ At the conclusion of the experiment these logs are collected and a contact
+ trace is constructed from them.
+ 
+\end_layout
+
+\begin_layout Standard
+Contact-start events occur when two mobile devices come within radio range
+ of each other.
+ Contact-end events occur when two mobile devices who were previously in
+ contact are not within the radio range of each other's devices.
+ Many aspects of the radio environment can affect these events.
+ In general, contact trace becomes meaningful when studied along with a
+ 
+\emph on
+contact model.
+
+\emph default
+ In the simplest model, two nodes are defined to be in contact whenever
+ their distance is less than a given transmission range, and disconnected
+ otherwise.
+ There is a debate that this model is too simplistic due to many reasons
+ including the existence of obstacles, lack of symmetry in real contacts,
+ inequality of signal strength inside the assumed transmission circle, etc
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+, but this model has been used extensively due its simplicity and the fact
+ that it allows to focus on other, perhaps more significant factors in the
+ experiment.
+\end_layout
+
+\begin_layout Subsubsection*
+
+\emph on
+Mobility Trace
+\end_layout
+
+\begin_layout Standard
+A mobility trace is a log of locations of nodes over time.
+ Similar to a contact trace, a mobility trace can also be unsynchronized
+ or synchronized, synthetically modeled or corresponding to real data from
+ GPS equipped devices or association to the base stations of a 3G/WiFi network.
+ 
+\end_layout
+
+\begin_layout Section
+Mobility Inversion Algorithm
+\end_layout
+
+\begin_layout Standard
+In this section, we define the problem and its solution in a mathematical
+ framework.
+ Let 
+\begin_inset Formula $N$
+\end_inset
+
+ be the number of nodes that reside in a field of size 
+\begin_inset Formula $L\times L$
+\end_inset
+
+.
+ We assume each node has a location in 
+\begin_inset Formula $d$
+\end_inset
+
+ dimensions, with 
+\begin_inset Formula $d=2$
+\end_inset
+
+ in our simulations.
+ A contact trace in this setting, corresponds to an 
+\begin_inset Formula $N\times N\times T_{m}$
+\end_inset
+
+ matrix of adjacencies of its corresponding evolving graph 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+ where 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ is the length of the trace .
+ A mobility trace is is a 
+\begin_inset Formula $d\times N\times T_{m}$
+\end_inset
+
+ matrix, where its element 
+\begin_inset Formula $(:,i,t)$
+\end_inset
+
+ is the location of node 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ in both dimensions.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:params"
+
+\end_inset
+
+ describes the parameters used in the above description.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of nodes 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transmission Range of 
+\begin_inset Formula $i^{th}$
+\end_inset
+
+ Input 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum Speed 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trace Length in Time 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dimensions of the problem (2 in our case) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Size of the Simulation Field (square) Side 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:params"
+
+\end_inset
+
+Summary of basic parameters used in the algorithm 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The front end of our algorithm is similar to the algorithm of Whitbeck et
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+ except that instead of one contact trace, we can take one or more contact
+ traces, their corresponding radio ranges, and an upper bound on speed of
+ movements as input and infer a mobility trace that can generate these contacts.O
+ur algorithm does not use any initial information or assumption about the
+ mobility model of the individuals.
+ The only assumptions made are the following:
+\end_layout
+
+\begin_layout Itemize
+Two nodes 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ are in contact once their distance, 
+\begin_inset Formula $||x_{i}-x_{j}||_{2}^{2}$
+\end_inset
+
+ is less than a given radio range, 
+\begin_inset Formula $R$
+\end_inset
+
+, and are out of contact if this distance is larger than 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Nodes move slower than a given maximum speed 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+, i.e.
+ , the distance between the location of a node 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ and 
+\begin_inset Formula $t+1$
+\end_inset
+
+, 
+\begin_inset Formula $||x_{i}^{t}-x_{i}^{t+1}||_{2}^{2}$
+\end_inset
+
+ is smaller than 
+\begin_inset Formula $v_{m}\times\Delta t$
+\end_inset
+
+ where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Delta t$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is the difference between snapshots.
+ 
+\end_layout
+
+\begin_layout Itemize
+Nodes are always confined inside the mobility field.
+\end_layout
+
+\begin_layout Standard
+We describe the algorithm for a single input contact trace, and the generalize
+ to an arbitrary number of inputs.
+ This front end is depicted in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+, where we use the notation 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ for the evolving graph corresponding to the input contact, which is a time-seri
+es of graphs 
+\begin_inset Formula $G^{t}=(V^{t},E^{t})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/ReportAlgorithmBasic.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:algorithm"
+
+\end_inset
+
+Optimization algorithm takes two contact traces along with their corresponding
+ radio ranges and a value of maximum speed to infer a re-usable mobility
+ in an iterative manner.
+ Inferred locations for each time step are given as an initial point of
+ the solver for the next step.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Acknowledgment
+\end_layout
+
+\begin_layout Standard
+bla bla
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Remember though that your final submission is supposed to have all the bibliogra
+phy entries embedded in the LaTeX-file.
+ This means you eventually have to copy the .bbl file into the latex file
+ and remove the bibtex lines.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "IEEEabrv,IEEEexample,MobilityPaper"
+options "IEEEtran"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
