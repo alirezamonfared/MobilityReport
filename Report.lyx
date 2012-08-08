@@ -1540,7 +1540,9 @@ Nodes are always confined inside the mobility field.
 \end_layout
 
 \begin_layout Standard
-This front end is depicted in figure 
+We describe the algorithm for a single input contact trace, and the generalize
+ to an arbitrary number of inputs.
+ This front end is depicted in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
@@ -1548,10 +1550,207 @@ reference "fig:algorithm"
 \end_inset
 
 , where we use the notation 
-\begin_inset Formula $G_{t}=(V,E)$
+\begin_inset Formula $G=(V,E)$
 \end_inset
 
- for the evolving graph corresponding to the input contact 
+ for the evolving graph corresponding to the input contact, which is a time-seri
+es of graphs 
+\begin_inset Formula $G^{t}=(V^{t},E^{t})$
+\end_inset
+
+ .
+ We use the notation 
+\begin_inset Formula $G\Leftrightarrow C$
+\end_inset
+
+ to show that the evolving graph 
+\begin_inset Formula $G$
+\end_inset
+
+ has the corresponding adjacency matrix 
+\begin_inset Formula $C$
+\end_inset
+
+ , which is a contact trace as defined above, this means that the graphs
+ 
+\begin_inset Formula $G^{t}$
+\end_inset
+
+ have adjacencies 
+\begin_inset Formula $C(:,:,t)$
+\end_inset
+
+.
+ The algorithm works in an iterative manner to find the locations of the
+ nodes at each time step of the contact trace.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Input: 
+\series default
+Contact Trace 
+\begin_inset Formula $C_{N\times N\times T_{m}},$
+\end_inset
+
+ Transmission range 
+\begin_inset Formula $R$
+\end_inset
+
+, Maximum speed 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+, number of dimensions 
+\begin_inset Formula $d=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Find a set of initial locations 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{final}(:,:,0)\leftarrow X_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+for
+\series default
+ 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\begin_inset Formula $:=$
+\end_inset
+
+
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ 
+\series bold
+do
+\end_layout
+
+\begin_layout Description
+
+\series medium
+solve
+\series default
+ the nonlinear optimization problem in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+ with 
+\begin_inset Formula $G^{t}\Longleftrightarrow C(:,:,t)$
+\end_inset
+
+ , 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $R$
+\end_inset
+
+, 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{0}\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Output:
+\series default
+ 
+\begin_inset Formula $X_{final}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Basic"
+
+\end_inset
+
+Basic mobility inversion algorithm with one input contact trace
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1563,7 +1762,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Figures/Algorithm.eps
+	filename Figures/ReportAlgorithmMulti.eps
 	width 40text%
 
 \end_inset
@@ -1581,9 +1780,9 @@ name "fig:algorithm"
 
 \end_inset
 
-Optimization algorithm takes two contact traces along with their corresponding
- radio ranges and a value of maximum speed to infer a re-usable mobility
- in an iterative manner.
+Optimization algorithm takes a contact traces along with its corresponding
+ radio range and a value of maximum speed to infer a mobility in an iterative
+ manner.
  Inferred locations for each time step are given as an initial point of
  the solver for the next step.
 \end_layout
@@ -1596,6 +1795,116 @@ Optimization algorithm takes two contact traces along with their corresponding
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+To complete our description of algorithm
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+, we need to clarify how we find the initial value of 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+ and how we solve the nonlinear optimization of figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To solve the optimization problem, proposed in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+, which is done in every iteration of algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+, we use Limited-memory Broyden–Fletcher–Goldfarb–Shanno (l-BFGS-B) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zhu1997algorithm"
+
+\end_inset
+
+ which solves a nonlinear optimization or feasibility problem with simple
+ bounds on variable.
+ the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
+ (BFGS), an approximation of Newton's method that seeks the stationary point
+ of a function by finding the zero of its derivative.
+ l-BFGS-B, needs an initial point to seek this stationary point, which is
+ the value 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+given to it in algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To solve the equation for the first iteration, we use the same method as
+ above, except that only constraints corresponding to ranges, and residence
+ of locations in the simulations will be considered, and the maximum speed
+ constraint, which necessitates a reasonable set of 
+\begin_inset Quotes eld
+\end_inset
+
+previous
+\begin_inset Quotes erd
+\end_inset
+
+ locations, will be ignored.
+ Since l-BFGS-B still needs an initial point to seek the stationary point
+ of the function, we construct a distance matrix by finding the number of
+ hops among every pair of nodes in 
+\begin_inset Formula $G^{0}\Longleftrightarrow C(:,:,0)$
+\end_inset
+
+, and multiplying it by the transmission range 
+\begin_inset Formula $R,$
+\end_inset
+
+i.e.
+ we assume two nodes 
+\begin_inset Formula $m$
+\end_inset
+
+ hops far from each other are at a distance 
+\begin_inset Formula $m\times R$
+\end_inset
+
+, and apply the classical MDS on it, to yield a decent initial point which
+ can be then passed to the version of the optimization problem that ignores
+ the speed constraint to find the first value of 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+, which is initial location of nodes as well, i.e.
+ 
+\begin_inset Formula $X_{final}(:,:,0)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section*
