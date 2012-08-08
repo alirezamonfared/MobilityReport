@@ -1575,12 +1575,54 @@ status open
 Input: 
 \series default
 Contact Trace 
-\series bold
-
 \begin_inset Formula $C_{N\times N\times T_{m}},$
 \end_inset
 
- Tra
+ Transmission range 
+\begin_inset Formula $R$
+\end_inset
+
+, Maximum speed 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Find a set of initial locations 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X(:,:,0)\leftarrow X_{0}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
