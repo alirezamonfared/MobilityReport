@@ -1616,10 +1616,6 @@ Contact Trace
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
 \end_inset
 
@@ -1838,7 +1834,7 @@ reference "alg:Basic"
 
 \end_inset
 
-.
+,
 \end_layout
 
 \begin_layout Section*
