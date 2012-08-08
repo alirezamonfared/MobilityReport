@@ -1594,7 +1594,7 @@ Contact Trace
 \end_inset
 
 
-\begin_inset Formula $X\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
+\begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
 \end_inset
 
 
@@ -1616,7 +1616,7 @@ Find a set of initial locations
 \end_inset
 
 
-\begin_inset Formula $X(:,:,0)\leftarrow X_{0}$
+\begin_inset Formula $X_{final}(:,:,0)\leftarrow X_{0}$
 \end_inset
 
 
@@ -1626,7 +1626,11 @@ Find a set of initial locations
 \begin_inset space \qquad{}
 \end_inset
 
-for 
+
+\series bold
+for
+\series default
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1639,10 +1643,70 @@ for
 \end_inset
 
  to 
-\begin_inset Formula $T$
+\begin_inset Formula $T_{m}$
 \end_inset
 
 
+\series bold
+do
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+solve the nonlinear optimization problem in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+ with 
+\begin_inset Formula $G^{t}$
+\end_inset
+
+is the graph 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+corresponding to adjacency 
+\begin_inset Formula $C(:,:,t)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\series bold
+end for
 \end_layout
 
 \begin_layout Plain Layout
