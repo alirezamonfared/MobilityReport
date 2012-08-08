@@ -1261,7 +1261,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Figures/Algorithm.eps
-	scale 10
+	width 50text%
 
 \end_inset
 
