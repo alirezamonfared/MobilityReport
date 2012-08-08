@@ -1571,6 +1571,16 @@ status open
 
 \begin_layout Plain Layout
 
+\series bold
+Input: 
+\series default
+Contact Trace 
+\series bold
+
+\begin_inset Formula $C_{N\times N\times T_{m}},$
+\end_inset
+
+ Tra
 \end_layout
 
 \begin_layout Plain Layout
