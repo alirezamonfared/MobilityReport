@@ -2431,8 +2431,8 @@ key "whitbeck2011encounters"
 \end_inset
 
 .
- We will also point outWe will discuss the performance metrics in the next
- section.
+ We will also point out the drawbacks of the algorithm.
+ We will discuss the performance metrics in the next section.
 \end_layout
 
 \begin_layout Standard
@@ -2472,7 +2472,15 @@ that affect the intensity of the repulsive force with distance, as well
  There is no general rule for setting these parameters, and for the algorithm
  to perform well, these need to be set in a trial and error.
  On the other hand, the optimization algorithm does not need any external
- parameters other than a maximum speed and transmission range, which 
+ parameters other than a maximum speed and transmission range, which are
+ natural to consider for every scenario and are present in the force-based
+ algorithm nevertheless.
+ 
+\end_layout
+
+\begin_layout Standard
+A drawback, present in both algorithms is the contact model.
+ It has been discussed in the literature 
 \end_layout
 
 \begin_layout Section*
