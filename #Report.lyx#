@@ -2480,7 +2480,20 @@ that affect the intensity of the repulsive force with distance, as well
 
 \begin_layout Standard
 A drawback, present in both algorithms is the contact model.
- It has been discussed in the literature 
+ It has been discussed in the literature, many other factors including but
+ not limited to presence of obstacles, fading, path-loss, etc affect the
+ connectivity model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+.
+ Despite this, the optimization mobility inversion algorithm is designed
+ in a modular manner so that any contact model can be integrated into it.
+ Since the solver at the heart of our algorithm, BFGS, can solve any nonlinear
+ optimization problem 
 \end_layout
 
 \begin_layout Section*
