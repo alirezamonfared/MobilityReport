@@ -2548,7 +2548,7 @@ The lowest level of evaluation is done with mobility-mobility comparison.
  for each location, and report a mean squared error over time:
 \begin_inset Formula 
 \[
-E_{location}=\sum_{t=0}^{T_{m}}\\su
+E_{location}=\frac{1}{N^{2}\times T_{m}}\sum_{t=0}^{T_{m}}\sum_{i=1}^{N}\sum_{j=1}^{N}||X_{original}(i,j,t)-X_{inferred}(i,j,t)||^{2}
 \]
 
 \end_inset
@@ -2564,19 +2564,28 @@ We do not expect a good matching in mobility nevertheless, as the proposed
 In the next level, we compare the contact traces.
  While the input to our algorithm is a contact trace, we can infer an output
  contact trace with the proper transmission range that the algorithm has
- used at the output based on the simple model of being in contact as described
- in 
-\backslash
-ref{PD}.
- We can then compare the two corresponding evolving graphs over time based
- on the number of missing links, i.e.
+ used at the output and a proper contact model We can then compare the two
+ corresponding evolving graphs over time based on the number of missing
+ links, i.e.
  present in the input contact trace and missing in the inferred contact
  trace, extra links, i.e.
  only seen in the inferred contact trace, and the sum of these two numbers.
  While a low number of link errors in this level is very desired to be seen
  and is sufficient to have a successful mobility inference, it is not necessary
  for our purposes.
- In the third level of comparisons, we use the definitions from 
+ These metrics, corresponding to, missing , extra, and total link error
+ as defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E_{total\; link}=\frac{\sum_{}}{}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In the third level of comparisons, we use the definitions from 
 \backslash
 cite{chen2011framework} and 
 \backslash
