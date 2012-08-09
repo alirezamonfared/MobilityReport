@@ -2573,15 +2573,29 @@ In the next level, we compare the contact traces.
  While a low number of link errors in this level is very desired to be seen
  and is sufficient to have a successful mobility inference, it is not necessary
  for our purposes.
- These metrics, corresponding to, missing , extra, and total link error
- as defined as follows:
+ Total link errors can be defined as follows
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Extra and missing link errors can be defined similarly
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $E_{total\; link}=\frac{\sum_{}}{}$
+\align center
+\begin_inset Formula $E_{total\; link}=\frac{\sum_{i,j,t}(C_{R}(i,j,t)\oplus C'_{R}(i,j,t))}{\sum_{i,j,t}(C_{R}(i,j,t)\wedge\mathbf{1})}\times100$
 \end_inset
 
  
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
