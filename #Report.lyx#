@@ -1933,7 +1933,25 @@ name "sub:Multiple-Input-Mobility"
 In this section, we meet the mobility inversion problem, in case that there
  are multiple inputs.
  Assume that we have contact traces
-\begin_inset Formula $C_{1}$
+\begin_inset Formula $C_{1},...C_{n}$
+\end_inset
+
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Each contact trace 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ is a 
+\begin_inset Formula $N\times N\times T_{m}$
+\end_inset
+
+matrix as describe in section
+\end_layout
+
 \end_inset
 
 
