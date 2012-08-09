@@ -1931,7 +1931,12 @@ name "sub:Multiple-Input-Mobility"
 
 \begin_layout Standard
 In this section, we meet the mobility inversion problem, in case that there
- are mu
+ are multiple inputs.
+ Assume that we have contact traces
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
