@@ -2353,7 +2353,53 @@ reference "alg:Multi"
 \end_inset
 
  to two values.
- One is the conta
+ One is the transmission range 
+\begin_inset Formula $R_{k}$
+\end_inset
+
+ corresponding to the contact trace 
+\begin_inset Formula $C_{k}$
+\end_inset
+
+with the largest transmission range that still shows the two nodes not to
+ be connected, i.e.
+ 
+\begin_inset Formula $C_{k}(i,j,t)=0$
+\end_inset
+
+, and the other is the transmission range 
+\begin_inset Formula $R_{l}$
+\end_inset
+
+ corresponding to the contact trace 
+\begin_inset Formula $C_{l}$
+\end_inset
+
+with the smallest transmission range that still shows the two nodes to be
+ connected, i.e.
+ 
+\begin_inset Formula $C_{k}(i,j,t)=1$
+\end_inset
+
+.
+ Note that in general case, we may have 
+\begin_inset Formula $R_{k}=0$
+\end_inset
+
+, i.e.
+ the two nodes are connected in all contact traces for that specific time
+ instance, and we can also have 
+\begin_inset Formula $R_{l}\rightarrow\infty$
+\end_inset
+
+, i.e.
+ that the two nodes are never connected in any contact trace for that specific
+ time instance.
+\end_layout
+
+\begin_layout Standard
+Except the above mentioned revisions, the optimization problem is solved
+ with similar techniques as the ones discussed in section 
 \end_layout
 
 \begin_layout Section*
