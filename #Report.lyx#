@@ -2201,7 +2201,7 @@ ing radio ranges and a value of maximum speed to infer a mobility in an
 \end_layout
 
 \begin_layout Standard
-The preprocessing, a first difference from algorithm 
+The pre-processing, a first difference from algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:Basic"
@@ -2225,7 +2225,8 @@ and so on to
 \begin_inset Formula $C_{n}$
 \end_inset
 
-, at any points, if two nodes are not connected in a contact trace 
+.
+ At any points, if two nodes are not connected in a contact trace 
 \begin_inset Formula $C_{i}$
 \end_inset
 
@@ -2233,17 +2234,66 @@ and so on to
 \begin_inset Formula $R_{i}$
 \end_inset
 
- at a certain time
+ at a certain time, we need to force all contact traces 
+\begin_inset Formula $C_{j}$
+\end_inset
+
+ with transmission ranges 
+\begin_inset Formula $R_{j}\geq R_{i}$
+\end_inset
+
+ not to have a connection between the same nodes at the same time
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Th
+If those nodes are labeled 
+\begin_inset Formula $l$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+, respectively, then if 
+\begin_inset Formula $C_{i}(l,k,t)=0$
+\end_inset
+
+, we force 
+\begin_inset Formula $C_{j}(l,k,t)\leftarrow0,$
+\end_inset
+
+for all 
+\begin_inset Formula $R_{j}\geq R_{i}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
-, we need to force all contact traces 
+.
+ A follow-up inspection is then performed, starting from 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+, and then 
+\begin_inset Formula $C_{n-1}$
+\end_inset
+
+to 
+\begin_inset Formula $C_{1}.$
+\end_inset
+
+ At any points, if two nodes are connected in a contact trace 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ with transmission 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+ at a certain time, we need to force all contact traces 
 \begin_inset Formula $C_{j}$
 \end_inset
 
@@ -2251,7 +2301,41 @@ Th
 \begin_inset Formula $R_{j}\leq R_{i}$
 \end_inset
 
- to have a connection between the same nodes at the same time.
+ to have a connection between the same nodes at the same time
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+If those nodes are labeled 
+\begin_inset Formula $l$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+, respectively, then if 
+\begin_inset Formula $C_{i}(l,k,t)=0$
+\end_inset
+
+, we force 
+\begin_inset Formula $C_{j}(l,k,t)\leftarrow1,$
+\end_inset
+
+for all 
+\begin_inset Formula $R_{j}\leq R_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ The pre-processing ensures that there is no contradiction in the contact
+ traces.
+ Note that such contradictions are possible, if we use real traces, and
+ ski
 \end_layout
 
 \begin_layout Section*
