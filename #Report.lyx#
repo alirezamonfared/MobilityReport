@@ -2347,7 +2347,13 @@ reference "alg:Multi"
 \end_inset
 
  is the second revision to the basic algorithm.
- In this case, 
+ In this case, for every two nodes, we can limit their distance at every
+ time 
+\begin_inset Formula $t$
+\end_inset
+
+ to two values.
+ One is the conta
 \end_layout
 
 \begin_layout Section*
