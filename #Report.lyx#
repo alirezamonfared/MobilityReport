@@ -2213,7 +2213,19 @@ reference "alg:Basic"
 \end_inset
 
  are compatible.
- As a rule of thumb, if two nodes are connected in a contact trace 
+ We first inspect the contact traces starting from 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+and then 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+and so on to 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+, at any points, if two nodes are not connected in a contact trace 
 \begin_inset Formula $C_{i}$
 \end_inset
 
@@ -2221,7 +2233,17 @@ reference "alg:Basic"
 \begin_inset Formula $R_{i}$
 \end_inset
 
- at a certain time, we need to force all contact traces 
+ at a certain time
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Th
+\end_layout
+
+\end_inset
+
+, we need to force all contact traces 
 \begin_inset Formula $C_{j}$
 \end_inset
 
