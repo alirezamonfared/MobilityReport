@@ -2083,7 +2083,7 @@ reference "fig:algorithm"
 \end_inset
 
  with 
-\begin_inset Formula $G^{t}\Longleftrightarrow C(:,:,t)$
+\begin_inset Formula $\{G_{1}^{t},G_{2}^{t},...,G_{n}^{t}\}\Longleftrightarrow\{C_{1}(:,:,t),C_{2}(:,:,t),...,C_{n}(:,:,t)\}$
 \end_inset
 
  , 
@@ -2154,6 +2154,54 @@ Basic mobility inversion algorithm with one input contact trace
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/ReportAlgorithmMulti.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:algorithmMulti"
+
+\end_inset
+
+Optimization algorithm takes multiple contact traces along with their correspond
+ing radio ranges and a value of maximum speed to infer a mobility in an
+ iterative manner.
+ Inferred locations for each time step are given as an initial point of
+ the solver for the next step.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The preprocessing, a first difference from algorith
 \end_layout
 
 \begin_layout Section*
