@@ -1163,6 +1163,13 @@ A mobility trace is a log of locations of nodes over time.
 
 \begin_layout Section
 Mobility Inversion Algorithm
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mobility-Inversion-Algorithm"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1933,7 +1940,7 @@ name "sub:Multiple-Input-Mobility"
 In this section, we meet the mobility inversion problem, in case that there
  are multiple inputs.
  Assume that we have contact traces
-\begin_inset Formula $C_{1},...C_{n}$
+\begin_inset Formula $C_{1},C_{2},...,C_{n}$
 \end_inset
 
  
@@ -1949,9 +1956,20 @@ Each contact trace
 \begin_inset Formula $N\times N\times T_{m}$
 \end_inset
 
-matrix as describe in section
+matrix as describe in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Mobility-Inversion-Algorithm"
+
+\end_inset
+
+.
 \end_layout
 
+\end_inset
+
+ , with their corresponding transmission ranges, 
+\begin_inset Formula $R_{1}\leq R_{2}\leq...\ensuremath{\leq R_{n}} $
 \end_inset
 
 
