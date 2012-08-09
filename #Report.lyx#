@@ -2335,7 +2335,19 @@ for all
  The pre-processing ensures that there is no contradiction in the contact
  traces.
  Note that such contradictions are possible, if we use real traces, and
- ski
+ skip the pre-processing due to environmental effects, etc.
+\end_layout
+
+\begin_layout Standard
+The optimization problem to be solved in the iterations of algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Multi"
+
+\end_inset
+
+ is the second revision to the basic algorithm.
+ In this case, 
 \end_layout
 
 \begin_layout Section*
