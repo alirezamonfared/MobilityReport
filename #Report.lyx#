@@ -2516,7 +2516,17 @@ Performance Evaluation
 \end_layout
 
 \begin_layout Standard
+In this section, we evaluate the performance of the mobility inversion algorithm
+ proposed.
+\end_layout
+
+\begin_layout Subsection
 Metrics
+\end_layout
+
+\begin_layout Standard
+Before presenting the evaluations, we need to define a performance metric
+ 
 \end_layout
 
 \begin_layout Section*
