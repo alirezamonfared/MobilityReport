@@ -2526,21 +2526,42 @@ Metrics
 
 \begin_layout Standard
 Before presenting the evaluations, we need to define a performance metric
- to meas
+ to measure how 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ is the performance of the algorithm on a trace.
+ To do this, in the very general framework ,we need to derive measures of
+ comparison from the inputs and the outputs of the algorithm.
+ Such comparison can be done in three levels as follows.
 \end_layout
 
 \begin_layout Standard
-In summary, we have evaluated the algorithm in three levels.
- The lowest level of evaluation is done with mobility-mobility comparison.
+The lowest level of evaluation is done with mobility-mobility comparison.
  Assuming that we have access to the mobility trace from which the input
  contact trace originated, which is only viable for test purposes, we can
  compare the original input mobility trace and the output mobility trace
- for each location, and report a mean squared error over time.
- We do not expect a good matching in mobility nevertheless, as the proposed
+ for each location, and report a mean squared error over time:
+\begin_inset Formula 
+\[
+E_{location}=\sum_{t=0}^{T_{m}}\\su
+\]
+
+\end_inset
+
+We do not expect a good matching in mobility nevertheless, as the proposed
  feasibility does not have a unique solution, and we have shown that it
  actually has many solutions which makes it almost impossible to pick the
  desired output mobility among all these possible solutions.
- In the next level, we compare the contact traces.
+ 
+\end_layout
+
+\begin_layout Standard
+In the next level, we compare the contact traces.
  While the input to our algorithm is a contact trace, we can infer an output
  contact trace with the proper transmission range that the algorithm has
  used at the output based on the simple model of being in contact as described
