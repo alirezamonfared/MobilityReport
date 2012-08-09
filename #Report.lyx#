@@ -2526,7 +2526,56 @@ Metrics
 
 \begin_layout Standard
 Before presenting the evaluations, we need to define a performance metric
- 
+ to meas
+\end_layout
+
+\begin_layout Standard
+In summary, we have evaluated the algorithm in three levels.
+ The lowest level of evaluation is done with mobility-mobility comparison.
+ Assuming that we have access to the mobility trace from which the input
+ contact trace originated, which is only viable for test purposes, we can
+ compare the original input mobility trace and the output mobility trace
+ for each location, and report a mean squared error over time.
+ We do not expect a good matching in mobility nevertheless, as the proposed
+ feasibility does not have a unique solution, and we have shown that it
+ actually has many solutions which makes it almost impossible to pick the
+ desired output mobility among all these possible solutions.
+ In the next level, we compare the contact traces.
+ While the input to our algorithm is a contact trace, we can infer an output
+ contact trace with the proper transmission range that the algorithm has
+ used at the output based on the simple model of being in contact as described
+ in 
+\backslash
+ref{PD}.
+ We can then compare the two corresponding evolving graphs over time based
+ on the number of missing links, i.e.
+ present in the input contact trace and missing in the inferred contact
+ trace, extra links, i.e.
+ only seen in the inferred contact trace, and the sum of these two numbers.
+ While a low number of link errors in this level is very desired to be seen
+ and is sufficient to have a successful mobility inference, it is not necessary
+ for our purposes.
+ In the third level of comparisons, we use the definitions from 
+\backslash
+cite{chen2011framework} and 
+\backslash
+cite{bui2003evolving} to compare journeys, i.e.
+ space-time paths between node pairs over time.
+ In its simplest form, we can categorize node pairs at each time instant
+ to three groups, S-pairs that are always reachable in space at every instant
+ of time after the current time, ST-pairs that are reachable within a journey
+ of limited duration after the current time, and N-pairs that are not reachable
+ after the current time.
+ We have compared the percentage of S-,SP-, and N-pairs at every instant
+ of time for the input and inferred contact trace, and shown a perfect matching
+ with the input contact trace, as well as better or equally good matching
+ compared to the force based algorithm of 
+\backslash
+cite{whitbeck2011encounters} with the advantage that to get comparable results
+ from 
+\backslash
+cite{whitbeck2011encounters} we need to tune the force parameters, while
+ the optimization algorithm does not need any parameter tuning.
 \end_layout
 
 \begin_layout Section*
