@@ -2201,7 +2201,35 @@ ing radio ranges and a value of maximum speed to infer a mobility in an
 \end_layout
 
 \begin_layout Standard
-The preprocessing, a first difference from algorith
+The preprocessing, a first difference from algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+, is needed to make sure that the contact traces 
+\begin_inset Formula $C_{1},C_{2},...,C_{n}$
+\end_inset
+
+ are compatible.
+ As a rule of thumb, if two nodes are connected in a contact trace 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ with transmission 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+ at a certain time, we need to force all contact traces 
+\begin_inset Formula $C_{j}$
+\end_inset
+
+ with transmission ranges 
+\begin_inset Formula $R_{j}\leq R_{i}$
+\end_inset
+
+ to have a connection between the same nodes at the same time.
 \end_layout
 
 \begin_layout Section*
