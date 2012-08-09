@@ -1165,6 +1165,10 @@ A mobility trace is a log of locations of nodes over time.
 Mobility Inversion Algorithm
 \end_layout
 
+\begin_layout Subsection
+Single Input Mobility Inversion
+\end_layout
+
 \begin_layout Standard
 In this section, we define the problem and its solution in a mathematical
  framework.
@@ -1874,8 +1878,45 @@ previous
 \end_inset
 
  locations, will be ignored.
- Since l-BFGS-B still needs an inital point to seek the srtationary point
- of the functuion
+ Since l-BFGS-B still needs an initial point to seek the stationary point
+ of the function, we construct a distance matrix by finding the number of
+ hops among every pair of nodes in 
+\begin_inset Formula $G^{0}\Longleftrightarrow C(:,:,0)$
+\end_inset
+
+, and multiplying it by the transmission range 
+\begin_inset Formula $R,$
+\end_inset
+
+i.e.
+ we assume two nodes 
+\begin_inset Formula $m$
+\end_inset
+
+ hops far from each other are at a distance 
+\begin_inset Formula $m\times R$
+\end_inset
+
+, and apply the classical MDS on it, to yield a decent initial point which
+ can be then passed to the version of the optimization problem that ignores
+ the speed constraint to find the first value of 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+, which is initial location of nodes as well, i.e.
+ 
+\begin_inset Formula $X_{final}(:,:,0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Multiple Input Mobility Inversion
+\end_layout
+
+\begin_layout Standard
+In this section, 
 \end_layout
 
 \begin_layout Section*
