@@ -1548,6 +1548,13 @@ Nodes are always confined inside the mobility field.
 
 \begin_layout Subsection
 Single Input Mobility Inversion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Single-Input-Mobility"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2400,6 +2407,42 @@ with the smallest transmission range that still shows the two nodes to be
 \begin_layout Standard
 Except the above mentioned revisions, the optimization problem is solved
  with similar techniques as the ones discussed in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Single-Input-Mobility"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Discussions
+\end_layout
+
+\begin_layout Standard
+In this section, we briefly review the main advantages of our mobility inversion
+ algorithm, compared to the force based algorithm of Whitbeck et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+.
+ We will discuss the performance metrics in the next section.
+\end_layout
+
+\begin_layout Standard
+Simplicity of the front-end is the first advantage of our algorithm.
+ In case of the force-based algorithm, calling the algorithm needs not only
+ the input contact trace, but also many parameters need to be set.
+ These include the rigidity constant 
+\begin_inset Formula $K$
+\end_inset
+
+ in the attractive force, 
 \end_layout
 
 \begin_layout Section*
