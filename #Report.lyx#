@@ -1972,6 +1972,187 @@ reference "sec:Mobility-Inversion-Algorithm"
 \begin_inset Formula $R_{1}\leq R_{2}\leq...\ensuremath{\leq R_{n}} $
 \end_inset
 
+.
+ The algorithm presented in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+, can be easily generalized to accept multiple inputs.
+ The revised version will be describe as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Input: 
+\series default
+Contact Trace 
+\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}_{N\times N\times T_{m}}$
+\end_inset
+
+ Transmission ranges 
+\begin_inset Formula $\{R_{1}\leq R_{2}\leq...\leq R_{n}\}$
+\end_inset
+
+, Maximum speed 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+, number of dimensions 
+\begin_inset Formula $d=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Preprocess contact traces
+\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Find a set of initial locations 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{final}(:,:,0)\leftarrow X_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+for
+\series default
+ 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\begin_inset Formula $:=$
+\end_inset
+
+
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ 
+\series bold
+do
+\end_layout
+
+\begin_layout Description
+
+\series medium
+solve
+\series default
+ the nonlinear optimization problem in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+ with 
+\begin_inset Formula $G^{t}\Longleftrightarrow C(:,:,t)$
+\end_inset
+
+ , 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $R$
+\end_inset
+
+, 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{0}\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Output:
+\series default
+ 
+\begin_inset Formula $X_{final}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Multi"
+
+\end_inset
+
+Basic mobility inversion algorithm with one input contact trace
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
