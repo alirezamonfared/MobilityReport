@@ -1165,10 +1165,6 @@ A mobility trace is a log of locations of nodes over time.
 Mobility Inversion Algorithm
 \end_layout
 
-\begin_layout Subsection
-Single Input Mobility Inversion
-\end_layout
-
 \begin_layout Standard
 In this section, we define the problem and its solution in a mathematical
  framework.
@@ -1543,9 +1539,20 @@ Nodes move slower than a given maximum speed
 Nodes are always confined inside the mobility field.
 \end_layout
 
+\begin_layout Subsection
+Single Input Mobility Inversion
+\end_layout
+
 \begin_layout Standard
-We describe the algorithm for a single input contact trace, and the generalize
- to an arbitrary number of inputs.
+In this section, we describe the algorithm for a single input contact trace,
+ and the generalize to an arbitrary number of inputs in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Multiple-Input-Mobility"
+
+\end_inset
+
+.
  This front end is depicted in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1913,10 +1920,17 @@ i.e.
 
 \begin_layout Subsection
 Multiple Input Mobility Inversion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Multiple-Input-Mobility"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-In this section, 
+In this section, we meet the mobility inversion problem
 \end_layout
 
 \begin_layout Section*
