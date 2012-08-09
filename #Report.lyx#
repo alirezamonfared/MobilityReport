@@ -2431,7 +2431,8 @@ key "whitbeck2011encounters"
 \end_inset
 
 .
- We will discuss the performance metrics in the next section.
+ We will also point outWe will discuss the performance metrics in the next
+ section.
 \end_layout
 
 \begin_layout Standard
@@ -2442,7 +2443,36 @@ Simplicity of the front-end is the first advantage of our algorithm.
 \begin_inset Formula $K$
 \end_inset
 
- in the attractive force, 
+ and the damping factor 
+\begin_inset Formula $\tau$
+\end_inset
+
+ in the attractive force, the intensity constant 
+\begin_inset Formula $G$
+\end_inset
+
+ , cutoff distance 
+\begin_inset Formula $d_{max},$
+\end_inset
+
+and parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset
+
+that affect the intensity of the repulsive force with distance, as well
+ as the strength parameter 
+\begin_inset Formula $D$
+\end_inset
+
+ of the drag force.
+ There is no general rule for setting these parameters, and for the algorithm
+ to perform well, these need to be set in a trial and error.
+ On the other hand, the optimization algorithm does not need any external
+ parameters other than a maximum speed and transmission range, which 
 \end_layout
 
 \begin_layout Section*
