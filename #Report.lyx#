@@ -2493,7 +2493,30 @@ key "kotz2003mistaken"
  Despite this, the optimization mobility inversion algorithm is designed
  in a modular manner so that any contact model can be integrated into it.
  Since the solver at the heart of our algorithm, BFGS, can solve any nonlinear
- optimization problem 
+ optimization problem, a new contact model that can be described mathematically,
+ and can be derived from a contact trace, possibly with additional information,
+ can replace the circular model, without affecting the other modules.
+\end_layout
+
+\begin_layout Standard
+A second future improvement to the algorithm, should target the computational
+ complexity.
+ The BFGS solver used in the algorithm does not scale linearly with the
+ number of nodes, and this can be a serious drawback to the performance
+ of the algorithm on large traces.
+ The authors do not know of any solver or feasible modification at the moment
+ that can address this completely.
+ The only suggestion, which can give marginal improvements, but does not
+ remove the nonlinear increases of running time with the number of nodes
+ is to implement the algorithm in a lower level language.
+\end_layout
+
+\begin_layout Section
+Performance Evaluation 
+\end_layout
+
+\begin_layout Standard
+Metrics
 \end_layout
 
 \begin_layout Section*
