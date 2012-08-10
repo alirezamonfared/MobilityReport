@@ -2595,15 +2595,58 @@ Extra and missing link errors can be defined similarly
 \end_layout
 
 \begin_layout Standard
+Where 
+\begin_inset Formula $C_{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $C'_{R}$
+\end_inset
+
+ are contact traces corresponding evolving graph of ground truth, aka the
+ input to the algorithm, and derived contact which comes from the inferred
+ mobility, and 
+\begin_inset Formula $\mathbf{1}$
+\end_inset
+
+ is a matrix of all ones of the size 
+\begin_inset Formula $N\times N\times T_{m}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\oplus$
+\end_inset
+
+ and 
+\begin_inset Formula $\wedge$
+\end_inset
+
+ represent element-wise logical XOR and AND respectively.
+ Note that for such comparison to be reasonable, we need both contact traces
+ to correspond to the same transmission range 
+\begin_inset Formula $R.$
+\end_inset
+
 
 \end_layout
 
 \begin_layout Standard
-In the third level of comparisons, we use the definitions from 
-\backslash
-cite{chen2011framework} and 
-\backslash
-cite{bui2003evolving} to compare journeys, i.e.
+In the third level of comparisons, we use the definitions from Chen et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen2011framework"
+
+\end_inset
+
+ and Bui et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+ to compare journeys, i.e.
  space-time paths between node pairs over time.
  In its simplest form, we can categorize node pairs at each time instant
  to three groups, S-pairs that are always reachable in space at every instant
