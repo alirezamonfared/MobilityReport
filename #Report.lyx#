@@ -2546,13 +2546,36 @@ The lowest level of evaluation is done with mobility-mobility comparison.
  contact trace originated, which is only viable for test purposes, we can
  compare the original input mobility trace and the output mobility trace
  for each location, and report a mean squared error over time:
-\begin_inset Formula 
-\[
-E_{location}=\frac{1}{N^{2}\times T_{m}}\sum_{t=0}^{T_{m}}\sum_{i=1}^{N}\sum_{j=1}^{N}||X_{original}(i,j,t)-X_{inferred}(i,j,t)||^{2}
-\]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Formula $E_{location}=\frac{1}{N^{2}\times T_{m}}\sum_{t=0}^{T_{m}}\sum_{i=1}^{N}\sum_{j=1}^{N}||X_{original}(i,j,t)-X_{inferred}(i,j,t)||^{2}$
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 We do not expect a good matching in mobility nevertheless, as the proposed
  feasibility does not have a unique solution, and we have shown that it
  actually has many solutions which makes it almost impossible to pick the
@@ -2653,16 +2676,9 @@ key "bui2003evolving"
  of time after the current time, ST-pairs that are reachable within a journey
  of limited duration after the current time, and N-pairs that are not reachable
  after the current time.
- We have compared the percentage of S-,SP-, and N-pairs at every instant
- of time for the input and inferred contact trace, and shown a perfect matching
- with the input contact trace, as well as better or equally good matching
- compared to the force based algorithm of 
-\backslash
-cite{whitbeck2011encounters} with the advantage that to get comparable results
- from 
-\backslash
-cite{whitbeck2011encounters} we need to tune the force parameters, while
- the optimization algorithm does not need any parameter tuning.
+ We can then compare the percentage of S-,SP-, and N-pairs at every instant
+ of time for the input and inferred contact trace, and seek a matching with
+ the input contact trace.
 \end_layout
 
 \begin_layout Section*
