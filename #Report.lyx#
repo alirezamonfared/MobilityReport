@@ -445,6 +445,29 @@ valid
 \end_layout
 
 \begin_layout Standard
+We are interested in the problem of inferring a plausible mobility trace
+ from a contact trace.
+ By 
+\begin_inset Quotes eld
+\end_inset
+
+plausible
+\begin_inset Quotes erd
+\end_inset
+
+, we mean a trace that is consitent with the contacts, and not originating
+ from a given radio model.
+ In general, there may be multiple mobility traces that are consistent with
+ a given trace.
+ We do not attempt to enumerate them.
+\end_layout
+
+\begin_layout Standard
+Coming from the contact domain to the mobility domain, may provide researchers
+ with
+\end_layout
+
+\begin_layout Standard
 Our proposed algorithm uses the limited information from the contacts to
  infer the mobility.
  Benefits of this is an ability to visualize the movements of the node that
