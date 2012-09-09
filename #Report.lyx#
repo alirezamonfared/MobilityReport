@@ -455,7 +455,7 @@ plausible
 \begin_inset Quotes erd
 \end_inset
 
-, we mean a trace that is consitent with the contacts, and not originating
+, we mean a trace that is consistent with the contacts, and not originating
  from a given radio model.
  In general, there may be multiple mobility traces that are consistent with
  a given trace.
