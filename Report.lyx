@@ -4,12 +4,7 @@
 \begin_header
 \textclass IEEEtran
 \begin_preamble
-% for subfigures/subtables
-\ifCLASSOPTIONcompsoc
-\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-\else
-\usepackage[caption=false,font=footnotesize]{subfig}
-\fi
+ \usepackage{multicol}
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
@@ -132,33 +127,29 @@ http://mirror.ctan.org/macros/latex/contrib/IEEEtran/IEEEtran_HOWTO.pdf
 \end_layout
 
 \begin_layout Title
-Plausible Mobility Inference from Contacts Using a Simple Optimization
+Plausible Mobility Inference from Wireless Contacts UsingOptimization
 \end_layout
 
 \begin_layout Author
-Alirea k.Monfared,
-\begin_inset space ~
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{multicols}{3}
+\end_layout
+
 \end_inset
 
- Mostafa Ammar,
-\begin_inset space ~
-\end_inset
-
- and
-\begin_inset space ~
-\end_inset
-
-Ellen Zegura,
-\begin_inset space ~
-\end_inset
-
-
+Alirea k.Monfared
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Alireza K.Monfared is with the Department of Computer Science, Georgia Institute
- of Technology, Atlanta, GA, e-mail: 
+Alireza K.Monfared is with the School of Electrical and Computer Engineering,
+ Georgia Institute of Technology, Atlanta, GA, e-mail: 
 \begin_inset CommandInset href
 LatexCommand href
 target "alireza@gatech.edu"
@@ -171,11 +162,15 @@ target "alireza@gatech.edu"
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+ Mostafa Ammar
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Mostafa Ammar is with the Department of Computer Science, Georgia Institute
+Mostafa Ammar is with the School of Computer Science, Georgia Institute
  of Technology, Atlanta, GA, e-mail:
 \begin_inset CommandInset href
 LatexCommand href
@@ -189,12 +184,16 @@ target "ammar@gatech.edu"
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+Ellen Zegura
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Ellen Zegura is with the Department of Computer Science, Georgia Institute
- of Technology, Atlanta, GA, e-mail: 
+Ellen Zegura is with the School of Computer Science, Georgia Institute of
+ Technology, Atlanta, GA, e-mail: 
 \begin_inset CommandInset href
 LatexCommand href
 target "ewz@cc.gatech.edu"
@@ -202,6 +201,23 @@ target "ewz@cc.gatech.edu"
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{multicols}
 \end_layout
 
 \end_inset
@@ -220,20 +236,12 @@ Recording locations of mobile nodes and connectivity between them is essential
  to detailed locations of the nodes.
  In this paper, we present a solution for inferring mobility from contact
  information.
- This technique uses a simple non-linear optimization approach to solve
+ This technique uses a simple non-linear optimization approach to suppress
  the problem as a feasibility problem with fundamental constraints on the
  mobility of the nodes.
- The main contribution of this solution is the possibility to apply more
- than one contact trace as input to enhance the 
-\begin_inset Quotes eld
-\end_inset
-
-quality
-\begin_inset Quotes erd
-\end_inset
-
- of the inferred mobility.
- 
+ In this paper, we introduce our technique and its underlying assumptions,
+ and discuss applicability of more than one input to enhance the performance
+ of inferred mobility.
 \end_layout
 
 \begin_layout Keywords
@@ -308,15 +316,7 @@ n studies.
  Outdoor positioning systems are sensitive to weather and obstacles, while
  indoor positioning systems generally rely on availability of WiFi or other
  signal infrastructure that may not be available.
- On top of this, to capture all the contact opportunities between nodes,
- a large number of GPS devices may be needed 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "journals/ton/RheeSHLKC11"
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -332,7 +332,11 @@ contact traces
  Contact traces can record on-off timing information about links, hence
  they can be more compact than mobility traces that must record data at
  every time instant.
- In its, simplest form, contacts can be implied by close proximity, although
+ 
+\end_layout
+
+\begin_layout Standard
+In its, simplest form, contacts can be implied by close proximity, although
  this is not the best model to consider and needs to be replaced with more
  accurate models based o the requirements of the study
 \begin_inset CommandInset citation
@@ -422,6 +426,18 @@ key "aschenbruck2009modeling"
  It seems that if fine-grained mobility information is available for such
  contact traces, it is possible to re-use the same dataset for a slightly
  different scenario without inuring the burden of data collection repeatedly.
+\end_layout
+
+\begin_layout Standard
+On top of this, to capture all the contact opportunities between nodes,
+ a large number of GPS devices may be needed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "journals/ton/RheeSHLKC11"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1163,6 +1179,13 @@ A mobility trace is a log of locations of nodes over time.
 
 \begin_layout Section
 Mobility Inversion Algorithm
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mobility-Inversion-Algorithm"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1539,9 +1562,27 @@ Nodes move slower than a given maximum speed
 Nodes are always confined inside the mobility field.
 \end_layout
 
+\begin_layout Subsection
+Single Input Mobility Inversion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Single-Input-Mobility"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-We describe the algorithm for a single input contact trace, and the generalize
- to an arbitrary number of inputs.
+In this section, we describe the algorithm for a single input contact trace,
+ and the generalize to an arbitrary number of inputs in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Multiple-Input-Mobility"
+
+\end_inset
+
+.
  This front end is depicted in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1762,7 +1803,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Figures/ReportAlgorithmMulti.eps
+	filename Figures/ReportAlgorithmBasic.eps
 	width 40text%
 
 \end_inset
@@ -1907,28 +1948,1486 @@ i.e.
 .
 \end_layout
 
-\begin_layout Section*
-Acknowledgment
+\begin_layout Subsection
+Multiple Input Mobility Inversion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Multiple-Input-Mobility"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-bla bla
-\end_layout
+In this section, we meet the mobility inversion problem, in case that there
+ are multiple inputs.
+ Assume that we have contact traces
+\begin_inset Formula $C_{1},C_{2},...,C_{n}$
+\end_inset
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
+ 
+\begin_inset Foot
+status open
 
 \begin_layout Plain Layout
-Remember though that your final submission is supposed to have all the bibliogra
-phy entries embedded in the LaTeX-file.
- This means you eventually have to copy the .bbl file into the latex file
- and remove the bibtex lines.
+Each contact trace 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ is a 
+\begin_inset Formula $N\times N\times T_{m}$
+\end_inset
+
+matrix as describe in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Mobility-Inversion-Algorithm"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ , with their corresponding transmission ranges, 
+\begin_inset Formula $R_{1}\leq R_{2}\leq...\ensuremath{\leq R_{n}}$
+\end_inset
+
+.
+ The algorithm presented in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+, can be easily generalized to accept multiple inputs.
+ The revised version will be describe as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Input: 
+\series default
+Contact Trace 
+\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}_{N\times N\times T_{m}}$
+\end_inset
+
+ Transmission ranges 
+\begin_inset Formula $\{R_{1}\leq R_{2}\leq...\leq R_{n}\}$
+\end_inset
+
+, Maximum speed 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+, number of dimensions 
+\begin_inset Formula $d=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Preprocess contact traces
+\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Find a set of initial locations 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{final}(:,:,0)\leftarrow X_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+for
+\series default
+ 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\begin_inset Formula $:=$
+\end_inset
+
+
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ 
+\series bold
+do
+\end_layout
+
+\begin_layout Description
+
+\series medium
+solve
+\series default
+ the nonlinear optimization problem in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+ with 
+\begin_inset Formula $\{G_{1}^{t},G_{2}^{t},...,G_{n}^{t}\}\Longleftrightarrow\{C_{1}(:,:,t),C_{2}(:,:,t),...,C_{n}(:,:,t)\}$
+\end_inset
+
+ , 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $R$
+\end_inset
+
+, 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{0}\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Output:
+\series default
+ 
+\begin_inset Formula $X_{final}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Multi"
+
+\end_inset
+
+Basic mobility inversion algorithm with one input contact trace
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/ReportAlgorithmMulti.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:algorithmMulti"
+
+\end_inset
+
+Optimization algorithm takes multiple contact traces along with their correspond
+ing radio ranges and a value of maximum speed to infer a mobility in an
+ iterative manner.
+ Inferred locations for each time step are given as an initial point of
+ the solver for the next step.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The pre-processing, a first difference from algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+, is needed to make sure that the contact traces 
+\begin_inset Formula $C_{1},C_{2},...,C_{n}$
+\end_inset
+
+ are compatible.
+ We first inspect the contact traces starting from 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+and then 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+and so on to 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+.
+ At any points, if two nodes are not connected in a contact trace 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ with transmission 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+ at a certain time, we need to force all contact traces 
+\begin_inset Formula $C_{j}$
+\end_inset
+
+ with transmission ranges 
+\begin_inset Formula $R_{j}\geq R_{i}$
+\end_inset
+
+ not to have a connection between the same nodes at the same time
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+If those nodes are labeled 
+\begin_inset Formula $l$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+, respectively, then if 
+\begin_inset Formula $C_{i}(l,k,t)=0$
+\end_inset
+
+, we force 
+\begin_inset Formula $C_{j}(l,k,t)\leftarrow0,$
+\end_inset
+
+for all 
+\begin_inset Formula $R_{j}\geq R_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ A follow-up inspection is then performed, starting from 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+, and then 
+\begin_inset Formula $C_{n-1}$
+\end_inset
+
+to 
+\begin_inset Formula $C_{1}.$
+\end_inset
+
+ At any points, if two nodes are connected in a contact trace 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ with transmission 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+ at a certain time, we need to force all contact traces 
+\begin_inset Formula $C_{j}$
+\end_inset
+
+ with transmission ranges 
+\begin_inset Formula $R_{j}\leq R_{i}$
+\end_inset
+
+ to have a connection between the same nodes at the same time
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+If those nodes are labeled 
+\begin_inset Formula $l$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+, respectively, then if 
+\begin_inset Formula $C_{i}(l,k,t)=0$
+\end_inset
+
+, we force 
+\begin_inset Formula $C_{j}(l,k,t)\leftarrow1,$
+\end_inset
+
+for all 
+\begin_inset Formula $R_{j}\leq R_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ The pre-processing ensures that there is no contradiction in the contact
+ traces.
+ Note that such contradictions are possible, if we use real traces, and
+ skip the pre-processing due to environmental effects, etc.
+\end_layout
+
+\begin_layout Standard
+The optimization problem to be solved in the iterations of algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Multi"
+
+\end_inset
+
+ is the second revision to the basic algorithm.
+ In this case, for every two nodes, we can limit their distance at every
+ time 
+\begin_inset Formula $t$
+\end_inset
+
+ to two values.
+ One is the transmission range 
+\begin_inset Formula $R_{k}$
+\end_inset
+
+ corresponding to the contact trace 
+\begin_inset Formula $C_{k}$
+\end_inset
+
+with the largest transmission range that still shows the two nodes not to
+ be connected, i.e.
+ 
+\begin_inset Formula $C_{k}(i,j,t)=0$
+\end_inset
+
+, and the other is the transmission range 
+\begin_inset Formula $R_{l}$
+\end_inset
+
+ corresponding to the contact trace 
+\begin_inset Formula $C_{l}$
+\end_inset
+
+with the smallest transmission range that still shows the two nodes to be
+ connected, i.e.
+ 
+\begin_inset Formula $C_{k}(i,j,t)=1$
+\end_inset
+
+.
+ Note that in general case, we may have 
+\begin_inset Formula $R_{k}=0$
+\end_inset
+
+, i.e.
+ the two nodes are connected in all contact traces for that specific time
+ instance, and we can also have 
+\begin_inset Formula $R_{l}\rightarrow\infty$
+\end_inset
+
+, i.e.
+ that the two nodes are never connected in any contact trace for that specific
+ time instance.
+\end_layout
+
+\begin_layout Standard
+Except the above mentioned revisions, the optimization problem is solved
+ with similar techniques as the ones discussed in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Single-Input-Mobility"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Discussions
+\end_layout
+
+\begin_layout Standard
+In this section, we briefly review the main advantages of our mobility inversion
+ algorithm, compared to the force based algorithm of Whitbeck et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+.
+ We will also point out the drawbacks of the algorithm.
+ We will discuss the performance metrics in the next section.
+\end_layout
+
+\begin_layout Standard
+Simplicity of the front-end is the first advantage of our algorithm.
+ In case of the force-based algorithm, calling the algorithm needs not only
+ the input contact trace, but also many parameters need to be set.
+ These include the rigidity constant 
+\begin_inset Formula $K$
+\end_inset
+
+ and the damping factor 
+\begin_inset Formula $\tau$
+\end_inset
+
+ in the attractive force, the intensity constant 
+\begin_inset Formula $G$
+\end_inset
+
+ , cutoff distance 
+\begin_inset Formula $d_{max},$
+\end_inset
+
+and parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset
+
+that affect the intensity of the repulsive force with distance, as well
+ as the strength parameter 
+\begin_inset Formula $D$
+\end_inset
+
+ of the drag force.
+ There is no general rule for setting these parameters, and for the algorithm
+ to perform well, these need to be set in a trial and error.
+ On the other hand, the optimization algorithm does not need any external
+ parameters other than a maximum speed and transmission range, which are
+ natural to consider for every scenario and are present in the force-based
+ algorithm nevertheless.
+ 
+\end_layout
+
+\begin_layout Standard
+A drawback, present in both algorithms is the contact model.
+ It has been discussed in the literature, many other factors including but
+ not limited to presence of obstacles, fading, path-loss, etc affect the
+ connectivity model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+.
+ Despite this, the optimization mobility inversion algorithm is designed
+ in a modular manner so that any contact model can be integrated into it.
+ Since the solver at the heart of our algorithm, BFGS, can solve any nonlinear
+ optimization problem, a new contact model that can be described mathematically,
+ and can be derived from a contact trace, possibly with additional information,
+ can replace the circular model, without affecting the other modules.
+\end_layout
+
+\begin_layout Standard
+A second future improvement to the algorithm, should target the computational
+ complexity.
+ The BFGS solver used in the algorithm does not scale linearly with the
+ number of nodes, and this can be a serious drawback to the performance
+ of the algorithm on large traces.
+ The authors do not know of any solver or feasible modification at the moment
+ that can address this completely.
+ The only suggestion, which can give marginal improvements, but does not
+ remove the nonlinear increases of running time with the number of nodes
+ is to implement the algorithm in a lower level language.
+\end_layout
+
+\begin_layout Section
+Performance Evaluation 
+\end_layout
+
+\begin_layout Standard
+In this section, we evaluate the performance of the mobility inversion algorithm
+ proposed.
+\end_layout
+
+\begin_layout Subsection
+Metrics
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Metrics"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Before presenting the evaluations, we need to define a performance metric
+ to measure how 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ is the performance of the algorithm on a trace.
+ To do this, in the very general framework ,we need to derive measures of
+ comparison from the inputs and the outputs of the algorithm.
+ Such comparison can be done in three levels as follows.
+\end_layout
+
+\begin_layout Standard
+The lowest level of evaluation is done with mobility-mobility comparison.
+ Assuming that we have access to the mobility trace from which the input
+ contact trace originated, which is only viable for test purposes, we can
+ compare the original input mobility trace and the output mobility trace
+ for each location, and report a mean squared error over time:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Formula $E_{location}=\frac{1}{N^{2}\times T_{m}}\sum_{i,j,t}||X_{original}(i,j,t)-X_{inferred}(i,j,t)||^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+We do not expect a good matching in mobility nevertheless, as the proposed
+ feasibility does not have a unique solution, and we have shown that it
+ actually has many solutions which makes it almost impossible to pick the
+ desired output mobility among all these possible solutions.
+ 
+\end_layout
+
+\begin_layout Standard
+In the next level, we compare the contact traces.
+ While the input to our algorithm is a contact trace, we can infer an output
+ contact trace with the proper transmission range that the algorithm has
+ used at the output and a proper contact model We can then compare the two
+ corresponding evolving graphs over time based on the number of missing
+ links, i.e.
+ present in the input contact trace and missing in the inferred contact
+ trace, extra links, i.e.
+ only seen in the inferred contact trace, and the sum of these two numbers.
+ While a low number of link errors in this level is very desired to be seen
+ and is sufficient to have a successful mobility inference, it is not necessary
+ for our purposes.
+ These errors can be defined as a function of time as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{missing\; link}(t)=\frac{\sum_{i,j}(C_{R}(i,j,t)\wedge(\neg C'_{R}(i,j,t)))}{\sum_{i,j}(C_{R}(i,j,t)\wedge\mathbf{1})}\times100
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{extra\; link}(t)=\frac{\sum_{i,j}((\neg C_{R}(i,j,t))\wedge(C'_{R}(i,j,t))}{\sum_{i,j}(C_{R}(i,j,t)\wedge\mathbf{1})}\times100
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{total\; link}(t)=\frac{\sum_{i,j}(C_{R}(i,j,t)\oplus C'_{R}(i,j,t))}{\sum_{i,j}(C_{R}(i,j,t)\wedge\mathbf{1})}\times100
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $C_{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $C'_{R}$
+\end_inset
+
+ are contact traces corresponding evolving graph of ground truth, aka the
+ input to the algorithm, and derived contact which comes from the inferred
+ mobility, and 
+\begin_inset Formula $\mathbf{1}$
+\end_inset
+
+ is a matrix of all ones of the size 
+\begin_inset Formula $N\times N\times T_{m}$
+\end_inset
+
+.
+\begin_inset Formula $\neg$
+\end_inset
+
+, 
+\begin_inset Formula $\oplus$
+\end_inset
+
+ and 
+\begin_inset Formula $\wedge$
+\end_inset
+
+ represent element-wise logical NOT, XOR and AND respectively.
+ Note that for such comparison to be reasonable, we need both contact traces
+ to correspond to the same transmission range 
+\begin_inset Formula $R.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the third level of comparisons, we use the definitions from Chen et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen2011framework"
+
+\end_inset
+
+ and Bui et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+ to compare journeys, i.e.
+ space-time paths between node pairs over time.
+ In its simplest form, we can categorize node pairs at each time instant
+ to three groups:
+\end_layout
+
+\begin_layout Itemize
+S-pairs: Two nodes that are always reachable in space at every instant of
+ time after the current time.
+\end_layout
+
+\begin_layout Itemize
+ST-pairs: Two nodes that are reachable within a journey of limited duration
+ after the current time.
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+As discussed by Chen et.
+ al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen2011framework"
+
+\end_inset
+
+, A journey, is a space-time path in an evolving graph that connects two
+ nodes over the course of time.
+ It's represented as 
+\begin_inset Formula $J=(R,R_{\delta})$
+\end_inset
+
+ in an evolving graph 
+\begin_inset Formula $G$
+\end_inset
+
+, where 
+\begin_inset Formula $R=e_{1},e_{2},...,e_{k}$
+\end_inset
+
+, the sequence of edges it traverses, and 
+\begin_inset Formula $R_{\delta}=\delta_{1},\delta_{2},...,\delta_{k}$
+\end_inset
+
+ the corresponding time instants of edge traversal.
+ 
+\begin_inset Formula $R_{\delta}$
+\end_inset
+
+ must be such that each edge traversed is in the evolving graph at the time
+ of traversal.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+N-pairs: two that are not reachable after the current time.
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note that S-pair,ST-pair, and N-pairs are a function of time, e.g., that two
+ nodes can be an ST-pair at a time 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+, but an N-pair at another time 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can then compare the percentage of S-,SP-, and N-pairs at every instant
+ of time for the input and inferred contact trace.
+ This shows the connectivity characteristics of the trace, and can be used
+ as a metric to compare the two traces.
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Standard
+In our experiments, we use three mobility models: 
+\end_layout
+
+\begin_layout Itemize
+Random Waypoint (RWP)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "camp2002survey"
+
+\end_inset
+
+, which is often used for simulation purposes in mobility literature despite
+ its known limitations 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/YoonLN03"
+
+\end_inset
+
+.
+ In this model speed, direction, and destination of each mobile node is
+ chosen randomly and independently of other nodes.
+\end_layout
+
+\begin_layout Itemize
+Reference Point Group Mobility (RPGM) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "roy2011reference"
+
+\end_inset
+
+ which organizes mobile hosts into groups according to their logical relationshi
+ps with each group having a logical center known as reference center whose
+ movement is followed by all nodes in the group.
+\end_layout
+
+\begin_layout Itemize
+Disaster Area Model (DA) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "aschenbruck2009modeling"
+
+\end_inset
+
+ which is based on an analysis of tactical issues of civil protection and
+ has added features like heterogeneous area-based movement, obstacles, and
+ joining/leaving of nodes.
+\end_layout
+
+\begin_layout Standard
+The experiments setting consists of 
+\begin_inset Formula $50$
+\end_inset
+
+ nodes and a duration of 
+\begin_inset Formula $1000$
+\end_inset
+
+ time steps.
+ RWP and RPGM span over a 
+\begin_inset Formula $1000\times1000\: m^{2}$
+\end_inset
+
+ field, with a maximum speed of 
+\begin_inset Formula $10m/s$
+\end_inset
+
+, while DA spans over a 
+\begin_inset Formula $350\times350\: m^{2}$
+\end_inset
+
+ field, with a maximum speed of 
+\begin_inset Formula $20m/s$
+\end_inset
+
+,.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/RWPLoc1.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rwploc"
+
+\end_inset
+
+Error in location inference for RWP over time.
+ Vertical axis shows the MSE of such error devided by the radio range to
+ make the numbers globally comparable.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/RPGMLoc.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rpgmloc"
+
+\end_inset
+
+Error in location inference for RPGM over time.
+ Vertical axis shows the MSE of such error devided by the radio range to
+ make the numbers globally comparable.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/DALoc.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:daloc"
+
+\end_inset
+
+Error in location inference for DA over time.
+ Vertical axis shows the MSE of such error devided by the radio range to
+ make the numbers globally comparable.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rwploc"
+
+\end_inset
+
+,
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rpgmloc"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:daloc"
+
+\end_inset
+
+ show the MSE of the errors in location prediction (
+\begin_inset Formula $E_{location}$
+\end_inset
+
+is section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Metrics"
+
+\end_inset
+
+ ).
+ We do not expect the algorithm to find the exact locations of the nodes,
+ since no initial information has been used, but as it is obvious the errors
+ in the case of RPGM and DA are increasing over the time.
+ This does not happen with RWP.
+ We believe that this behavior is due to erratic behavior of RWP.
+ In RPGM and DA, the number of possibilities that match the inferred location
+ decrease over the time, and there is a higher correlation between the current
+ and previous locations.
+ This is much more random in case of RWP.
+ For this reason, in the former, our algorithm inevitably has to get closer
+ to the original locations over the time, and pick one of the fewer possible
+ location sets that are compatible with the input contacts.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/RWPLink.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rwplink"
+
+\end_inset
+
+Error in contact inference for RWP over time.
+ Extra links are missing in the input, but present in the contacts inferred
+ from the output mobility.
+ Missing links are present in the input, but missing in the contacts inferred
+ from the output mobility.
+ Total link errors is the sum of these.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/RPGMLink.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rpgmlink"
+
+\end_inset
+
+Error in contact inference for RPGM over time.
+ Extra links are missing in the input, but present in the contacts inferred
+ from the output mobility.
+ Missing links are present in the input, but missing in the contacts inferred
+ from the output mobility.
+ Total link errors is the sum of these.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/DALink.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dalink"
+
+\end_inset
+
+Error in contact inference for DA over time.
+ Extra links are missing in the input, but present in the contacts inferred
+ from the output mobility.
+ Missing links are present in the input, but missing in the contacts inferred
+ from the output mobility.
+ Total link errors is the sum of these.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rwplink"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rpgmlink"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dalink"
+
+\end_inset
+
+ show the errors resulted in comparing the input contact trace, and the
+ contact trace resulted from the inferred mobility.As we can see these errors
+ have some spikes in case of RPGM and is more smooth for RWP and DA.
+ This is mostly due to the grouped nature of RPGM and presence of obvious
+ communities in that.
+ Also it's obvious that the errors for DA are much smaller than the other
+ tow models.
+ This is due to the fact that most nodes in DA model are wandering in a
+ dense area, and number of connections are surprisingly high compared to
+ the RWP and RPGM, resulting in a denser connectivity graph.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename Figures/RWPEpochReal.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rwpnodepaira"
+
+\end_inset
+
+Input contact trace
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename Figures/RWPEpcohInf.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rwpnodepairb"
+
+\end_inset
+
+Contact trace inferred from output mobility
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rwpnodepair"
+
+\end_inset
+
+Comparison of nodepair classifiaction for RWP over time.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rwpnodepair"
+
+\end_inset
+
+, compares the input contact trace and the trace inferred from the output
+ mobility with the same radio range for RWP, in the sense that at each moment
+ of time, the number of nodepairs classified as S-pair, ST-pair, and N-pair
+ are counted and plotted in a box plot.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rwpnodepaira"
+
+\end_inset
+
+ shows this count for the input contact trace, and figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rwpnodepairb"
+
+\end_inset
+
+ shows it for the inferred trace.
+ This last results shows that despite errors present in the contact level
+ comparison, when compared for connectivity characteristics, our algorithm
+ finds an output mobility trace that has the same properties with a high
+ precision.
+ This ensures that the inferred set of locations can be used in any experiment,
+ instead of the original location that had resulted in the input contact
+ trace, and yet the same behavior will be observed.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+We have presented an algorithm to infer mobility from contacts.
+ Our algorithm accepts a contact trace that indicated the connections among
+ nodes over time.
+ Without any extra information about the locations of these nodes, we infer
+ a set of locations, aka a mobility trace, that could have generated these
+ contacts.
+ Through performance evaluations, we have shown that this inferred mobility
+ shows comparable connectivity characteristics compared to the original
+ locations from which the input contact trace has come.
+ This opens up the opportunity to use these locations in any experiment,
+ and avoid the expensive process of collecting location information.
+ It also gives rise to an ongoing research to use these locations to infer
+ contact traces for other scenarios, which results in transformation of
+ a contact trace.
+\end_layout
+
+\begin_layout Section*
+Acknowledgment
+\end_layout
+
+\begin_layout Standard
+This material is based upon work supported by the National Science Foundation
+ Graduate Research Fellowship under Grant No.
+ 1117190.
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "IEEEabrv,IEEEexample,MobilityPaper"
