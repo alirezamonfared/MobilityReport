@@ -3141,6 +3141,19 @@ Multidimensional Scaling (MDS) is a statistical technique used for exploring
 \begin_inset Formula $X=[x_{1}...x_{m}]^{T}$
 \end_inset
 
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $[]^{T}$
+\end_inset
+
+ represents transpose operation on a vector.
+\end_layout
+
+\end_inset
+
 of 
 \begin_inset Formula $n$
 \end_inset
@@ -3168,7 +3181,8 @@ of
 \end_layout
 
 \begin_layout Standard
-Classical MDS requires distances between every pair of nodes, Shang et.al
+Classical MDS requires distances between every pair of nodes.
+ Shang et al.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3206,23 +3220,17 @@ is 1 whenever nodes i and j are within transmission range of each other
 \end_inset
 
 .
- MDS yields a relative map of locations of the nodes, and given d anchor
- nodes
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Nodes with known locations.
-\end_layout
-
+ MDS yields a relative map of locations of the nodes, and given 
+\begin_inset Formula $d$
 \end_inset
 
-, this can be turned into an absolute map, which the target embedding 
+ anchor nodes (nodes with known locations), this can be turned into an absolute
+ map with the target embedding, 
 \begin_inset Formula $X$
 \end_inset
 
 .
- MDS, has the disadvantage of pulling nodes towards the center of the area,
+ MDS has the disadvantage of pulling nodes towards the center of the area,
  and thus performs poorly on irregularly-shaped graphs.
  To overcome this problem, Shang et.al 
 \begin_inset CommandInset citation
