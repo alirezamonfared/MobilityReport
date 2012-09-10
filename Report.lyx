@@ -476,14 +476,18 @@ Contributions of this work are summarized as follows:
 \end_layout
 
 \begin_layout Itemize
-An algorithm to infer mobility information based on mere contact traces
- that enables richer understanding of mobile networks.
+An algorithm to infer mobility information based on contact traces that
+ enables richer understanding of mobile networks.
 \end_layout
 
 \begin_layout Itemize
 Application of multiple inputs for the proposed algorithm to enhance re-usabilit
 y of the output trace.
  
+\end_layout
+
+\begin_layout Standard
+The rest of this paper is organized as follows [TO BE COMPLETED]
 \end_layout
 
 \begin_layout Section
@@ -3437,6 +3441,10 @@ options "IEEEtran"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Appendix
+Related Work in Location Inference
 \end_layout
 
 \end_body
