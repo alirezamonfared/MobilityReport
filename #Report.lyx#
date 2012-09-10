@@ -738,7 +738,8 @@ are the previous and the next time that node
 \end_inset
 
  denotes the transmission range of the nodes.
- 
+ Note that these definitions rely on the assumption of circular transmission
+ range model.
 \end_layout
 
 \begin_layout Standard
@@ -747,9 +748,9 @@ The first constraint states that no node can move faster than a maximum
 \begin_inset Formula $v_{max}$
 \end_inset
 
-, and the other two confines the distance between two nodes based on their
+ and the other two confine the distance between two nodes based on their
  previous and future contact opportunities.
- The authors then define, an attractive force, similar to the classical
+ The authors aslo define, an attractive force, similar to the classical
  
 \begin_inset Quotes eld
 \end_inset
@@ -777,7 +778,7 @@ drag
 
  force to prevent nodes going excessively away from each other when borders
  are not obvious.
- Equilibrium of these forces on each node, determines its location.
+ The equilibrium of these forces on each node determines its location.
  Together, this gives a relative set of locations satisfying the given contacts.
  A major disadvantage of this approach is the necessity of a smart choice
  of many constants involved in the calculation of the forces.
@@ -834,13 +835,27 @@ key "bui2003evolving"
 \begin_inset Formula $T_{m}$
 \end_inset
 
- is the length of the trace .
+ is the number of time steps .
  A mobility trace is is a 
 \begin_inset Formula $d\times N\times T_{m}$
 \end_inset
 
  matrix, where its element 
 \begin_inset Formula $(:,i,t)$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Throughout this document, we use the notation of colons,
+\begin_inset Formula $(...,:,...)$
+\end_inset
+
+, to represent all possible numbers that can come in a specific vector location
+\end_layout
+
 \end_inset
 
  is the location of node 
