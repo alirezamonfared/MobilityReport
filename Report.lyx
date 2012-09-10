@@ -463,14 +463,12 @@ Coming from the contact domain to the mobility domain, may provide researchers
 \end_layout
 
 \begin_layout Standard
-Our proposed algorithm uses the limited information from the contacts to
- infer the mobility.
- Benefits of this is an ability to visualize the movements of the node that
- can give the researcher an ability to view the node dynamics.
- It also allows to perform transformations on the contact traces, such as
- changing node density, adding nodes, changing the transmission range, etc.
- Finally, a plausible mobility trace allows a finer simulation if the radio
- channel.
+Our proposed algorithm is based on optimizing a mobility trace using the
+ limited information from the contacts.
+ It operates by solving a feasibility problem for a small set of fundamental
+ constraints on mobility of the nodes.
+ We will describe the details of the algorithm in this report and we have
+ made the code publicly available [CITATION NEEDED]
 \end_layout
 
 \begin_layout Standard
