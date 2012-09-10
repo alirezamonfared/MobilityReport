@@ -1600,6 +1600,24 @@ Set :
 
 \end_layout
 
+\begin_layout Description
+
+\series medium
+\begin_inset Formula $Y_{k+1}=\Delta f(X_{k+1})-\Delta f(X_{k})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+
+\series medium
+\begin_inset Formula $B_{k+1}=B_{k}+\frac{Y_{k}Y_{k}^{T}}{Y_{k}^{T}s_{k}}-\frac{B_{k}s_{k}s_{k}^{T}B_{k}}{s_{k}^{T}B_{k}s_{k}}$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
 \series bold
@@ -1612,7 +1630,7 @@ end for
 Output:
 \series default
  
-\begin_inset Formula $X_{final}$
+\begin_inset Formula $Y_{k}$
 \end_inset
 
 
