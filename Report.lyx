@@ -3443,7 +3443,7 @@ s.t. & (1;0;\mathbf{0})^{T}X(1;0;\mathbf{0})=1\\
 \begin_inset Formula $e_{i}$
 \end_inset
 
-is a vector of all zero entries except 
+ is a vector of all zero entries except 
 \begin_inset Formula $i^{th}$
 \end_inset
 
@@ -3451,8 +3451,8 @@ is a vector of all zero entries except
 \begin_inset Formula $a_{k}\quad\forall k=1...m$
 \end_inset
 
- is the locations of the anchor nodes, and the last constraint requires,
- 
+ is the locations of the anchor nodes.
+ The last constraint requires 
 \begin_inset Formula $X$
 \end_inset
 
