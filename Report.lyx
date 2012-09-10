@@ -1497,12 +1497,152 @@ key "zhu1997algorithm"
 
 \end_inset
 
- which solves a nonlinear optimization or feasibility problem with linear
- bounds on variables.
- the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
- (BFGS), an approximation of Newton's method that seeks the stationary point
- of a function by finding the zero of its derivative.
- l-BFGS-B, needs an initial point to seek this stationary point, which is
+.
+ The l-BFGS-B is a variant of the Broyden–Fletcher–Goldfarb–Shann (BFGS),
+ an approximation of Newton's method that seeks the stationary point of
+ a function by finding the zero of its derivative.
+ The advantage of the BFGS to its alternative methods is that it does not
+ need to evaluate the Hessian matrix of the second derivatives.
+ Instead, the Hessian is approximated using rank-one updates of gradient
+ evaluations.
+ The l-BFGS variant is particularly suited to problems with very large numbers
+ of variables, and BFGS-B variant handles simple box constraints.
+ The basic operation of the BFGS to find the 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Input: 
+\series default
+Objective function 
+\begin_inset Formula $f(X)$
+\end_inset
+
+, approximate initial Hessian 
+\begin_inset Formula $B_{0}$
+\end_inset
+
+(can be identity matrix), maximum number of iterations 
+\begin_inset Formula $max-iter$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+for
+\series default
+ 
+\begin_inset Formula $k$
+\end_inset
+
+ 
+\begin_inset Formula $:=$
+\end_inset
+
+
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $max-iter$
+\end_inset
+
+ 
+\series bold
+do
+\end_layout
+
+\begin_layout Description
+
+\series medium
+Solve for direction, 
+\begin_inset Formula $p_{k}$
+\end_inset
+
+: 
+\begin_inset Formula $B_{k}p_{k}=\Delta f(X_{k})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+
+\series medium
+Perform line search with acceptable step size 
+\begin_inset Formula $\alpha_{k}$
+\end_inset
+
+ to perform the update: 
+\begin_inset Formula $X_{k+1}=X_{k}+\alpha_{k}p_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series medium
+Set : 
+\begin_inset Formula $s_{k}:=X_{k}+\alpha_{k}p_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Output:
+\series default
+ 
+\begin_inset Formula $X_{final}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:BFGS"
+
+\end_inset
+
+Basic procedure of the BFGS algorithm.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+l-BFGS-B, needs an initial point to seek this stationary point, which is
  the value 
 \begin_inset Formula $X_{0}$
 \end_inset
