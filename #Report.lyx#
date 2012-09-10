@@ -491,14 +491,103 @@ The rest of this paper is organized as follows [TO BE COMPLETED]
 \end_layout
 
 \begin_layout Section
-Previous Work
+Background 
 \end_layout
 
 \begin_layout Standard
-The problem of mobility inversion, though, is different from the localization
- problem, in the sense that it combines a contact model, and a contact trace
- showing the opportunities among nodes to get in touch to obtain a mobility
- trace showing their locations using no further information
+In this section, we define the basic concepts of mobility and contacts as
+ they have been used in our proposed algorithm, and provide the background
+ knowledge required for understanding the context and technical details
+ of our mobility inversion algorithm.
+ We start this section by a few definitions.
+\end_layout
+
+\begin_layout Subsubsection*
+Contact Trace
+\end_layout
+
+\begin_layout Standard
+A contact trace is a log of contact-start and contact-end events, each labeled
+ with a time stamp and with the identifiers of the two nodes involved in
+ the contact event.
+ Mathematically, contact traces can be represented using a sequence of graphs
+ showing the connections over time, which are called 
+\emph on
+evolving graphs
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+.
+ We are interested in contact traces collected in the course of an experiment.
+ In such experiments, mobile devices equipped with a wireless interface
+ are attached to moving entities (e.g., people or vehicles).
+ These mobile devices sample their environments periodically and log the
+ presence of neighboring nodes.
+ At the conclusion of the experiment these logs are collected and a contact
+ trace is constructed from them.
+ 
+\end_layout
+
+\begin_layout Standard
+Contact-start events occur when one of the devices receives information
+ from the other and contact-end events occur when transmission stops.
+ Many aspects of the radio environment can affect these events.
+ In general, a contact trace becomes meaningful when studied along with
+ a 
+\emph on
+contact model.
+
+\emph default
+ In the simplest model, two nodes are defined to be in contact whenever
+ their distance is less than a given transmission range, and disconnected
+ otherwise.
+ This model is considered very simplistic due to many reasons, including
+ the existence of obstacles, lack of symmetry in real contacts, inequality
+ of signal strength inside the assumed transmission circle, effects like
+ fading, shadowing, etc.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+, but this model has been used extensively due its simplicity and the fact
+ that it allows to focus on other, perhaps more significant factors in the
+ experiment.
+\end_layout
+
+\begin_layout Subsubsection*
+
+\emph on
+Mobility Trace
+\end_layout
+
+\begin_layout Standard
+A mobility trace is a log of locations of nodes over time.
+ Similar to a contact trace, a mobility trace can also be asynchronized
+ or synchronized, synthetically modeled or originating from real data collected
+ using GPS equipped devices or association to the base stations of a 3G/WiFi
+ network.
+ 
+\end_layout
+
+\begin_layout Standard
+We have reviewed different techniques in literature that can be considered
+ similar to our plausible mobility technique, but we mention the related
+ work attacking the exact same problem here.
+\end_layout
+
+\begin_layout Standard
+The difference between mobility inversion, though, is different from the
+ localization problem, in the sense that it combines a contact model, and
+ a contact trace showing the opportunities among nodes to get in touch to
+ obtain a mobility trace showing their locations using no further information
 \begin_inset Foot
 status open
 
@@ -679,7 +768,7 @@ spring
 \end_inset
 
  force on each node from all of its contacts, as well as a repulsive force,
- similar to the classical 
+mathnormalo the classical 
 \begin_inset Quotes eld
 \end_inset
 
@@ -705,91 +794,6 @@ drag
  of the application becomes dependent of the specific scenario under study,
  and it may become a series of trial and errors when such information is
  not available.
-\end_layout
-
-\begin_layout Section
-Background 
-\end_layout
-
-\begin_layout Standard
-In this section, we define the basic concepts of mobility and contacts as
- they have been used in our proposed algorithm, and provide the background
- knowledge required for understanding the context and technical details
- of our mobility inversion algorithm.
- We start this section by a few definitions.
-\end_layout
-
-\begin_layout Subsubsection*
-Contact Trace
-\end_layout
-
-\begin_layout Standard
-A contact trace is a log of contact-start and contact-end events, each labeled
- with a time stamp and with the identifiers of the two nodes involved in
- the contact event.
- Mathematically, contact traces can be represented using a sequence of graphs
- showing the connections over time, which are called 
-\emph on
-evolving graphs
-\emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "bui2003evolving"
-
-\end_inset
-
-.
- We are interested in contact traces collected in the course of an experiment.
- In such experiments, mobile devices equipped with a wireless interface
- are attached to moving entities (e.g., people or vehicles).
- These mobile devices sample their environments periodically and log the
- presence of neighboring nodes.
- At the conclusion of the experiment these logs are collected and a contact
- trace is constructed from them.
- 
-\end_layout
-
-\begin_layout Standard
-Contact-start events occur when one of the devices receives information
- from the other and contact-end events occur when transmission stops.
- Many aspects of the radio environment can affect these events.
- In general, contact trace becomes meaningful when studied along with a
- 
-\emph on
-contact model.
-
-\emph default
- In the simplest model, two nodes are defined to be in contact whenever
- their distance is less than a given transmission range, and disconnected
- otherwise.
- There is a debate that this model is too simplistic due to many reasons
- including the existence of obstacles, lack of symmetry in real contacts,
- inequality of signal strength inside the assumed transmission circle, etc
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kotz2003mistaken"
-
-\end_inset
-
-, but this model has been used extensively due its simplicity and the fact
- that it allows to focus on other, perhaps more significant factors in the
- experiment.
-\end_layout
-
-\begin_layout Subsubsection*
-
-\emph on
-Mobility Trace
-\end_layout
-
-\begin_layout Standard
-A mobility trace is a log of locations of nodes over time.
- Similar to a contact trace, a mobility trace can also be unsynchronized
- or synchronized, synthetically modeled or corresponding to real data from
- GPS equipped devices or association to the base stations of a 3G/WiFi network.
- 
 \end_layout
 
 \begin_layout Section
@@ -1023,7 +1027,7 @@ Dimensions of the problem (2 in our case)
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Plain Layout
+\begin_layout cmrin Layout
 \begin_inset Formula $L$
 \end_inset
 
