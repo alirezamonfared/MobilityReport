@@ -1522,7 +1522,7 @@ status open
 Input: 
 \series default
 Objective function 
-\begin_inset Formula $f(x)$
+\begin_inset Formula $f(X)$
 \end_inset
 
 , approximate initial Hessian 
@@ -1536,7 +1536,8 @@ Objective function
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series bold
 for
@@ -1562,102 +1563,71 @@ for
 do
 \end_layout
 
-\begin_layout Description
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Solve for direction,
+\series medium
+
+\begin_inset Formula $p_{k}$
+\end_inset
+
+ : 
+\begin_inset Formula $B_{k}p_{k}=\Delta f(X_{k})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series medium
-\begin_inset Formula $B_{k}p_{k}=$
+Perform line search with acceptable step size 
+\begin_inset Formula $\alpha_{k}$
 \end_inset
 
--
-\end_layout
-
-\begin_layout Plain Layout
-Find a set of initial locations 
-\begin_inset Formula $X_{0}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula $X_{final}(:,:,0)\leftarrow X_{0}$
+ to perform the update: 
+\begin_inset Formula $X_{k+1}=X_{k}+\alpha_{k}p_{k}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\series bold
-for
-\series default
- 
-\begin_inset Formula $i$
-\end_inset
-
- 
-\begin_inset Formula $:=$
-\end_inset
-
-
-\begin_inset Formula $1$
-\end_inset
-
- to 
-\begin_inset Formula $T_{m}$
-\end_inset
-
- 
-\series bold
-do
-\end_layout
-
-\begin_layout Description
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series medium
-solve
-\series default
- the nonlinear optimization problem in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:algorithm"
-
-\end_inset
-
- with 
-\begin_inset Formula $\{G_{1}^{t},G_{2}^{t},...,G_{n}^{t}\}\Longleftrightarrow\{C_{1}(:,:,t),C_{2}(:,:,t),...,C_{n}(:,:,t)\}$
-\end_inset
-
- , 
-\begin_inset Formula $X_{0}$
-\end_inset
-
-, 
-\begin_inset Formula $R$
-\end_inset
-
-, 
-\begin_inset Formula $v_{m}$
+Set : 
+\begin_inset Formula $s_{k}:=X_{k}+\alpha_{k}p_{k}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Description
-\begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series medium
+\begin_inset Formula $Y_{k+1}=\Delta f(X_{k+1})-\Delta f(X_{k})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series medium
+\begin_inset Formula $B_{k+1}=B_{k}+\frac{Y_{k}Y_{k}^{T}}{Y_{k}^{T}s_{k}}-\frac{B_{k}s_{k}s_{k}^{T}B_{k}}{s_{k}^{T}B_{k}s_{k}}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Description
-\begin_inset Formula $X_{0}\leftarrow X$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series bold
 end for
@@ -1669,7 +1639,7 @@ end for
 Output:
 \series default
  
-\begin_inset Formula $X_{final}$
+\begin_inset Formula $Y_{k}$
 \end_inset
 
 
