@@ -1083,20 +1083,8 @@ Summary of basic parameters used in the algorithm
 \end_layout
 
 \begin_layout Standard
-The front end of our algorithm is similar to the algorithm of Whitbeck et
- al.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "whitbeck2011encounters"
-
-\end_inset
-
- except that instead of one contact trace, we can take one or more contact
- traces, their corresponding radio ranges, and an upper bound on speed of
- movements as input and infer a mobility trace that can generate these contacts.O
-ur algorithm does not use any initial information or assumption about the
- mobility model of the individuals.
+Our algorithm does not use any information on initial locations or assumption
+ about the mobility model of the nodes.
  The only assumptions made are the following:
 \end_layout
 
@@ -1187,6 +1175,11 @@ Nodes move slower than a given maximum speed
 Nodes are always confined inside the mobility field.
 \end_layout
 
+\begin_layout Standard
+We will describe the technical details of the algorithm and its variants
+ in the next section.
+\end_layout
+
 \begin_layout Subsection
 Single Input Mobility Inversion
 \begin_inset CommandInset label
@@ -1200,7 +1193,8 @@ name "sub:Single-Input-Mobility"
 
 \begin_layout Standard
 In this section, we describe the algorithm for a single input contact trace,
- and the generalize to an arbitrary number of inputs in section 
+ and then we generalize this to an arbitrary number of inputs in section
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Multiple-Input-Mobility"
@@ -1242,7 +1236,7 @@ es of graphs
 \begin_inset Formula $G^{t}$
 \end_inset
 
- have adjacencies 
+ have adjacency matrices 
 \begin_inset Formula $C(:,:,t)$
 \end_inset
 
@@ -1410,10 +1404,6 @@ Basic mobility inversion algorithm with one input contact trace
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1464,7 +1454,7 @@ Optimization algorithm takes a contact traces along with its corresponding
 \end_layout
 
 \begin_layout Standard
-To complete our description of algorithm
+To complete our description of Algorithm
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:Basic"
@@ -1493,7 +1483,7 @@ reference "fig:algorithm"
 
 \end_inset
 
-, which is done in every iteration of algorithm 
+, which is done in every iteration of Algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:Basic"
@@ -1507,8 +1497,8 @@ key "zhu1997algorithm"
 
 \end_inset
 
- which solves a nonlinear optimization or feasibility problem with simple
- bounds on variable.
+ which solves a nonlinear optimization or feasibility problem with linear
+ bounds on variables.
  the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
  (BFGS), an approximation of Newton's method that seeks the stationary point
  of a function by finding the zero of its derivative.
@@ -1517,7 +1507,7 @@ key "zhu1997algorithm"
 \begin_inset Formula $X_{0}$
 \end_inset
 
-given to it in algorithm 
+ given to it in algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
@@ -2060,6 +2050,21 @@ reference "sub:Single-Input-Mobility"
 
 \begin_layout Subsection
 Discussions
+\end_layout
+
+\begin_layout Standard
+The front end of our algorithm is similar to the algorithm of Whitbeck et
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+ except that instead of one contact trace, we can take one or more contact
+ traces, their corresponding radio ranges, and an upper bound on speed of
+ movements as input and infer a mobility trace that can generate these contacts.
 \end_layout
 
 \begin_layout Standard
