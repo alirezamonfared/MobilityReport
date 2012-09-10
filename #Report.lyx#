@@ -548,10 +548,10 @@ contact model.
  In the simplest model, two nodes are defined to be in contact whenever
  their distance is less than a given transmission range, and disconnected
  otherwise.
- This model is considered very simplistic due to many reasons, including
- the existence of obstacles, lack of symmetry in real contacts, inequality
- of signal strength inside the assumed transmission circle, effects like
- fading, shadowing, etc.
+ This circular transmission range model is considered very simplistic due
+ to many reasons, including the existence of obstacles, lack of symmetry
+ in real contacts, inequality of signal strength inside the assumed transmission
+ circle, effects like fading, shadowing, etc.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -592,6 +592,7 @@ These concepts will be more formally defined in the next section
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -615,12 +616,16 @@ key "ristanovic2010tracking"
 
 \end_inset
 
- suggests a solution that relies on knowledge of some anchor nodes, with
- fixed and known location, which can give a rough estimate of location of
- mobile Bluetooth devices that have a low range.
+ suggests a solution that relies on knowledge of some anchor node with fixed
+ locations which can give a rough estimate of location of mobile Bluetooth
+ devices that have a low range.
  The immediate downside is the dependence on the location of devices and
  the underlying technologies used.
- Whitbeck et al.
+ 
+\end_layout
+
+\begin_layout Standard
+Whitbeck et al.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -688,7 +693,7 @@ Where
 \begin_inset Formula $j$
 \end_inset
 
- at time
+ at time 
 \begin_inset Formula $t$
 \end_inset
 
@@ -732,19 +737,8 @@ are the previous and the next time that node
 \begin_inset Formula $r$
 \end_inset
 
- denotes the transmission range of the nodes 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-The paper assumes a simple circular transmission range for the all nodes,
- which is used for the sake of simplicity in many works, but is not the
- best model.
-\end_layout
-
-\end_inset
-
-.
+ denotes the transmission range of the nodes.
+ 
 \end_layout
 
 \begin_layout Standard
