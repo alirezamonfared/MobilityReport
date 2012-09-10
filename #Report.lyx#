@@ -540,10 +540,10 @@ Contact-start events occur when one of the devices receives information
  In general, a contact trace becomes meaningful when studied along with
  a 
 \emph on
-contact model.
+radio model.
 
 \emph default
- A contact model specifies the circumstances under which two nodes are defined
+ A radio model specifies the circumstances under which two nodes are defined
  to be in contact.
  In the simplest model, two nodes are defined to be in contact whenever
  their distance is less than a given transmission range, and disconnected
@@ -579,7 +579,7 @@ A mobility trace is a log of locations of nodes over time.
 \end_layout
 
 \begin_layout Standard
-The mobility inversion problem combines a contact model, and a contact trace
+The mobility inversion problem combines a radio model, and a contact trace
  to obtain a consistent mobility trace showing their locations using no
  further information
 \begin_inset Foot
@@ -2039,7 +2039,7 @@ Pre-processing is needed to make sure that the contact traces
  same nodes are not connected in another contact trace with a larger range.
  Note that the necessity of this pre-processing is tied with our assumption
  of circular transmission ranges.
- A more complex contact model might not see this step necessary.
+ A more complex radio model might not see this step necessary.
  In our algorithm, to pre-process, we first inspect the contact traces starting
  from 
 \begin_inset Formula $C_{1}$
@@ -2257,21 +2257,6 @@ key "whitbeck2011encounters"
 \end_layout
 
 \begin_layout Standard
-The front end of our algorithm is similar to the algorithm of Whitbeck et
- al.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "whitbeck2011encounters"
-
-\end_inset
-
- except that instead of one contact trace, we can take one or more contact
- traces, their corresponding radio ranges, and an upper bound on speed of
- movements as input and infer a mobility trace that can generate these contacts.
-\end_layout
-
-\begin_layout Standard
 Simplicity of the front-end is the first advantage of our algorithm.
  The force-based algorithm not only relies on the input contact trace, but
  also many parameters that need to be set.
@@ -2299,14 +2284,14 @@ and parameters
 \begin_inset Formula $\epsilon_{0}$
 \end_inset
 
-that affect the intensity of the repulsive force with distance, as well
+ that affect the intensity of the repulsive force with distance, as well
  as the strength parameter 
 \begin_inset Formula $D$
 \end_inset
 
  of the drag force.
  There is no general rule for setting these parameters, and for the algorithm
- to perform well, these need to be set in a trial and error.
+ to perform well, these need to be set in a trial and error fashion.
  On the other hand, the optimization algorithm does not need any external
  parameters other than a maximum speed and transmission range, which are
  natural to consider for every scenario and are present in the force-based
@@ -2315,10 +2300,24 @@ that affect the intensity of the repulsive force with distance, as well
 \end_layout
 
 \begin_layout Standard
-A drawback, present in both algorithms is the contact model.
+Optimization algorithm can take one or more contact traces, their corresponding
+ radio ranges, and an upper bound on speed of movements as input and infer
+ a mobility trace that can generate these contacts.
+ This has not been foreseen in the force-based algorithm of Whitbeck
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+, but can be possibly incorporated with some modifications.
+\end_layout
+
+\begin_layout Standard
+A drawback, present in both algorithms is the radio model.
  It has been discussed in the literature, many other factors including but
  not limited to presence of obstacles, fading, path-loss, etc affect the
- connectivity model 
+ radio model 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kotz2003mistaken"
@@ -2327,7 +2326,19 @@ key "kotz2003mistaken"
 
 .
  Despite this, the optimization mobility inversion algorithm is designed
- in a modular manner so that any contact model can be integrated into it.
+ in a modular manner so that any radio model can be integrated into it provided
+ that the a linear penalty corresponding the connectivity status of the
+ nodes is suggested
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+.
  Since the solver at the heart of our algorithm, BFGS, can solve any nonlinear
  optimization problem, a new contact model that can be described mathematically,
  and can be derived from a contact trace, possibly with additional information,
@@ -2440,7 +2451,7 @@ We do not expect a good matching in mobility nevertheless, as the proposed
 In the next level, we compare the contact traces.
  While the input to our algorithm is a contact trace, we can infer an output
  contact trace with the proper transmission range that the algorithm has
- used at the output and a proper contact model We can then compare the two
+ used at the output and a proper radio model We can then compare the two
  corresponding evolving graphs over time based on the number of missing
  links, i.e.
  present in the input contact trace and missing in the inferred contact
