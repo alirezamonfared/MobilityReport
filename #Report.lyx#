@@ -423,28 +423,6 @@ key "aschenbruck2009modeling"
 \end_layout
 
 \begin_layout Standard
-It seems that if fine-grained mobility information is available for such
- contact traces, it is possible to re-use the same dataset for a slightly
- different scenario without inuring the burden of data collection repeatedly.
- Although it is not possible to find the original locations of the nodes,
- given only their relative contacts, it is still possible to find a plausible
- mobility, that could have generated the same contact trace, or a trace
- very similar to it.
- It can be discussed that the exact locations of the nodes is not required
- in most the experiments that deal with studying mobility or modifying contacts
- , unless the researcher has access to a 
-\begin_inset Quotes eld
-\end_inset
-
-valid
-\begin_inset Quotes erd
-\end_inset
-
- mobility trace presenting the same characteristics.
- 
-\end_layout
-
-\begin_layout Standard
 We are interested in the problem of inferring a plausible mobility trace
  from a contact trace.
  By 
@@ -460,23 +438,36 @@ plausible
  In general, there may be multiple mobility traces that are consistent with
  a given trace.
  We do not attempt to enumerate them.
+ Although this plausible mobility might not match the original locations,
+ it matches to a mobility trace that could have generated the same contact
+ trace, or a trace very similar to it.
+ It can be discussed that the exact locations of the nodes is not required
+ in most the experiments that deal with studying mobility or modifying contacts
+ , unless the researcher has access to a 
+\begin_inset Quotes eld
+\end_inset
+
+valid
+\begin_inset Quotes erd
+\end_inset
+
+ mobility trace presenting the same characteristics.
+ 
 \end_layout
 
 \begin_layout Standard
 Coming from the contact domain to the mobility domain, may provide researchers
- with opportunities not presenet with the contacts alone, such as transforming
- the settings of the original data collect
+ with opportunities not present with the contacts alone, such as transforming
+ the settings of the original data collection, one that assumes a different
+ radio, for example.
 \end_layout
 
 \begin_layout Standard
-Our proposed algorithm uses the limited information from the contacts to
- infer the mobility.
- Benefits of this is an ability to visualize the movements of the node that
- can give the researcher an ability to view the node dynamics.
- It also allows to perform transformations on the contact traces, such as
- changing node density, adding nodes, changing the transmission range, etc.
- Finally, a plausible mobility trace allows a finer simulation if the radio
- channel.
+Our proposed algorithm is based on optimizing a mobility trace using the
+ limited information from the contacts.
+ It operates by solving a feasibility problem for a small set of fundamental
+ constraints on mobility of the nodes.
+ We will describe the detials of the lgorithm in this report and 
 \end_layout
 
 \begin_layout Standard
