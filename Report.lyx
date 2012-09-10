@@ -491,14 +491,97 @@ The rest of this paper is organized as follows [TO BE COMPLETED]
 \end_layout
 
 \begin_layout Section
-Previous Work
+Background 
 \end_layout
 
 \begin_layout Standard
-The problem of mobility inversion, though, is different from the localization
- problem, in the sense that it combines a contact model, and a contact trace
- showing the opportunities among nodes to get in touch to obtain a mobility
- trace showing their locations using no further information
+In this section, we define the basic concepts of mobility and contacts as
+ they have been used in our proposed algorithm, and provide the background
+ knowledge required for understanding the context and technical details
+ of our mobility inversion algorithm.
+ We start this section by a few definitions.
+\end_layout
+
+\begin_layout Subsubsection*
+Contact Trace
+\end_layout
+
+\begin_layout Standard
+A contact trace is a log of contact-start and contact-end events, each labeled
+ with a time stamp and with the identifiers of the two nodes involved in
+ the contact event.
+ Mathematically, contact traces can be represented using a sequence of graphs
+ showing the connections over time, which are called 
+\emph on
+evolving graphs
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bui2003evolving"
+
+\end_inset
+
+.
+ We are interested in contact traces collected in the course of an experiment.
+ In such experiments, mobile devices equipped with a wireless interface
+ are attached to moving entities (e.g., people or vehicles).
+ These mobile devices sample their environments periodically and log the
+ presence of neighboring nodes.
+ At the conclusion of the experiment these logs are collected and a contact
+ trace is constructed from them.
+ 
+\end_layout
+
+\begin_layout Standard
+Contact-start events occur when one of the devices receives information
+ from the other and contact-end events occur when transmission stops.
+ Many aspects of the radio environment can affect these events.
+ In general, a contact trace becomes meaningful when studied along with
+ a 
+\emph on
+contact model.
+
+\emph default
+ A contact model specifies the circumstances under which two nodes are defined
+ to be in contact.
+ In the simplest model, two nodes are defined to be in contact whenever
+ their distance is less than a given transmission range, and disconnected
+ otherwise.
+ This circular transmission range model is considered very simplistic due
+ to many reasons, including the existence of obstacles, lack of symmetry
+ in real contacts, inequality of signal strength inside the assumed transmission
+ circle, effects like fading, shadowing, etc.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kotz2003mistaken"
+
+\end_inset
+
+, but this model has been used extensively due its simplicity and the fact
+ that it allows to focus on other, perhaps more significant factors in the
+ experiment.
+\end_layout
+
+\begin_layout Subsubsection*
+
+\emph on
+Mobility Trace
+\end_layout
+
+\begin_layout Standard
+A mobility trace is a log of locations of nodes over time.
+ Similar to a contact trace, a mobility trace can also be asynchronized
+ or synchronized, synthetically modeled or originating from real data collected
+ using GPS equipped devices or association to the base stations of a 3G/WiFi
+ network.
+\end_layout
+
+\begin_layout Standard
+The mobility inversion problem combines a contact model, and a contact trace
+ to obtain a consistent mobility trace showing their locations using no
+ further information
 \begin_inset Foot
 status open
 
@@ -509,7 +592,11 @@ These concepts will be more formally defined in the next section
 \end_inset
 
 .
- Few solutions have been proposed for this specific problem.
+ 
+\end_layout
+
+\begin_layout Standard
+Few solutions have been proposed for this specific problem.
  Wang et al.
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -517,7 +604,7 @@ key "wang2011automatic"
 
 \end_inset
 
- solves the same problem by dividing it into smaller subproblems, and relying
+ solves the same problem by dividing it into smaller sub-problems, and relying
  on decreasing number of possibilities.
  Our analysis of such approach has proven that the complexity of such solution
  grows exponentially with increasing number of nodes, and hence is only
@@ -529,12 +616,16 @@ key "ristanovic2010tracking"
 
 \end_inset
 
- suggests a solution that relies on knowledge of some anchor nodes, with
- fixed and known location, which can give a rough estimate of location of
- mobile Bluetooth devices that have a low range.
+ suggests a solution that relies on knowledge of some anchor node with fixed
+ locations which can give a rough estimate of location of mobile Bluetooth
+ devices that have a low range.
  The immediate downside is the dependence on the location of devices and
  the underlying technologies used.
- Whitbeck et al.
+ 
+\end_layout
+
+\begin_layout Standard
+Whitbeck et al.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -602,7 +693,7 @@ Where
 \begin_inset Formula $j$
 \end_inset
 
- at time
+ at time 
 \begin_inset Formula $t$
 \end_inset
 
@@ -646,19 +737,9 @@ are the previous and the next time that node
 \begin_inset Formula $r$
 \end_inset
 
- denotes the transmission range of the nodes 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-The paper assumes a simple circular transmission range for the all nodes,
- which is used for the sake of simplicity in many works, but is not the
- best model.
-\end_layout
-
-\end_inset
-
-.
+ denotes the transmission range of the nodes.
+ Note that these definitions rely on the assumption of circular transmission
+ range model.
 \end_layout
 
 \begin_layout Standard
@@ -667,9 +748,9 @@ The first constraint states that no node can move faster than a maximum
 \begin_inset Formula $v_{max}$
 \end_inset
 
-, and the other two confines the distance between two nodes based on their
+ and the other two confine the distance between two nodes based on their
  previous and future contact opportunities.
- The authors then define, an attractive force, similar to the classical
+ The authors aslo define, an attractive force, similar to the classical
  
 \begin_inset Quotes eld
 \end_inset
@@ -697,7 +778,7 @@ drag
 
  force to prevent nodes going excessively away from each other when borders
  are not obvious.
- Equilibrium of these forces on each node, determines its location.
+ The equilibrium of these forces on each node determines its location.
  Together, this gives a relative set of locations satisfying the given contacts.
  A major disadvantage of this approach is the necessity of a smart choice
  of many constants involved in the calculation of the forces.
@@ -705,93 +786,6 @@ drag
  of the application becomes dependent of the specific scenario under study,
  and it may become a series of trial and errors when such information is
  not available.
-\end_layout
-
-\begin_layout Section
-Background 
-\end_layout
-
-\begin_layout Standard
-In this section, we define the basic concepts of mobility and contacts as
- they have been used in our proposed algorithm, and provide the background
- knowledge required for understanding the context and technical details
- of our mobility inversion algorithm.
- We start this section by a few definitions.
-\end_layout
-
-\begin_layout Subsubsection*
-Contact Trace
-\end_layout
-
-\begin_layout Standard
-A contact trace is a log of contact-start and contact-end events, each labeled
- with a time stamp and with the identifiers of the two nodes involved in
- the contact event.
- Mathematically, contact traces can be represented using a sequence of graphs
- showing the connections over time, which are called 
-\emph on
-evolving graphs
-\emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "bui2003evolving"
-
-\end_inset
-
-.
- We are interested in contact traces collected in the course of an experiment.
- In such experiments, mobile devices equipped with a wireless interface
- are attached to moving entities (e.g., people or vehicles).
- These mobile devices sample their environments periodically and log the
- presence of neighboring nodes.
- At the conclusion of the experiment these logs are collected and a contact
- trace is constructed from them.
- 
-\end_layout
-
-\begin_layout Standard
-Contact-start events occur when two mobile devices come within radio range
- of each other.
- Contact-end events occur when two mobile devices who were previously in
- contact are not within the radio range of each other's devices.
- Many aspects of the radio environment can affect these events.
- In general, contact trace becomes meaningful when studied along with a
- 
-\emph on
-contact model.
-
-\emph default
- In the simplest model, two nodes are defined to be in contact whenever
- their distance is less than a given transmission range, and disconnected
- otherwise.
- There is a debate that this model is too simplistic due to many reasons
- including the existence of obstacles, lack of symmetry in real contacts,
- inequality of signal strength inside the assumed transmission circle, etc
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kotz2003mistaken"
-
-\end_inset
-
-, but this model has been used extensively due its simplicity and the fact
- that it allows to focus on other, perhaps more significant factors in the
- experiment.
-\end_layout
-
-\begin_layout Subsubsection*
-
-\emph on
-Mobility Trace
-\end_layout
-
-\begin_layout Standard
-A mobility trace is a log of locations of nodes over time.
- Similar to a contact trace, a mobility trace can also be unsynchronized
- or synchronized, synthetically modeled or corresponding to real data from
- GPS equipped devices or association to the base stations of a 3G/WiFi network.
- 
 \end_layout
 
 \begin_layout Section
@@ -841,13 +835,27 @@ key "bui2003evolving"
 \begin_inset Formula $T_{m}$
 \end_inset
 
- is the length of the trace .
+ is the number of time steps .
  A mobility trace is is a 
 \begin_inset Formula $d\times N\times T_{m}$
 \end_inset
 
  matrix, where its element 
 \begin_inset Formula $(:,i,t)$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Throughout this document, we use the notation of colons,
+\begin_inset Formula $(...,:,...)$
+\end_inset
+
+, to represent all possible numbers that can come in a specific vector location
+\end_layout
+
 \end_inset
 
  is the location of node 
@@ -1075,20 +1083,8 @@ Summary of basic parameters used in the algorithm
 \end_layout
 
 \begin_layout Standard
-The front end of our algorithm is similar to the algorithm of Whitbeck et
- al.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "whitbeck2011encounters"
-
-\end_inset
-
- except that instead of one contact trace, we can take one or more contact
- traces, their corresponding radio ranges, and an upper bound on speed of
- movements as input and infer a mobility trace that can generate these contacts.O
-ur algorithm does not use any initial information or assumption about the
- mobility model of the individuals.
+Our algorithm does not use any information on initial locations or assumption
+ about the mobility model of the nodes.
  The only assumptions made are the following:
 \end_layout
 
@@ -1179,6 +1175,11 @@ Nodes move slower than a given maximum speed
 Nodes are always confined inside the mobility field.
 \end_layout
 
+\begin_layout Standard
+We will describe the technical details of the algorithm and its variants
+ in the next section.
+\end_layout
+
 \begin_layout Subsection
 Single Input Mobility Inversion
 \begin_inset CommandInset label
@@ -1192,7 +1193,8 @@ name "sub:Single-Input-Mobility"
 
 \begin_layout Standard
 In this section, we describe the algorithm for a single input contact trace,
- and the generalize to an arbitrary number of inputs in section 
+ and then we generalize this to an arbitrary number of inputs in section
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Multiple-Input-Mobility"
@@ -1234,7 +1236,7 @@ es of graphs
 \begin_inset Formula $G^{t}$
 \end_inset
 
- have adjacencies 
+ have adjacency matrices 
 \begin_inset Formula $C(:,:,t)$
 \end_inset
 
@@ -1402,10 +1404,6 @@ Basic mobility inversion algorithm with one input contact trace
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1456,7 +1454,7 @@ Optimization algorithm takes a contact traces along with its corresponding
 \end_layout
 
 \begin_layout Standard
-To complete our description of algorithm
+To complete our description of Algorithm
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:Basic"
@@ -1485,7 +1483,7 @@ reference "fig:algorithm"
 
 \end_inset
 
-, which is done in every iteration of algorithm 
+, which is done in every iteration of Algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:Basic"
@@ -1499,8 +1497,8 @@ key "zhu1997algorithm"
 
 \end_inset
 
- which solves a nonlinear optimization or feasibility problem with simple
- bounds on variable.
+ which solves a nonlinear optimization or feasibility problem with linear
+ bounds on variables.
  the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
  (BFGS), an approximation of Newton's method that seeks the stationary point
  of a function by finding the zero of its derivative.
@@ -1509,7 +1507,7 @@ key "zhu1997algorithm"
 \begin_inset Formula $X_{0}$
 \end_inset
 
-given to it in algorithm 
+ given to it in algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
@@ -2052,6 +2050,21 @@ reference "sub:Single-Input-Mobility"
 
 \begin_layout Subsection
 Discussions
+\end_layout
+
+\begin_layout Standard
+The front end of our algorithm is similar to the algorithm of Whitbeck et
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+ except that instead of one contact trace, we can take one or more contact
+ traces, their corresponding radio ranges, and an upper bound on speed of
+ movements as input and infer a mobility trace that can generate these contacts.
 \end_layout
 
 \begin_layout Standard
