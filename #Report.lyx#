@@ -3244,17 +3244,24 @@ key "conf/infocom/ShangR04"
 \begin_inset Formula $p$
 \end_inset
 
-) in which MDS is applied for the subgraph of a given number of hops around
- each node to produce a local map for that node, and then these nodes are
- merged to produce a global relative map.
+) in which MDS is applied for the subgraph of a given number of hops, 
+\begin_inset Formula $p$
+\end_inset
+
+, around each node to produce a local map for that node, and then these
+ local maps are merged to produce a global relative map.
 \end_layout
 
 \begin_layout Standard
-Spectral Graph Drawing (SGD) is another solution that is proposed for the
- graph realization problem.
+Spectral Graph Drawing (SGD) is another solution proposed for the graph
+ realization problem.
  SGD also defines a minimization problem based on the Laplacian matrix,
- L.
- this matrix is defined as follows:
+ 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ This matrix is defined as follows:
 \end_layout
 
 \begin_layout Standard
@@ -3291,7 +3298,6 @@ K=diag(k_{ii})=\underset{j\epsilon N(i)}{\sum}w_{ij}
 \end_layout
 
 \begin_layout Standard
-Where 
 \begin_inset Formula $W$
 \end_inset
 
@@ -3346,9 +3352,17 @@ s.t.\quad X^{T}X=1
 \end_layout
 
 \begin_layout Standard
-The second constraint in the above equation, ensures that the trivial solution
+The first constraint in the above equation ensures that the trivial solution
  of all nodes in the same place is not chosen in favor of the others.
- The selection of variance in this constraint is arbitrary.
+ The selection of variance, 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+, to be equal to 
+\begin_inset Formula $1$
+\end_inset
+
+ in this constraint is arbitrary.
  The second constraint, ensures the invariance of the solution under transitions
  by setting a mean of zero.
  Koren 
@@ -3358,17 +3372,17 @@ key "conf/cocoon/Koren03"
 
 \end_inset
 
- argues that like classical MDS, SGD tends to draw the nodes to the center,
+ argues that like classical MDS, SGD tends to draw the nodes to the center
  and hence has a poor performance on irregularly-shaped graphs.
- A variant of SGD, called degree normalized spectral graph drawing (DN-SGD)
- is proposed, which updates the second constraint of original SGD with weights
- proportional to degrees, i.e.
+ A variant of SGD, called degree normalized spectral graph drawing (DN-SGD),
+ updates the second constraint of original SGD with weights proportional
+ to degrees, i.e.
  
 \begin_inset Formula $X^{T}KX=1$
 \end_inset
 
 .
- SGD, and DN-SGD have been shown to be solvable by finding the generalized
+ SGD and DN-SGD have been shown to be solvable by finding the generalized
  eigenvalues of the matrices 
 \begin_inset Formula $L$
 \end_inset
@@ -3388,13 +3402,13 @@ key "journals/sigmobile/BroxtonLP06"
 
  have shown that for DN-SGD to perform reasonably on static sensor network
  localization, a two-step localization, followed by a post-processing to
- filter outliers are required.
+ filter outliers is required.
 \end_layout
 
 \begin_layout Standard
 Finally, the localization problem has been formulated as a Semidefinite
- program (SDP), which a specific type of convex optimization which can be
- solved by interior methods.
+ program (SDP), a specific type of convex optimization which can be solved
+ by interior methods.
  An SDP feasibility is as follows:
 \end_layout
 
