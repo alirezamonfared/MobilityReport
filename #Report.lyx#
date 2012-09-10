@@ -467,7 +467,8 @@ Our proposed algorithm is based on optimizing a mobility trace using the
  limited information from the contacts.
  It operates by solving a feasibility problem for a small set of fundamental
  constraints on mobility of the nodes.
- We will describe the detials of the lgorithm in this report and 
+ We will describe the details of the algorithm in this report and we have
+ made the code publicly available [CITATION NEEDED]
 \end_layout
 
 \begin_layout Standard
@@ -475,8 +476,8 @@ Contributions of this work are summarized as follows:
 \end_layout
 
 \begin_layout Itemize
-An algorithm to infer mobility information based on mere contact traces
- that enables richer understanding of mobile networks.
+An algorithm to infer mobility information based on contact traces that
+ enables richer understanding of mobile networks.
 \end_layout
 
 \begin_layout Itemize
@@ -485,396 +486,12 @@ y of the output trace.
  
 \end_layout
 
+\begin_layout Standard
+The rest of this paper is organized as follows [TO BE COMPLETED]
+\end_layout
+
 \begin_layout Section
 Previous Work
-\end_layout
-
-\begin_layout Standard
-A closely related problem to our mobility inversion, localization has been
- a well-studied problem in various disciplines of networking.
- In wireless sensor networks, the problem also called the 
-\begin_inset Quotes eld
-\end_inset
-
-graph realization
-\begin_inset Quotes erd
-\end_inset
-
- problem, is mostly stated as follows:
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Given a graph 
-\begin_inset Formula $G=(V,E)$
-\end_inset
-
- such that 
-\begin_inset Formula $V$
-\end_inset
-
- is the set of n vertices (nodes), and 
-\begin_inset Formula $D$
-\end_inset
-
- is an 
-\begin_inset Formula $n\times n$
-\end_inset
-
- matrix of pairwise distances between nodes, find a 
-\begin_inset Formula $d-dimensional$
-\end_inset
-
- embedding that preserves 
-\begin_inset Formula $D$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Next, we will briefly review three widely used proposed solutions for the
- graph realization problem, which is proved to be NP-Hard in general case
-\begin_inset CommandInset citation
-LatexCommand cite
-key "nphard"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Multidimensional Scaling (MDS) is a statistical technique used for exploring
- the similarities or dissimilarities in data.
- To find an embedding 
-\begin_inset Formula $X=[x_{1}...x_{m}]^{T}$
-\end_inset
-
-of 
-\begin_inset Formula $n$
-\end_inset
-
- vertices in 
-\begin_inset Formula $\mathbb{R^{d}}$
-\end_inset
-
-, and given a known distance matrix 
-\begin_inset Formula $D$
-\end_inset
-
-, multidimensional scaling, seeks to minimize a stress function as follows:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\underset{x_{1}...x_{m}}{min}\underset{i<j}{\sum}\quad(||x_{i}-x_{j}||-d_{ij})^{2}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Classical MDS requires distances between every pair of nodes, Shang et.al
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "conf/infocom/ShangR04"
-
-\end_inset
-
- have proposed to use shortest paths computed from a connectivity matrix
- instead of the distance matrix in their MDS-MAP
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Connectivity matrix is defined similar to an adjacency matrix.
- For a graph 
-\begin_inset Formula $G=(V,E)$
-\end_inset
-
- the 
-\begin_inset Formula $n\times n$
-\end_inset
-
- connectivity matrix 
-\begin_inset Formula $A$
-\end_inset
-
- is defined such that 
-\begin_inset Formula $A_{ij}$
-\end_inset
-
-is 1 whenever nodes i and j are within transmission range of each other
- and 0 otherwise.
-\end_layout
-
-\end_inset
-
-.
- MDS yields a relative map of locations of the nodes, and given d anchor
- nodes
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Nodes with known locations.
-\end_layout
-
-\end_inset
-
-, this can be turned into an absolute map, which the target embedding 
-\begin_inset Formula $X$
-\end_inset
-
-.
- MDS, has the disadvantage of pulling nodes towards the center of the area,
- and thus performs poorly on irregularly-shaped graphs.
- To overcome this problem, Shang et.al 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "conf/infocom/ShangR04"
-
-\end_inset
-
-, have produced a version of the algorithm, MDS-MAP(p) in which MDS is applied
- for the subgraph of a given number of hops around each node to produce
- a local map for that node, and then these nodes are merged to produce a
- global relative map.
-\end_layout
-
-\begin_layout Standard
-Spectral Graph Drawing (SGD) is another solution that is proposed for the
- graph realization problem.
- SGD also defines a minimization problem based on the Laplacian matrix,
- L.
- this matrix is defined as follows:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-L=K-W
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-W=[w_{ij}]=\frac{1}{1+d_{ij}}\quad or\quad e^{-d_{ij}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-K=diag(k_{ii})=\underset{j\epsilon N(i)}{\sum}w_{ij}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Where 
-\begin_inset Formula $W$
-\end_inset
-
- is a weighting matrix, inversely proportional to the pair-wise distances
- 
-\begin_inset Formula $D$
-\end_inset
-
-, and 
-\begin_inset Formula $K$
-\end_inset
-
- is the diagonal matrix of node degrees.
- SGD solves the following optimization problem to find 
-\begin_inset Formula $X$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-X^{*}=\underset{X}{argmin}[X^{T}LX]
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-s.t.\quad X^{T}X=1
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\quad\quad X^{T}\mathbf{1}_{n}=0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The second constraint in the above equation, ensures that the trivial solution
- of all nodes in the same place is not chosen in favor of the others.
- The selection of variance in this constraint is arbitrary.
- The second constraint, ensures the invariance of the solution under transitions
- by setting a mean of zero.
- Koren 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "conf/cocoon/Koren03"
-
-\end_inset
-
- argues that like classical MDS, SGD tends to draw the nodes to the center,
- and hence has a poor performance on irregularly-shaped graphs.
- A variant of SGD, called degree normalized spectral graph drawing (DN-SGD)
- is proposed, which updates the second constraint of original SGD with weights
- proportional to degrees, i.e.
- 
-\begin_inset Formula $X^{T}KX=1$
-\end_inset
-
-.
- SGD, and DN-SGD have been shown to be solvable by finding the generalized
- eigenvalues of the matrices 
-\begin_inset Formula $L$
-\end_inset
-
- and 
-\begin_inset Formula $K$
-\end_inset
-
-.
- Broxten et al.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "journals/sigmobile/BroxtonLP06"
-
-\end_inset
-
- have shown that for DN-SGD to perform reasonably on static sensor network
- localization, a two-step localization, followed by a post-processing to
- filter outliers are required.
-\end_layout
-
-\begin_layout Standard
-Finally, the localization problem has been formulated as a Semidefinite
- program (SDP), which a specific type of convex optimization which can be
- solved by interior methods.
- An SDP feasibility is as follows:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\begin{split}find\; X\in\mathbb{R}^{(n+2)\times(n+2)}\\
-s.t. & (1;0;\mathbf{0})^{T}X(1;0;\mathbf{0})=1\\
- & (0;1;\mathbf{0})^{T}X(0;1;\mathbf{0})=1\\
- & (1;1;\mathbf{0})^{T}X(1;1;\mathbf{0})=2\\
- & (0;e_{i}-e_{j})^{T}X(0;e_{i}-e_{j})=d_{ji}^{2}\;\forall(j,i)\in V_{x}\\
- & (a_{k}-e_{j})^{T}X(a_{k}-e_{j})=d_{jk}^{2}\;\forall(j,k)\in V_{a}\\
- & X\succcurlyeq0
-\end{split}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Where, 
-\begin_inset Formula $V_{x}\subseteq V$
-\end_inset
-
- is the set of nodes with unknown locations, and 
-\begin_inset Formula $V_{a}\subseteq V$
-\end_inset
-
- is the set of nodes with known locations (anchors).
- and 
-\begin_inset Formula $e_{i}$
-\end_inset
-
-is a vector of all zero entries except 
-\begin_inset Formula $i^{th}$
-\end_inset
-
--entry, and 
-\begin_inset Formula $a_{k}\quad\forall k=1...m$
-\end_inset
-
- is the locations of the anchor nodes, and the last constraint requires,
- 
-\begin_inset Formula $X$
-\end_inset
-
- to be a positive semidefinite matrix
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-A matrix, 
-\begin_inset Formula $M$
-\end_inset
-
-, is positive semidefinite, if 
-\begin_inset Formula $z^{T}Mz\geq0$
-\end_inset
-
- for all non-zero column vectors 
-\begin_inset Formula $z$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.Biswas et.al 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "biswas2004semidefinite,journals/tosn/BiswasLWY06"
-
-\end_inset
-
- have discussed details of using semidefinite programming for solving the
- localization problem.
- 
 \end_layout
 
 \begin_layout Standard
@@ -3436,6 +3053,398 @@ options "IEEEtran"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Appendix
+
+\end_layout
+
+\begin_layout Standard
+A closely related problem to our mobility inversion, localization has been
+ a well-studied problem in various disciplines of networking.
+ In wireless sensor networks, the problem also called the 
+\begin_inset Quotes eld
+\end_inset
+
+graph realization
+\begin_inset Quotes erd
+\end_inset
+
+ problem, is mostly stated as follows:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Given a graph 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ such that 
+\begin_inset Formula $V$
+\end_inset
+
+ is the set of n vertices (nodes), and 
+\begin_inset Formula $D$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix of pairwise distances between nodes, find a 
+\begin_inset Formula $d-dimensional$
+\end_inset
+
+ embedding that preserves 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Next, we will briefly review three widely used proposed solutions for the
+ graph realization problem, which is proved to be NP-Hard in general case
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nphard"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Multidimensional Scaling (MDS) is a statistical technique used for exploring
+ the similarities or dissimilarities in data.
+ To find an embedding 
+\begin_inset Formula $X=[x_{1}...x_{m}]^{T}$
+\end_inset
+
+of 
+\begin_inset Formula $n$
+\end_inset
+
+ vertices in 
+\begin_inset Formula $\mathbb{R^{d}}$
+\end_inset
+
+, and given a known distance matrix 
+\begin_inset Formula $D$
+\end_inset
+
+, multidimensional scaling, seeks to minimize a stress function as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underset{x_{1}...x_{m}}{min}\underset{i<j}{\sum}\quad(||x_{i}-x_{j}||-d_{ij})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Classical MDS requires distances between every pair of nodes, Shang et.al
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/ShangR04"
+
+\end_inset
+
+ have proposed to use shortest paths computed from a connectivity matrix
+ instead of the distance matrix in their MDS-MAP
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Connectivity matrix is defined similar to an adjacency matrix.
+ For a graph 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ connectivity matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is defined such that 
+\begin_inset Formula $A_{ij}$
+\end_inset
+
+is 1 whenever nodes i and j are within transmission range of each other
+ and 0 otherwise.
+\end_layout
+
+\end_inset
+
+.
+ MDS yields a relative map of locations of the nodes, and given d anchor
+ nodes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Nodes with known locations.
+\end_layout
+
+\end_inset
+
+, this can be turned into an absolute map, which the target embedding 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ MDS, has the disadvantage of pulling nodes towards the center of the area,
+ and thus performs poorly on irregularly-shaped graphs.
+ To overcome this problem, Shang et.al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/infocom/ShangR04"
+
+\end_inset
+
+, have produced a version of the algorithm, MDS-MAP(p) in which MDS is applied
+ for the subgraph of a given number of hops around each node to produce
+ a local map for that node, and then these nodes are merged to produce a
+ global relative map.
+\end_layout
+
+\begin_layout Standard
+Spectral Graph Drawing (SGD) is another solution that is proposed for the
+ graph realization problem.
+ SGD also defines a minimization problem based on the Laplacian matrix,
+ L.
+ this matrix is defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=K-W
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=[w_{ij}]=\frac{1}{1+d_{ij}}\quad or\quad e^{-d_{ij}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K=diag(k_{ii})=\underset{j\epsilon N(i)}{\sum}w_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $W$
+\end_inset
+
+ is a weighting matrix, inversely proportional to the pair-wise distances
+ 
+\begin_inset Formula $D$
+\end_inset
+
+, and 
+\begin_inset Formula $K$
+\end_inset
+
+ is the diagonal matrix of node degrees.
+ SGD solves the following optimization problem to find 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X^{*}=\underset{X}{argmin}[X^{T}LX]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s.t.\quad X^{T}X=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\quad\quad X^{T}\mathbf{1}_{n}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second constraint in the above equation, ensures that the trivial solution
+ of all nodes in the same place is not chosen in favor of the others.
+ The selection of variance in this constraint is arbitrary.
+ The second constraint, ensures the invariance of the solution under transitions
+ by setting a mean of zero.
+ Koren 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/cocoon/Koren03"
+
+\end_inset
+
+ argues that like classical MDS, SGD tends to draw the nodes to the center,
+ and hence has a poor performance on irregularly-shaped graphs.
+ A variant of SGD, called degree normalized spectral graph drawing (DN-SGD)
+ is proposed, which updates the second constraint of original SGD with weights
+ proportional to degrees, i.e.
+ 
+\begin_inset Formula $X^{T}KX=1$
+\end_inset
+
+.
+ SGD, and DN-SGD have been shown to be solvable by finding the generalized
+ eigenvalues of the matrices 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $K$
+\end_inset
+
+.
+ Broxten et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "journals/sigmobile/BroxtonLP06"
+
+\end_inset
+
+ have shown that for DN-SGD to perform reasonably on static sensor network
+ localization, a two-step localization, followed by a post-processing to
+ filter outliers are required.
+\end_layout
+
+\begin_layout Standard
+Finally, the localization problem has been formulated as a Semidefinite
+ program (SDP), which a specific type of convex optimization which can be
+ solved by interior methods.
+ An SDP feasibility is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{split}find\; X\in\mathbb{R}^{(n+2)\times(n+2)}\\
+s.t. & (1;0;\mathbf{0})^{T}X(1;0;\mathbf{0})=1\\
+ & (0;1;\mathbf{0})^{T}X(0;1;\mathbf{0})=1\\
+ & (1;1;\mathbf{0})^{T}X(1;1;\mathbf{0})=2\\
+ & (0;e_{i}-e_{j})^{T}X(0;e_{i}-e_{j})=d_{ji}^{2}\;\forall(j,i)\in V_{x}\\
+ & (a_{k}-e_{j})^{T}X(a_{k}-e_{j})=d_{jk}^{2}\;\forall(j,k)\in V_{a}\\
+ & X\succcurlyeq0
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $V_{x}\subseteq V$
+\end_inset
+
+ is the set of nodes with unknown locations, and 
+\begin_inset Formula $V_{a}\subseteq V$
+\end_inset
+
+ is the set of nodes with known locations (anchors).
+ and 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+is a vector of all zero entries except 
+\begin_inset Formula $i^{th}$
+\end_inset
+
+-entry, and 
+\begin_inset Formula $a_{k}\quad\forall k=1...m$
+\end_inset
+
+ is the locations of the anchor nodes, and the last constraint requires,
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ to be a positive semidefinite matrix
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A matrix, 
+\begin_inset Formula $M$
+\end_inset
+
+, is positive semidefinite, if 
+\begin_inset Formula $z^{T}Mz\geq0$
+\end_inset
+
+ for all non-zero column vectors 
+\begin_inset Formula $z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.Biswas et.al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "biswas2004semidefinite,journals/tosn/BiswasLWY06"
+
+\end_inset
+
+ have discussed details of using semidefinite programming for solving the
+ localization problem.
+ 
 \end_layout
 
 \end_body
