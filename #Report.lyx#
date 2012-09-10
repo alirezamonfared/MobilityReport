@@ -3060,6 +3060,11 @@ options "IEEEtran"
 \end_layout
 
 \begin_layout Standard
+In this appendix, we survey other techniques to infer the locations of wireless
+ nodes, given various amount of information.
+\end_layout
+
+\begin_layout Standard
 A closely related problem to our mobility inversion, localization has been
  a well-studied problem in various disciplines of networking.
  In wireless sensor networks, the problem also called the 
@@ -3070,7 +3075,7 @@ graph realization
 \begin_inset Quotes erd
 \end_inset
 
- problem, is mostly stated as follows:
+ problem, is generally stated as follows:
 \end_layout
 
 \begin_layout Standard
@@ -3104,8 +3109,21 @@ Given a graph
 \end_layout
 
 \begin_layout Standard
-Next, we will briefly review three widely used proposed solutions for the
- graph realization problem, which is proved to be NP-Hard in general case
+Note that in our problem, we deal with an evolving graph 
+\begin_inset Formula $G=\{G^{t}(V^{t},E^{t})\quad\forall t\}$
+\end_inset
+
+, which is a series of graphs whose information are correlated.
+ Also, we do not assume access to the distance matrix, 
+\begin_inset Formula $D$
+\end_inset
+
+, in our algorithm.
+\end_layout
+
+\begin_layout Standard
+Next, we will briefly review three widely used proposed solutions for graph
+ realization problem, which is proved to be NP-Hard in the general case
 \begin_inset CommandInset citation
 LatexCommand cite
 key "nphard"
