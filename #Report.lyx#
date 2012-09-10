@@ -1497,15 +1497,189 @@ key "zhu1997algorithm"
 
 \end_inset
 
- which solves a nonlinear optimization or feasibility problem with linear
- bounds on variables.
- the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
- (BFGS), an approximation of Newton's method that seeks the stationary point
- of a function by finding the zero of its derivative.
+.
+ The l-BFGS-B is a variant of the Broyden–Fletcher–Goldfarb–Shann (BFGS),
+ an approximation of Newton's method that seeks the stationary point of
+ a function by finding the zero of its derivative.
  The advantage of the BFGS to its alternative methods is that it does not
  need to evaluate the Hessian matrix of the second derivatives.
  Instead, the Hessian is approximated using rank-one updates of gradient
  evaluations.
+ The l-BFGS variant is particularly suited to problems with very large numbers
+ of variables, and BFGS-B variant handles simple box constraints.
+ The basic operation of the BFGS to find the 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Input: 
+\series default
+Contact Trace 
+\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}_{N\times N\times T_{m}}$
+\end_inset
+
+ Transmission ranges 
+\begin_inset Formula $\{R_{1}\leq R_{2}\leq...\leq R_{n}\}$
+\end_inset
+
+, Maximum speed 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+, number of dimensions 
+\begin_inset Formula $d=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Preprocess contact traces
+\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Find a set of initial locations 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{final}(:,:,0)\leftarrow X_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+for
+\series default
+ 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\begin_inset Formula $:=$
+\end_inset
+
+
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ 
+\series bold
+do
+\end_layout
+
+\begin_layout Description
+
+\series medium
+solve
+\series default
+ the nonlinear optimization problem in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+ with 
+\begin_inset Formula $\{G_{1}^{t},G_{2}^{t},...,G_{n}^{t}\}\Longleftrightarrow\{C_{1}(:,:,t),C_{2}(:,:,t),...,C_{n}(:,:,t)\}$
+\end_inset
+
+ , 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $R$
+\end_inset
+
+, 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{0}\leftarrow X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+end for
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Output:
+\series default
+ 
+\begin_inset Formula $X_{final}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:BFGS"
+
+\end_inset
+
+Basic procedure of the BFGS algorithm.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
