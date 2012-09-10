@@ -1521,38 +1521,54 @@ status open
 \series bold
 Input: 
 \series default
-Contact Trace 
-\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}_{N\times N\times T_{m}}$
+Objective function 
+\begin_inset Formula $f(x)$
 \end_inset
 
- Transmission ranges 
-\begin_inset Formula $\{R_{1}\leq R_{2}\leq...\leq R_{n}\}$
+, approximate initial Hessian 
+\begin_inset Formula $B_{0}$
 \end_inset
 
-, Maximum speed 
-\begin_inset Formula $v_{m}$
-\end_inset
-
-, number of dimensions 
-\begin_inset Formula $d=2$
+(can be identity matrix), maximum number of iterations 
+\begin_inset Formula $max-iter$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Plain Layout
-Preprocess contact traces
-\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}$
+
+\series bold
+for
+\series default
+ 
+\begin_inset Formula $k$
+\end_inset
+
+ 
+\begin_inset Formula $:=$
 \end_inset
 
 
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $max-iter$
+\end_inset
+
+ 
+\series bold
+do
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
+\begin_layout Description
+
+\series medium
+\begin_inset Formula $B_{k}p_{k}=$
 \end_inset
 
-
+-
 \end_layout
 
 \begin_layout Plain Layout
