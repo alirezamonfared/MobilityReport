@@ -751,10 +751,8 @@ key "bui2003evolving"
 \end_layout
 
 \begin_layout Standard
-Contact-start events occur when two mobile devices come within radio range
- of each other.
- Contact-end events occur when two mobile devices who were previously in
- contact are not within the radio range of each other's devices.
+Contact-start events occur when one of the devices receives information
+ from the other and contact-end events occur when transmission stops.
  Many aspects of the radio environment can affect these events.
  In general, contact trace becomes meaningful when studied along with a
  
@@ -3427,11 +3425,10 @@ s.t. & (1;0;\mathbf{0})^{T}X(1;0;\mathbf{0})=1\\
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
-Where, 
 \begin_inset Formula $V_{x}\subseteq V$
 \end_inset
 
@@ -3444,7 +3441,7 @@ Where,
 \begin_inset Formula $e_{i}$
 \end_inset
 
-is a vector of all zero entries except 
+ is a vector of all zero entries except 
 \begin_inset Formula $i^{th}$
 \end_inset
 
@@ -3452,8 +3449,8 @@ is a vector of all zero entries except
 \begin_inset Formula $a_{k}\quad\forall k=1...m$
 \end_inset
 
- is the locations of the anchor nodes, and the last constraint requires,
- 
+ is the locations of the anchor nodes.
+ The last constraint requires 
 \begin_inset Formula $X$
 \end_inset
 
