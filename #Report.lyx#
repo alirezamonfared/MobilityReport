@@ -2034,7 +2034,10 @@ Pre-processing is needed to make sure that the contact traces
 \end_inset
 
  are compatible.
- We first inspect the contact traces starting from 
+ This step is necessary since in real traces, situations may arise that
+ two nodes are connected in a contact trace with a smaller transmission
+ range and not connected in  We first inspect the contact traces starting
+ from 
 \begin_inset Formula $C_{1}$
 \end_inset
 
