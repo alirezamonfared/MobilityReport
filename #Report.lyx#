@@ -2034,9 +2034,13 @@ Pre-processing is needed to make sure that the contact traces
 \end_inset
 
  are compatible.
- This step is necessary since in real traces, situations may arise that
- two nodes are connected in a contact trace with a smaller transmission
- range and not connected in  We first inspect the contact traces starting
+ This step handles the situations in which two nodes are connected in a
+ contact trace with a smaller transmission range at some time step but the
+ same nodes are not connected in another contact trace with a larger range.
+ Note that the necessity of this pre-processing is tied with our assumption
+ of circular transmission ranges.
+ A more complex contact model might not see this step necessary.
+ In our algorithm, to pre-process, we first inspect the contact traces starting
  from 
 \begin_inset Formula $C_{1}$
 \end_inset
@@ -2235,7 +2239,21 @@ reference "sub:Single-Input-Mobility"
 \end_layout
 
 \begin_layout Subsection
-Discussions
+Discussion
+\end_layout
+
+\begin_layout Standard
+In this section, we briefly review the main advantages of our mobility inversion
+ algorithm, compared to the force based algorithm of Whitbeck et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+.
+ We will also point out the drawbacks of the algorithm.
+ We will discuss the performance metrics in the next section.
 \end_layout
 
 \begin_layout Standard
@@ -2254,23 +2272,9 @@ key "whitbeck2011encounters"
 \end_layout
 
 \begin_layout Standard
-In this section, we briefly review the main advantages of our mobility inversion
- algorithm, compared to the force based algorithm of Whitbeck et al.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "whitbeck2011encounters"
-
-\end_inset
-
-.
- We will also point out the drawbacks of the algorithm.
- We will discuss the performance metrics in the next section.
-\end_layout
-
-\begin_layout Standard
 Simplicity of the front-end is the first advantage of our algorithm.
- In case of the force-based algorithm, calling the algorithm needs not only
- the input contact trace, but also many parameters need to be set.
+ The force-based algorithm not only relies on the input contact trace, but
+ also many parameters that need to be set.
  These include the rigidity constant 
 \begin_inset Formula $K$
 \end_inset
