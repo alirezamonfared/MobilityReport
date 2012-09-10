@@ -1297,7 +1297,8 @@ Find a set of initial locations
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series bold
 for
@@ -1323,7 +1324,9 @@ for
 do
 \end_layout
 
-\begin_layout Description
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series medium
 solve
@@ -1354,21 +1357,25 @@ reference "fig:algorithm"
 
 \end_layout
 
-\begin_layout Description
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Description
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Formula $X_{0}\leftarrow X$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series bold
 end for
@@ -1505,9 +1512,15 @@ key "zhu1997algorithm"
  need to evaluate the Hessian matrix of the second derivatives.
  Instead, the Hessian is approximated using rank-one updates of gradient
  evaluations.
- The l-BFGS variant is particularly suited to problems with very large numbers
- of variables, and BFGS-B variant handles simple box constraints.
- The basic operation of the BFGS to find the 
+ The basic operation of the BFGS is described in Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:BFGS"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1655,7 +1668,7 @@ name "alg:BFGS"
 
 \end_inset
 
-Basic procedure of the BFGS algorithm.
+Basic BFGS algorithm.
 \end_layout
 
 \end_inset
@@ -1669,8 +1682,10 @@ Basic procedure of the BFGS algorithm.
 \end_layout
 
 \begin_layout Standard
-l-BFGS-B, needs an initial point to seek this stationary point, which is
- the value 
+The l-BFGS variant is particularly suited to problems with very large numbers
+ of variables and BFGS-B variant handles simple box constraints.
+ Also not that in the algorithm, l-BFGS-B needs an initial point to seek
+ this stationary point, which is the value 
 \begin_inset Formula $X_{0}$
 \end_inset
 
@@ -1687,8 +1702,8 @@ reference "fig:algorithm"
 \begin_layout Standard
 To solve the equation for the first iteration, we use the same method as
  above, except that only constraints corresponding to ranges, and residence
- of locations in the simulations will be considered, and the maximum speed
- constraint, which necessitates a reasonable set of 
+ of nodes inside the simulation field will be considered and the maximum
+ speed constraint, which necessitates a reasonable set of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1707,12 +1722,12 @@ previous
 \begin_inset Formula $R,$
 \end_inset
 
-i.e.
+ i.e.
  we assume two nodes 
 \begin_inset Formula $m$
 \end_inset
 
- hops far from each other are at a distance 
+ hops from each other are at a distance 
 \begin_inset Formula $m\times R$
 \end_inset
 
@@ -1849,7 +1864,8 @@ Find a set of initial locations
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series bold
 for
@@ -1875,7 +1891,9 @@ for
 do
 \end_layout
 
-\begin_layout Description
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series medium
 solve
@@ -1906,21 +1924,25 @@ reference "fig:algorithm"
 
 \end_layout
 
-\begin_layout Description
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Description
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Formula $X_{0}\leftarrow X$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series bold
 end for
