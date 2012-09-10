@@ -543,6 +543,8 @@ Contact-start events occur when one of the devices receives information
 contact model.
 
 \emph default
+ A contact model specifies the circumstances under which two nodes are defined
+ to be in contact.
  In the simplest model, two nodes are defined to be in contact whenever
  their distance is less than a given transmission range, and disconnected
  otherwise.
@@ -574,20 +576,12 @@ A mobility trace is a log of locations of nodes over time.
  or synchronized, synthetically modeled or originating from real data collected
  using GPS equipped devices or association to the base stations of a 3G/WiFi
  network.
- 
 \end_layout
 
 \begin_layout Standard
-We have reviewed different techniques in literature that can be considered
- similar to our plausible mobility technique, but we mention the related
- work attacking the exact same problem here.
-\end_layout
-
-\begin_layout Standard
-The difference between mobility inversion, though, is different from the
- localization problem, in the sense that it combines a contact model, and
- a contact trace showing the opportunities among nodes to get in touch to
- obtain a mobility trace showing their locations using no further information
+The mobility inversion problem combines a contact model, and a contact trace
+ to obtain a consistent mobility trace showing their locations using no
+ further information
 \begin_inset Foot
 status open
 
@@ -598,7 +592,10 @@ These concepts will be more formally defined in the next section
 \end_inset
 
 .
- Few solutions have been proposed for this specific problem.
+\end_layout
+
+\begin_layout Standard
+Few solutions have been proposed for this specific problem.
  Wang et al.
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -606,7 +603,7 @@ key "wang2011automatic"
 
 \end_inset
 
- solves the same problem by dividing it into smaller subproblems, and relying
+ solves the same problem by dividing it into smaller sub-problems, and relying
  on decreasing number of possibilities.
  Our analysis of such approach has proven that the complexity of such solution
  grows exponentially with increasing number of nodes, and hence is only
@@ -768,7 +765,7 @@ spring
 \end_inset
 
  force on each node from all of its contacts, as well as a repulsive force,
-mathnormalo the classical 
+ similar to the classical 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1027,7 +1024,7 @@ Dimensions of the problem (2 in our case)
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout cmrin Layout
+\begin_layout Plain Layout
 \begin_inset Formula $L$
 \end_inset
 
