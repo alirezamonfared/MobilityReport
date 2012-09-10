@@ -1502,7 +1502,14 @@ key "zhu1997algorithm"
  the l-BFGS-B, which is a variant of the Broyden–Fletcher–Goldfarb–Shann
  (BFGS), an approximation of Newton's method that seeks the stationary point
  of a function by finding the zero of its derivative.
- l-BFGS-B, needs an initial point to seek this stationary point, which is
+ The advantage of the BFGS to its alternative methods is that it does not
+ need to evaluate the Hessian matrix of the second derivatives.
+ Instead, the Hessian is approximated using rank-one updates of gradient
+ evaluations.
+\end_layout
+
+\begin_layout Standard
+l-BFGS-B, needs an initial point to seek this stationary point, which is
  the value 
 \begin_inset Formula $X_{0}$
 \end_inset
