@@ -534,8 +534,8 @@ key "ristanovic2010tracking"
  mobile Bluetooth devices that have a low range.
  The immediate downside is the dependence on the location of devices and
  the underlying technologies used.
- Whitbeck et.
- al 
+ Whitbeck et al.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "whitbeck2011encounters"
@@ -2356,8 +2356,8 @@ ST-pairs: Two nodes that are reachable within a journey of limited duration
 status open
 
 \begin_layout Plain Layout
-As discussed by Chen et.
- al 
+As discussed by Chen et al.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "chen2011framework"
@@ -3232,17 +3232,21 @@ is 1 whenever nodes i and j are within transmission range of each other
 .
  MDS has the disadvantage of pulling nodes towards the center of the area,
  and thus performs poorly on irregularly-shaped graphs.
- To overcome this problem, Shang et.al 
+ To overcome this problem, Shang et al.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "conf/infocom/ShangR04"
 
 \end_inset
 
-, have produced a version of the algorithm, MDS-MAP(p) in which MDS is applied
- for the subgraph of a given number of hops around each node to produce
- a local map for that node, and then these nodes are merged to produce a
- global relative map.
+, have produced a version of the algorithm, MDS-MAP(
+\begin_inset Formula $p$
+\end_inset
+
+) in which MDS is applied for the subgraph of a given number of hops around
+ each node to produce a local map for that node, and then these nodes are
+ merged to produce a global relative map.
 \end_layout
 
 \begin_layout Standard
@@ -3461,7 +3465,8 @@ A matrix,
 
 \end_inset
 
-.Biswas et.al 
+.Biswas et al.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "biswas2004semidefinite,journals/tosn/BiswasLWY06"
