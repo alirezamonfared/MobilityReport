@@ -1849,6 +1849,11 @@ and
 \end_inset
 
 , and their corresponding eigenvectors.
+ We finally perform a proper translation to map the center of mass of 
+\begin_inset Formula $X$
+\end_inset
+
+ to the center of the simulation field.
  This value of 
 \begin_inset Formula $X$
 \end_inset
