@@ -1,5 +1,27 @@
 @comment{x-kbibtex-personnameformatting=<%l><, %f>}
 
+@inproceedings{conf/cocoon/Koren03,
+	added-at = "2011-07-05T00:00:00.000+0200",
+	author = "Koren, Yehuda",
+	biburl = "http://www.bibsonomy.org/bibtex/22b2a4d0d0658672e3fb99afa2cbbfcc5/dblp",
+	booktitle = "{COCOON}",
+	crossref = "conf/cocoon/2003",
+	editor = "Warnow, Tandy and Zhu, Binhai",
+	ee = "http://dx.doi.org/10.1007/3-540-45071-8_50",
+	interhash = "175f0de4174d6c6131e9f828fe2e75cb",
+	intrahash = "2b2a4d0d0658672e3fb99afa2cbbfcc5",
+	isbn = "3-540-40534-8",
+	keywords = "dblp",
+	pages = "496--508",
+	publisher = "Springer",
+	series = "{Lecture Notes in Computer Science}",
+	title = "{On Spectral Graph Drawing.}",
+	url = "http://dblp.uni-trier.de/db/conf/cocoon/cocoon2003.html#Koren03",
+	volume = 2697,
+	x-fetchedfrom = "Bibsonomy",
+	year = 2003
+}
+
 @article{kotz2003mistaken,
 	author = "Kotz, D. and Newport, C. and Elliot, C.",
 	journal = "Computer Science Department",
