@@ -1752,14 +1752,21 @@ reference "fig:algorithm"
 \end_inset
 
 .
- We have adopted an implementation of l-BFGS-B in MATLAB by D.Kroon.
+ We have adopted an implementation of l-BFGS-B in MATLAB by D.Kroon 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kroon"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-To solve the equation for the first iteration, we use the same method as
- above, except that only constraints corresponding to ranges, and residence
- of nodes inside the simulation field will be considered and the maximum
- speed constraint, which necessitates a reasonable set of 
+To address the issue of choosing a suitable initial point, , we use the
+ same method as above, except that only constraints corresponding to ranges,
+ and residence of nodes inside the simulation field will be considered and
+ the maximum speed constraint, which necessitates a reasonable set of 
 \begin_inset Quotes eld
 \end_inset
 
