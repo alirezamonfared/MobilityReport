@@ -1809,9 +1809,11 @@ key "colliat1996olap"
 
 \end_inset
 
- to yield a decent initial point which can be then passed to the version
- of the optimization problem that ignores the speed constraint to find the
- first value of 
+ to yield a decent initial point.
+ MDS achieves this by double-centering the given distance matrix, i.e.
+ subtracting row and column means from it and adding back the grand mean,
+ and then performing  which can be then passed to the version of the optimizatio
+n problem that ignores the speed constraint to find the first value of 
 \begin_inset Formula $X_{0}$
 \end_inset
 
