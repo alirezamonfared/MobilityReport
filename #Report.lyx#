@@ -870,7 +870,7 @@ key "bui2003evolving"
  is the number of time steps.
  Note that this representation assumes that we have access to snapshots
  of connectivity structure of nodes at some discrete times 
-\begin_inset Formula $t=t_{o},...,T$
+\begin_inset Formula $t=t_{o},...,T_{m}$
 \end_inset
 
 .
@@ -1258,20 +1258,20 @@ es of graphs
 \end_inset
 
  .
- We use the notation 
-\begin_inset Formula $G\Leftrightarrow C$
-\end_inset
-
- to show that the evolving graph 
+ In our notation, we associate graph 
 \begin_inset Formula $G$
 \end_inset
 
- has the corresponding adjacency matrix 
+, with matrix 
 \begin_inset Formula $C$
 \end_inset
 
- , which represents a contact trace as described above.
- This means that the graphs 
+ with the notation 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ This means that graphs 
 \begin_inset Formula $G^{t}$
 \end_inset
 
@@ -1372,7 +1372,7 @@ Find a set of initial locations
 for
 \series default
  
-\begin_inset Formula $i$
+\begin_inset Formula $t$
 \end_inset
 
  
@@ -1380,7 +1380,7 @@ for
 \end_inset
 
 
-\begin_inset Formula $1$
+\begin_inset Formula $t_{0}$
 \end_inset
 
  to 
@@ -1752,14 +1752,21 @@ reference "fig:algorithm"
 \end_inset
 
 .
- We have adopted an implementation of l-BFGS-B in MATLAB by D.Kroon .
+ We have adopted an implementation of l-BFGS-B in MATLAB by D.Kroon 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kroon"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-To solve the equation for the first iteration, we use the same method as
- above, except that only constraints corresponding to ranges, and residence
- of nodes inside the simulation field will be considered and the maximum
- speed constraint, which necessitates a reasonable set of 
+To address the issue of choosing a suitable initial point, , we use the
+ same method as above, except that only constraints corresponding to ranges,
+ and residence of nodes inside the simulation field will be considered and
+ the maximum speed constraint, which necessitates a reasonable set of 
 \begin_inset Quotes eld
 \end_inset
 
