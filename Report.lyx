@@ -1744,7 +1744,7 @@ The l-BFGS variant is particularly suited to problems with very large numbers
 \begin_inset Formula $X_{0}$
 \end_inset
 
- given to it in algorithm 
+ given to it in Algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
@@ -1752,6 +1752,7 @@ reference "fig:algorithm"
 \end_inset
 
 .
+ We have adopted an implementation of l-BFGS-B in MATLAB by D.Kroon.
 \end_layout
 
 \begin_layout Standard
