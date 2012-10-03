@@ -870,7 +870,7 @@ key "bui2003evolving"
  is the number of time steps.
  Note that this representation assumes that we have access to snapshots
  of connectivity structure of nodes at some discrete times 
-\begin_inset Formula $t=t_{o},...,T$
+\begin_inset Formula $t=t_{o},...,T_{m}$
 \end_inset
 
 .
@@ -1258,25 +1258,29 @@ es of graphs
 \end_inset
 
  .
- We use the notation 
-\begin_inset Formula $G\Leftrightarrow C$
-\end_inset
-
- to show that the evolving graph 
+ In our notation, we associate graph 
 \begin_inset Formula $G$
 \end_inset
 
- has the corresponding adjacency matrix 
+, with matrix 
 \begin_inset Formula $C$
 \end_inset
 
- , which represents a contact trace as described above.
- This means that the graphs 
+ with the notation 
+\begin_inset Formula $G\Longleftrightarrow C$
+\end_inset
+
+.
+ This means that graphs 
 \begin_inset Formula $G^{t}$
 \end_inset
 
  have adjacency matrices 
 \begin_inset Formula $C(:,:,t)$
+\end_inset
+
+, or in our notation 
+\begin_inset Formula $G^{t}\Longleftrightarrow C(:,:,t)$
 \end_inset
 
 .
@@ -1301,7 +1305,7 @@ reference "sec:Mobility-Inversion-Algorithm"
 .
  We the location of nodes at the previous step as the initial point for
  the problem, and solve this problem iteratively to find the location of
- the nodes at each of the sanpshots.
+ the nodes at each of the snapshots.
  Together, these yield a mobility trace consistent with input contacts.
  This process is describe in Algorithm 
 \begin_inset CommandInset ref
@@ -1372,7 +1376,7 @@ Find a set of initial locations
 for
 \series default
  
-\begin_inset Formula $i$
+\begin_inset Formula $t$
 \end_inset
 
  
@@ -1380,7 +1384,7 @@ for
 \end_inset
 
 
-\begin_inset Formula $1$
+\begin_inset Formula $t_{0}$
 \end_inset
 
  to 
@@ -1776,12 +1780,14 @@ previous
 
  locations, will be ignored.
  Since l-BFGS-B still needs an initial point to seek the stationary point
- of the function, we construct a distance matrix by finding the number of
- hops among every pair of nodes in 
-\begin_inset Formula $G^{0}\Longleftrightarrow C(:,:,0)$
+ of the function, we construct a distance matrix by finding the shortest
+ path among all node pairs in terms number of hops using the initial connectivit
+y structure, 
+\begin_inset Formula $G^{1}\Longleftrightarrow C(:,:,t_{0})$
 \end_inset
 
-, and multiplying it by the transmission range 
+.
+ Next, we multiply this hop-count matrix by the transmission range 
 \begin_inset Formula $R,$
 \end_inset
 
@@ -1794,25 +1800,71 @@ previous
 \begin_inset Formula $m\times R$
 \end_inset
 
-, and apply the classical MDS 
+, and replace the entries with a value of infinity, i.e unreachable nodeparis,
+ with a reasonably large distance.
+ Finally, we apply the classical Multidimensional Scaling (MDS) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "colliat1996olap"
 
 \end_inset
 
- to yield a decent initial point which can be then passed to the version
- of the optimization problem that ignores the speed constraint to find the
- first value of 
+ to yield a decent initial point.
+ MDS achieves this by double-centering the given distance matrix, i.e.
+ subtracting row and column means from it and adding back the grand mean,
+ and then performing a singular value decomposition (SVD) on the double-centered
+ distance matrix.
+ Using basic definition of Euclidean distance, it can be shown that if SVD
+ is of the form 
+\begin_inset Formula $D=UVU'$
+\end_inset
+
+, which is possible due to the symmetry of the distance matrix, then 
+\begin_inset Formula $X=UV^{1/2}$
+\end_inset
+
+.
+ To attain the desired dimension of 
+\begin_inset Formula $2$
+\end_inset
+
+ for the locations, we define 
+\begin_inset Formula $X$
+\end_inset
+
+ as 
+\begin_inset Formula $X=U_{2}V_{2}^{1/2},$
+\end_inset
+
+where 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+and 
+\begin_inset Formula $V_{2}$
+\end_inset
+
+ contain only the first two largest eigenvalues of 
+\begin_inset Formula $D$
+\end_inset
+
+, and their corresponding eigenvectors.
+ This value of 
+\begin_inset Formula $X$
+\end_inset
+
+ provided by MDS can be then passed to the version of the optimization problem
+ that ignores the speed constraint to find the first value of 
 \begin_inset Formula $X_{0}$
 \end_inset
 
-, which is initial location of nodes as well, i.e.
+.This is also used as initial location of nodes as well, i.e.
  
 \begin_inset Formula $X_{final}(:,:,0)$
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Subsection
