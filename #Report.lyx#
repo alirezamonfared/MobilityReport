@@ -1291,7 +1291,26 @@ t with the initial state of the contact trace, namely
 .
  After this initial step, we solve a feasibility problem to find a set of
  locations for each of the snapshots in the contact trace that is consistent
- with the three fundamental constraints 
+ with the three fundamental constraints mentioned in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Mobility-Inversion-Algorithm"
+
+\end_inset
+
+.
+ We the location of nodes at the previous step as the initial point for
+ the problem, and solve this problem iteratively to find the location of
+ the nodes at each of the sanpshots.
+ Together, these yield a mobility trace consistent with input contacts.
+ This process is describe in Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1528,18 +1547,12 @@ reference "fig:algorithm"
 
 \end_inset
 
-.
+ for each snapshot.
 \end_layout
 
 \begin_layout Standard
-To address the latter, which is done in every iteration of Algorithm 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "alg:Basic"
-
-\end_inset
-
-, we use Limited-memory Broyden–Fletcher–Goldfarb–Shanno (l-BFGS-B) 
+For the latter, we have used the Limited-memory Broyden–Fletcher–Goldfarb–Shanno
+ (l-BFGS-B) algorithm 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "zhu1997algorithm"
@@ -1731,7 +1744,7 @@ The l-BFGS variant is particularly suited to problems with very large numbers
 \begin_inset Formula $X_{0}$
 \end_inset
 
- given to it in algorithm 
+ given to it in Algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
@@ -1739,6 +1752,7 @@ reference "fig:algorithm"
 \end_inset
 
 .
+ We have adopted an implementation of l-BFGS-B in MATLAB by D.Kroon .
 \end_layout
 
 \begin_layout Standard
