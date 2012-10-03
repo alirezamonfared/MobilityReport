@@ -1267,7 +1267,7 @@ es of graphs
 \end_inset
 
  with the notation 
-\begin_inset Formula $G$
+\begin_inset Formula $G\Longleftrightarrow C$
 \end_inset
 
 .
@@ -1277,6 +1277,10 @@ es of graphs
 
  have adjacency matrices 
 \begin_inset Formula $C(:,:,t)$
+\end_inset
+
+, or in our notation 
+\begin_inset Formula $G^{t}\Longleftrightarrow C(:,:,t)$
 \end_inset
 
 .
@@ -1301,7 +1305,7 @@ reference "sec:Mobility-Inversion-Algorithm"
 .
  We the location of nodes at the previous step as the initial point for
  the problem, and solve this problem iteratively to find the location of
- the nodes at each of the sanpshots.
+ the nodes at each of the snapshots.
  Together, these yield a mobility trace consistent with input contacts.
  This process is describe in Algorithm 
 \begin_inset CommandInset ref
@@ -1776,12 +1780,14 @@ previous
 
  locations, will be ignored.
  Since l-BFGS-B still needs an initial point to seek the stationary point
- of the function, we construct a distance matrix by finding the number of
- hops among every pair of nodes in 
-\begin_inset Formula $G^{0}\Longleftrightarrow C(:,:,0)$
+ of the function, we construct a distance matrix by finding the shortest
+ path among all node pairs in terms number of hops using the initial connectivit
+y structure, 
+\begin_inset Formula $G^{1}\Longleftrightarrow C(:,:,t_{0})$
 \end_inset
 
-, and multiplying it by the transmission range 
+.
+ Next, we multiply this hop-count matrix by the transmission range 
 \begin_inset Formula $R,$
 \end_inset
 
@@ -1794,7 +1800,9 @@ previous
 \begin_inset Formula $m\times R$
 \end_inset
 
-, and apply the classical MDS 
+, and replace the entries with a value of infinity, i.e unreachable nodeparis,
+ with a reasonably large distance.
+ Finally, we apply the classical Multidimensional Scaling (MDS) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "colliat1996olap"
@@ -1807,12 +1815,13 @@ key "colliat1996olap"
 \begin_inset Formula $X_{0}$
 \end_inset
 
-, which is initial location of nodes as well, i.e.
+.This is also used as initial location of nodes as well, i.e.
  
 \begin_inset Formula $X_{final}(:,:,0)$
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Subsection
