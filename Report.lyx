@@ -2283,7 +2283,7 @@ for all
  The pre-processing ensures that there is no contradiction in the contact
  traces.
  Note that such contradictions are possible, if we use real traces, and
- skip the pre-processing due to environmental effects, etc.
+ skip the pre-processing due to random effects, etc.
 \end_layout
 
 \begin_layout Standard
