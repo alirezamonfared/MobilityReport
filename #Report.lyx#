@@ -794,13 +794,19 @@ drag
  to determines its location.
  Together, this gives a relative set of locations satisfying the given contacts.
  A major disadvantage of this approach is the necessity of a smart choice
- of many constants involved in the calculation of the forces, including
- but not limited the equilibrium position of spring and its rigidity constant,
- bounding and intensity decrease parameters for Columb force .
+ of many constants involved in the calculation of the forces.
  Since there is no rule of thumb for many of these parameters, the performance
  of the application becomes dependent of the specific scenario under study,
  and it may become a series of trial and errors when such information is
  not available.
+ For a more detailed analysis of this drawback, refer to Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Discussion"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1812,8 +1818,54 @@ key "colliat1996olap"
  to yield a decent initial point.
  MDS achieves this by double-centering the given distance matrix, i.e.
  subtracting row and column means from it and adding back the grand mean,
- and then performing  which can be then passed to the version of the optimizatio
-n problem that ignores the speed constraint to find the first value of 
+ and then performing a singular value decomposition (SVD) on the double-centered
+ distance matrix.
+ Using basic definition of Euclidean distance, it can be shown that if SVD
+ is of the form 
+\begin_inset Formula $D=UVU'$
+\end_inset
+
+, which is possible due to the symmetry of the distance matrix, then 
+\begin_inset Formula $X=UV^{1/2}$
+\end_inset
+
+.
+ To attain the desired dimension of 
+\begin_inset Formula $2$
+\end_inset
+
+ for the locations, we define 
+\begin_inset Formula $X$
+\end_inset
+
+ as 
+\begin_inset Formula $X=U_{2}V_{2}^{1/2},$
+\end_inset
+
+where 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+and 
+\begin_inset Formula $V_{2}$
+\end_inset
+
+ contain only the first two largest eigenvalues of 
+\begin_inset Formula $D$
+\end_inset
+
+, and their corresponding eigenvectors.
+ We finally perform a proper translation to map the center of mass of 
+\begin_inset Formula $X$
+\end_inset
+
+ to the center of the simulation field.
+ This value of 
+\begin_inset Formula $X$
+\end_inset
+
+ provided by MDS can be then passed to the version of the optimization problem
+ that ignores the speed constraint to find the first value of 
 \begin_inset Formula $X_{0}$
 \end_inset
 
@@ -2237,7 +2289,7 @@ for all
  The pre-processing ensures that there is no contradiction in the contact
  traces.
  Note that such contradictions are possible, if we use real traces, and
- skip the pre-processing due to environmental effects, etc.
+ skip the pre-processing due to random effects.
 \end_layout
 
 \begin_layout Standard
@@ -2301,7 +2353,8 @@ with the smallest transmission range that still shows the two nodes to be
 
 \begin_layout Standard
 Except the above mentioned revisions, the optimization problem is solved
- with similar techniques as the ones discussed in section 
+ with similar techniques as the ones discussed earlier.
+ For details, refer to Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Single-Input-Mobility"
@@ -2314,6 +2367,13 @@ reference "sub:Single-Input-Mobility"
 
 \begin_layout Subsection
 Discussion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Discussion"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2370,7 +2430,8 @@ and parameters
  parameters other than a maximum speed and transmission range, which are
  natural to consider for every scenario and are present in the force-based
  algorithm nevertheless.
- 
+ Detailed parameters for the solver are chosen internally and are the same
+ for every instance of the problem.
 \end_layout
 
 \begin_layout Standard
