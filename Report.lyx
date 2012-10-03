@@ -794,13 +794,19 @@ drag
  to determines its location.
  Together, this gives a relative set of locations satisfying the given contacts.
  A major disadvantage of this approach is the necessity of a smart choice
- of many constants involved in the calculation of the forces, including
- but not limited the equilibrium position of spring and its rigidity constant,
- bounding and intensity decrease parameters for Columb force .
+ of many constants involved in the calculation of the forces.
  Since there is no rule of thumb for many of these parameters, the performance
  of the application becomes dependent of the specific scenario under study,
  and it may become a series of trial and errors when such information is
  not available.
+ For a more detailed analysis of this drawback, refer to Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Discussion"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -2347,7 +2353,8 @@ with the smallest transmission range that still shows the two nodes to be
 
 \begin_layout Standard
 Except the above mentioned revisions, the optimization problem is solved
- with similar techniques as the ones discussed in section 
+ with similar techniques as the ones discussed earlier.
+ For details, refer to Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Single-Input-Mobility"
@@ -2360,6 +2367,13 @@ reference "sub:Single-Input-Mobility"
 
 \begin_layout Subsection
 Discussion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Discussion"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2416,7 +2430,8 @@ and parameters
  parameters other than a maximum speed and transmission range, which are
  natural to consider for every scenario and are present in the force-based
  algorithm nevertheless.
- 
+ Detailed parameters for the solver are chosen internally and are the same
+ for every instance of the problem.
 \end_layout
 
 \begin_layout Standard
@@ -2465,16 +2480,8 @@ In the circular model, for example, this penalty is that the distance between
  optimization problem, a new contact model that can be described mathematically,
  and can be derived from a contact trace, possibly with additional information,
  can replace the circular model, without affecting the other modules.
-\end_layout
-
-\begin_layout Standard
-A second future improvement to the algorithm concerns complexity.
- The BFGS solver used in the algorithm does not scale linearly with the
- number of nodes, and this can be a serious drawback to the performance
- of the algorithm on large traces.
- The authors do not know of any solver or feasible modification at the moment
- that can address this completely.
- 
+ We have addressed this drawback in our future work with minimal modifications
+ to problem definition which does not affect the solver.
 \end_layout
 
 \begin_layout Section
