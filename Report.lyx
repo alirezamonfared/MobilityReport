@@ -127,11 +127,7 @@ http://mirror.ctan.org/macros/latex/contrib/IEEEtran/IEEEtran_HOWTO.pdf
 \end_layout
 
 \begin_layout Title
-<<<<<<< HEAD
-Plausible Mobility Inference from Wireless Contacts UsingOptimization
-=======
 Plausible Mobility Inference from Wireless Contacts Using Optimization
->>>>>>> + ‘#Report.lyx#’
 \end_layout
 
 \begin_layout Author
@@ -505,86 +501,6 @@ In this section, we define the basic concepts of mobility and contacts as
  of our mobility inversion algorithm.
  We start this section by a few definitions.
 \end_layout
-<<<<<<< HEAD
-
-\begin_layout Subsubsection*
-Contact Trace
-\end_layout
-
-\begin_layout Standard
-A contact trace is a log of contact-start and contact-end events, each labeled
- with a time stamp and with the identifiers of the two nodes involved in
- the contact event.
- Mathematically, contact traces can be represented using a sequence of graphs
- showing the connections over time, which are called 
-\emph on
-evolving graphs
-\emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "bui2003evolving"
-
-\end_inset
-
-.
- We are interested in contact traces collected in the course of an experiment.
- In such experiments, mobile devices equipped with a wireless interface
- are attached to moving entities (e.g., people or vehicles).
- These mobile devices sample their environments periodically and log the
- presence of neighboring nodes.
- At the conclusion of the experiment these logs are collected and a contact
- trace is constructed from them.
- 
-\end_layout
-
-\begin_layout Standard
-Contact-start events occur when one of the devices receives information
- from the other and contact-end events occur when transmission stops.
- Many aspects of the radio environment can affect these events.
- In general, a contact trace becomes meaningful when studied along with
- a 
-\emph on
-radio model.
-
-\emph default
- A radio model specifies the circumstances under which two nodes are defined
- to be in contact.
- In the simplest model, two nodes are defined to be in contact whenever
- their distance is less than a given transmission range, and disconnected
- otherwise.
- This circular transmission range model is considered very simplistic due
- to many reasons, including the existence of obstacles, lack of symmetry
- in real contacts, inequality of signal strength inside the assumed transmission
- circle, effects like fading, shadowing, etc.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kotz2003mistaken"
-
-\end_inset
-
-, but this model has been used extensively due its simplicity and the fact
- that it allows to focus on other, perhaps more significant factors in the
- experiment.
-\end_layout
-
-\begin_layout Subsubsection*
-
-\emph on
-Mobility Trace
-\end_layout
-
-\begin_layout Standard
-A mobility trace is a log of locations of nodes over time.
- Similar to a contact trace, a mobility trace can also be asynchronized
- or synchronized, synthetically modeled or originating from real data collected
- using GPS equipped devices or association to the base stations of a 3G/WiFi
- network.
-\end_layout
-
-\begin_layout Standard
-=======
 
 \begin_layout Subsubsection*
 Contact Trace
@@ -675,7 +591,6 @@ A mobility trace is a log of locations of nodes over time.
 \end_layout
 
 \begin_layout Standard
->>>>>>> + ‘#Report.lyx#’
 The mobility inversion problem combines a radio model, and a contact trace
  to obtain a consistent mobility trace showing their locations using no
  further information
@@ -716,13 +631,8 @@ key "ristanovic2010tracking"
  suggests a solution that relies on knowledge of some anchor node with fixed
  locations which can give a rough estimate of location of mobile Bluetooth
  devices that have a low range.
-<<<<<<< HEAD
- The immediate downside is the dependence on the location of devices and
- the underlying technologies used.
-=======
  The immediate downside of this approach is its dependence on the location
  of devices and the underlying technologies used.
->>>>>>> + ‘#Report.lyx#’
  
 \end_layout
 
@@ -738,11 +648,7 @@ key "whitbeck2011encounters"
  has proposed a complete algorithm for the mobility inversion problem inspired
  by the work in dynamic graph drawing.
  They define three fundamental constraints on the mobility of the nodes
-<<<<<<< HEAD
- as follows
-=======
  as follows:
->>>>>>> + ‘#Report.lyx#’
 \end_layout
 
 \begin_layout Standard
@@ -856,11 +762,7 @@ The first constraint states that no node can move faster than a maximum
 
  and the other two confine the distance between two nodes based on their
  previous and future contact opportunities.
-<<<<<<< HEAD
- The authors aslo define, an attractive force, similar to the classical
-=======
  The authors also define, an attractive force, similar to the classical
->>>>>>> + ‘#Report.lyx#’
  
 \begin_inset Quotes eld
 \end_inset
@@ -878,11 +780,7 @@ Coulomb
 \begin_inset Quotes erd
 \end_inset
 
-<<<<<<< HEAD
- force, as well as a 
-=======
  force from all other present nodes, and a 
->>>>>>> + ‘#Report.lyx#’
 \begin_inset Quotes eld
 \end_inset
 
@@ -890,14 +788,6 @@ drag
 \begin_inset Quotes erd
 \end_inset
 
-<<<<<<< HEAD
- force to prevent nodes going excessively away from each other when borders
- are not obvious.
- The equilibrium of these forces on each node determines its location.
- Together, this gives a relative set of locations satisfying the given contacts.
- A major disadvantage of this approach is the necessity of a smart choice
- of many constants involved in the calculation of the forces.
-=======
  force to prevent excessive speeds that may make nodes go far away from
  each other when borders are not obvious.
  The equilibrium of these forces on each node is then calculated and used
@@ -907,7 +797,6 @@ drag
  of many constants involved in the calculation of the forces, including
  but not limited the equilibrium position of spring and its rigidity constant,
  bounding and intensity decrease parameters for Columb force .
->>>>>>> + ‘#Report.lyx#’
  Since there is no rule of thumb for many of these parameters, the performance
  of the application becomes dependent of the specific scenario under study,
  and it may become a series of trial and errors when such information is
@@ -934,37 +823,6 @@ In this section, we define the problem and its solution in a mathematical
 
  be the number of nodes that reside in a field of size 
 \begin_inset Formula $L\times L$
-<<<<<<< HEAD
-\end_inset
-
-.
- We assume each node has a location in 
-\begin_inset Formula $d$
-\end_inset
-
- dimensions, with 
-\begin_inset Formula $d=2$
-\end_inset
-
- in our simulations.
- A contact trace in this setting, corresponds to an 
-\begin_inset Formula $N\times N\times T_{m}$
-\end_inset
-
- matrix of adjacencies of its corresponding evolving graph 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "bui2003evolving"
-
-\end_inset
-
- where 
-\begin_inset Formula $T_{m}$
-\end_inset
-
- is the number of time steps .
- A mobility trace is is a 
-=======
 \end_inset
 
  
@@ -1017,7 +875,6 @@ key "bui2003evolving"
 
 .
  A mobility trace is a 
->>>>>>> + ‘#Report.lyx#’
 \begin_inset Formula $d\times N\times T_{m}$
 \end_inset
 
@@ -1074,7 +931,6 @@ status open
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
-<<<<<<< HEAD
 
 \begin_layout Plain Layout
 Parameter Name
@@ -1082,28 +938,6 @@ Parameter Name
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Description
-=======
-
-\begin_layout Plain Layout
-Parameter Name
->>>>>>> + ‘#Report.lyx#’
-\end_layout
-
-\end_inset
-</cell>
-<<<<<<< HEAD
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-=======
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -1119,7 +953,6 @@ Description
 \begin_inset Text
 
 \begin_layout Plain Layout
->>>>>>> + ‘#Report.lyx#’
 \begin_inset Formula $N$
 \end_inset
 
@@ -1198,7 +1031,6 @@ Maximum Speed
 
 
 \end_layout
-<<<<<<< HEAD
 
 \end_inset
 </cell>
@@ -1232,27 +1064,6 @@ Trace Length in Time
 Dimensions of the problem (2 in our case) 
 \end_layout
 
-=======
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Trace Length in Time 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $d$
->>>>>>> + ‘#Report.lyx#’
 \end_inset
 </cell>
 </row>
@@ -1260,7 +1071,6 @@ Trace Length in Time
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-<<<<<<< HEAD
 \begin_layout Plain Layout
 \begin_inset Formula $L$
 \end_inset
@@ -1275,168 +1085,13 @@ Trace Length in Time
 
 \begin_layout Plain Layout
 Size of the Simulation Field (square) Side 
-=======
-
->>>>>>> + ‘#Report.lyx#’
 \end_layout
 
-\end_inset
-</cell>
-<<<<<<< HEAD
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:params"
-
-=======
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Dimensions of the problem (2 in our case) 
-\end_layout
-
->>>>>>> + ‘#Report.lyx#’
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-<<<<<<< HEAD
-Summary of basic parameters used in the algorithm 
-\end_layout
-
-=======
-\begin_layout Plain Layout
-\begin_inset Formula $L$
->>>>>>> + ‘#Report.lyx#’
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-<<<<<<< HEAD
-
-\end_layout
-
-\begin_layout Standard
-Our algorithm does not use any information on initial locations or assumption
- about the mobility model of the nodes.
- The only assumptions made are the following:
-\end_layout
-
-\begin_layout Itemize
-Two nodes 
-\begin_inset Formula $x_{i}$
-=======
-\begin_layout Plain Layout
-Size of the Simulation Field (square) Side 
-\end_layout
-
->>>>>>> + ‘#Report.lyx#’
 \end_inset
 </cell>
 </row>
 </lyxtabular>
 
-<<<<<<< HEAD
- and 
-\begin_inset Formula $x_{j}$
-\end_inset
-
- are in contact once their distance, 
-\begin_inset Formula $||x_{i}-x_{j}||_{2}^{2}$
-\end_inset
-
- is less than a given radio range, 
-\begin_inset Formula $R$
-\end_inset
-
-, and are out of contact if this distance is larger than 
-\begin_inset Formula $R$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Nodes move slower than a given maximum speed 
-\begin_inset Formula $v_{m}$
-\end_inset
-
-, i.e.
- , the distance between the location of a node 
-\begin_inset Formula $i$
-\end_inset
-
- at time 
-\begin_inset Formula $t$
-\end_inset
-
- and 
-\begin_inset Formula $t+1$
-\end_inset
-
-, 
-\begin_inset Formula $||x_{i}^{t}-x_{i}^{t+1}||_{2}^{2}$
-\end_inset
-
- is smaller than 
-\begin_inset Formula $v_{m}\times\Delta t$
-\end_inset
-
- where 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $\Delta t$
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- is the difference between snapshots.
- 
-\end_layout
-
-=======
 \end_inset
 
 
@@ -1555,7 +1210,6 @@ Nodes move slower than a given maximum speed
  
 \end_layout
 
->>>>>>> + ‘#Report.lyx#’
 \begin_layout Itemize
 Nodes are always confined inside the mobility field.
 \end_layout
@@ -1591,45 +1245,6 @@ reference "sub:Multiple-Input-Mobility"
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
-<<<<<<< HEAD
-
-\end_inset
-
-, where we use the notation 
-\begin_inset Formula $G=(V,E)$
-\end_inset
-
- for the evolving graph corresponding to the input contact, which is a time-seri
-es of graphs 
-\begin_inset Formula $G^{t}=(V^{t},E^{t})$
-\end_inset
-
- .
- We use the notation 
-\begin_inset Formula $G\Leftrightarrow C$
-\end_inset
-
- to show that the evolving graph 
-\begin_inset Formula $G$
-\end_inset
-
- has the corresponding adjacency matrix 
-\begin_inset Formula $C$
-\end_inset
-
- , which is a contact trace as defined above, this means that the graphs
- 
-\begin_inset Formula $G^{t}$
-\end_inset
-
- have adjacency matrices 
-\begin_inset Formula $C(:,:,t)$
-\end_inset
-
-.
- The algorithm works in an iterative manner to find the locations of the
- nodes at each time step of the contact trace.
-=======
 
 \end_inset
 
@@ -1696,7 +1311,6 @@ reference "fig:algorithm"
 \end_inset
 
 .
->>>>>>> + ‘#Report.lyx#’
 \end_layout
 
 \begin_layout Standard
@@ -1781,7 +1395,6 @@ do
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-<<<<<<< HEAD
 
 \series medium
 solve
@@ -1796,32 +1409,11 @@ reference "fig:algorithm"
  with 
 \begin_inset Formula $G^{t}\Longleftrightarrow C(:,:,t)$
 \end_inset
-=======
-
-\series medium
-solve
-\series default
- the nonlinear optimization problem in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:algorithm"
->>>>>>> + ‘#Report.lyx#’
 
  , 
 \begin_inset Formula $X_{0}$
 \end_inset
 
-<<<<<<< HEAD
-=======
- with 
-\begin_inset Formula $G^{t}\Longleftrightarrow C(:,:,t)$
-\end_inset
-
- , 
-\begin_inset Formula $X_{0}$
-\end_inset
-
->>>>>>> + ‘#Report.lyx#’
 , 
 \begin_inset Formula $R$
 \end_inset
@@ -1946,7 +1538,6 @@ reference "alg:Basic"
 
 , we need to clarify how we find the initial value of 
 \begin_inset Formula $X_{0}$
-<<<<<<< HEAD
 \end_inset
 
  and how we solve the nonlinear optimization of figure 
@@ -1956,38 +1547,12 @@ reference "fig:algorithm"
 
 \end_inset
 
-.
+ for each snapshot.
 \end_layout
 
 \begin_layout Standard
-To solve the optimization problem, proposed in figure 
-=======
-\end_inset
-
- and how we solve the nonlinear optimization of figure 
->>>>>>> + ‘#Report.lyx#’
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:algorithm"
-
-\end_inset
-
-<<<<<<< HEAD
-, which is done in every iteration of Algorithm 
-=======
-.
-\end_layout
-
-\begin_layout Standard
-To address the latter, which is done in every iteration of Algorithm 
->>>>>>> + ‘#Report.lyx#’
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "alg:Basic"
-
-\end_inset
-
-, we use Limited-memory Broyden–Fletcher–Goldfarb–Shanno (l-BFGS-B) 
+For the latter, we have used the Limited-memory Broyden–Fletcher–Goldfarb–Shanno
+ (l-BFGS-B) algorithm 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "zhu1997algorithm"
@@ -2103,668 +1668,11 @@ Perform line search with acceptable step size
 \series medium
 Set : 
 \begin_inset Formula $s_{k}:=X_{k}+\alpha_{k}p_{k}$
-<<<<<<< HEAD
 \end_inset
 
 
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series medium
-\begin_inset Formula $Y_{k+1}=\Delta f(X_{k+1})-\Delta f(X_{k})$
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series medium
-\begin_inset Formula $B_{k+1}=B_{k}+\frac{Y_{k}Y_{k}^{T}}{Y_{k}^{T}s_{k}}-\frac{B_{k}s_{k}s_{k}^{T}B_{k}}{s_{k}^{T}B_{k}s_{k}}$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-end for
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-Output:
-\series default
- 
-\begin_inset Formula $Y_{k}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "alg:BFGS"
-
-\end_inset
-
-Basic BFGS algorithm.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The l-BFGS variant is particularly suited to problems with very large numbers
- of variables and BFGS-B variant handles simple box constraints.
- Also not that in the algorithm, l-BFGS-B needs an initial point to seek
- this stationary point, which is the value 
-\begin_inset Formula $X_{0}$
-\end_inset
-
- given to it in algorithm 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:algorithm"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-To solve the equation for the first iteration, we use the same method as
- above, except that only constraints corresponding to ranges, and residence
- of nodes inside the simulation field will be considered and the maximum
- speed constraint, which necessitates a reasonable set of 
-\begin_inset Quotes eld
-\end_inset
-
-previous
-\begin_inset Quotes erd
-\end_inset
-
- locations, will be ignored.
- Since l-BFGS-B still needs an initial point to seek the stationary point
- of the function, we construct a distance matrix by finding the number of
- hops among every pair of nodes in 
-\begin_inset Formula $G^{0}\Longleftrightarrow C(:,:,0)$
-\end_inset
-
-, and multiplying it by the transmission range 
-\begin_inset Formula $R,$
-\end_inset
-
- i.e.
- we assume two nodes 
-\begin_inset Formula $m$
-\end_inset
-
- hops from each other are at a distance 
-\begin_inset Formula $m\times R$
-\end_inset
-
-, and apply the classical MDS 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "colliat1996olap"
-
-\end_inset
-
- to yield a decent initial point which can be then passed to the version
- of the optimization problem that ignores the speed constraint to find the
- first value of 
-\begin_inset Formula $X_{0}$
-\end_inset
-
-, which is initial location of nodes as well, i.e.
- 
-\begin_inset Formula $X_{final}(:,:,0)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Multiple Input Mobility Inversion
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Multiple-Input-Mobility"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In this section, we extract the mobility inversion problem, in case that
- there are multiple inputs.
- This can be useful to enhance the quality of the inferred mobility when
- more information about the contacts is available.
- Assume that we have contact traces 
-\begin_inset Formula $C_{1},C_{2},...,C_{n}$
-\end_inset
-
- .
- Each contact trace 
-\begin_inset Formula $C_{i}$
-\end_inset
-
- is a 
-\begin_inset Formula $N\times N\times T_{m}$
-\end_inset
-
-matrix as describe in section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Mobility-Inversion-Algorithm"
-
-\end_inset
-
-.
- Also assume their corresponding transmission ranges to be 
-\begin_inset Formula $R_{1}\leq R_{2}\leq...\ensuremath{\leq R_{n}}$
-\end_inset
-
-.
- The algorithm presented in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "alg:Basic"
-
-\end_inset
-
-, can be easily generalized to accept multiple inputs.
- The revised version operates as follows:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\series bold
-Input: 
-\series default
-Contact Trace 
-\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}_{N\times N\times T_{m}}$
-\end_inset
-
- Transmission ranges 
-\begin_inset Formula $\{R_{1}\leq R_{2}\leq...\leq R_{n}\}$
-\end_inset
-
-, Maximum speed 
-\begin_inset Formula $v_{m}$
-\end_inset
-
-, number of dimensions 
-\begin_inset Formula $d=2$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Preprocess contact traces
-\begin_inset Formula $\{C_{1},C_{2},...,C_{n}\}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula $X_{final}\leftarrow\mathbf{0}_{d\times N\times T_{m}}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Find a set of initial locations 
-\begin_inset Formula $X_{0}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula $X_{final}(:,:,0)\leftarrow X_{0}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-for
-\series default
- 
-\begin_inset Formula $i$
-\end_inset
-
- 
-\begin_inset Formula $:=$
-\end_inset
-
-
-\begin_inset Formula $1$
-\end_inset
-
- to 
-\begin_inset Formula $T_{m}$
-\end_inset
-
- 
-\series bold
-do
-\end_layout
-
-\begin_deeper
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series medium
-solve
-\series default
- the nonlinear optimization problem in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:algorithm"
-
-\end_inset
-
- with 
-\begin_inset Formula $\{G_{1}^{t},G_{2}^{t},...,G_{n}^{t}\}\Longleftrightarrow\{C_{1}(:,:,t),C_{2}(:,:,t),...,C_{n}(:,:,t)\}$
-\end_inset
-
- , 
-\begin_inset Formula $X_{0}$
-\end_inset
-
-, 
-\begin_inset Formula $R$
-\end_inset
-
-, 
-\begin_inset Formula $v_{m}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Formula $X_{final}(:,:,t)\leftarrow X$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Formula $X_{0}\leftarrow X$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-end for
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-Output:
-\series default
- 
-\begin_inset Formula $X_{final}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "alg:Multi"
-
-\end_inset
-
-Basic mobility inversion algorithm with one input contact trace
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Figures/ReportAlgorithmMulti.eps
-	width 40text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:algorithmMulti"
-
-\end_inset
-
-Optimization algorithm takes multiple contact traces along with their correspond
-ing radio ranges and a value of maximum speed to infer a mobility in an
- iterative manner.
- Inferred locations for each time step are given as an initial point of
- the solver for the next step.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Pre-processing is needed to make sure that the contact traces 
-\begin_inset Formula $C_{1},C_{2},...,C_{n}$
-\end_inset
-
- are compatible.
- This step handles the situations in which two nodes are connected in a
- contact trace with a smaller transmission range at some time step but the
- same nodes are not connected in another contact trace with a larger range.
- Note that the necessity of this pre-processing is tied with our assumption
- of circular transmission ranges.
- A more complex radio model might not see this step necessary.
- In our algorithm, to pre-process, we first inspect the contact traces starting
- from 
-\begin_inset Formula $C_{1}$
-\end_inset
-
- and then 
-\begin_inset Formula $C_{2}$
-\end_inset
-
- and so on to 
-\begin_inset Formula $C_{n}$
-\end_inset
-
-.
- At any points, if two nodes are not connected in a contact trace 
-\begin_inset Formula $C_{i}$
-\end_inset
-
- with transmission 
-\begin_inset Formula $R_{i}$
-\end_inset
-
- at a certain time, we need to force all contact traces 
-\begin_inset Formula $C_{j}$
-\end_inset
-
- with transmission ranges 
-\begin_inset Formula $R_{j}\geq R_{i}$
-\end_inset
-
- not to have a connection between the same nodes at the same time
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-If those nodes are labeled 
-\begin_inset Formula $l$
-\end_inset
-
- and 
-\begin_inset Formula $k$
-\end_inset
-
-, respectively, then if 
-\begin_inset Formula $C_{i}(l,k,t)=0$
-\end_inset
-
-, we force 
-\begin_inset Formula $C_{j}(l,k,t)\leftarrow0,$
-\end_inset
-
-for all 
-\begin_inset Formula $R_{j}\geq R_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- A follow-up inspection is then performed, starting from 
-\begin_inset Formula $C_{n}$
-\end_inset
-
-, and then 
-\begin_inset Formula $C_{n-1}$
-\end_inset
-
-to 
-\begin_inset Formula $C_{1}.$
-\end_inset
-
- At any points, if two nodes are connected in a contact trace 
-\begin_inset Formula $C_{i}$
-\end_inset
-
- with transmission 
-\begin_inset Formula $R_{i}$
-\end_inset
-
- at a certain time, we need to force all contact traces 
-\begin_inset Formula $C_{j}$
-\end_inset
-
- with transmission ranges 
-\begin_inset Formula $R_{j}\leq R_{i}$
-\end_inset
-
- to have a connection between the same nodes at the same time
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-If those nodes are labeled 
-\begin_inset Formula $l$
-\end_inset
-
- and 
-\begin_inset Formula $k$
-\end_inset
-
-, respectively, then if 
-\begin_inset Formula $C_{i}(l,k,t)=0$
-\end_inset
-
-, we force 
-\begin_inset Formula $C_{j}(l,k,t)\leftarrow1,$
-\end_inset
-
-for all 
-\begin_inset Formula $R_{j}\leq R_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- The pre-processing ensures that there is no contradiction in the contact
- traces.
- Note that such contradictions are possible, if we use real traces, and
- skip the pre-processing due to environmental effects, etc.
-\end_layout
-
-\begin_layout Standard
-The optimization problem to be solved in the iterations of algorithm 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "alg:Multi"
-
-\end_inset
-
- is the second revision to the basic algorithm.
- In this case, for every two nodes, we can limit their distance at every
- time 
-\begin_inset Formula $t$
-\end_inset
-
- to two values.
- One is the transmission range 
-\begin_inset Formula $R_{k}$
-\end_inset
-
- corresponding to the contact trace 
-\begin_inset Formula $C_{k}$
-\end_inset
-
-with the largest transmission range that still shows the two nodes not to
- be connected, i.e.
- 
-\begin_inset Formula $C_{k}(i,j,t)=0$
-\end_inset
-
-, and the other is the transmission range 
-\begin_inset Formula $R_{l}$
-\end_inset
-
- corresponding to the contact trace 
-\begin_inset Formula $C_{l}$
-\end_inset
-
-with the smallest transmission range that still shows the two nodes to be
- connected, i.e.
- 
-\begin_inset Formula $C_{k}(i,j,t)=1$
-\end_inset
-
-.
- Note that in general case, we may have 
-\begin_inset Formula $R_{k}=0$
-\end_inset
-
-, i.e.
- the two nodes are connected in all contact traces for that specific time
- instance, and we can also have 
-\begin_inset Formula $R_{l}\rightarrow\infty$
-\end_inset
-
-, i.e.
- that the two nodes are never connected in any contact trace for that specific
- time instance.
-\end_layout
-
-\begin_layout Standard
-Except the above mentioned revisions, the optimization problem is solved
- with similar techniques as the ones discussed in section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Single-Input-Mobility"
-=======
-\end_inset
-
->>>>>>> + ‘#Report.lyx#’
-
-\end_layout
-
-<<<<<<< HEAD
-.
- 
-\end_layout
-
-\begin_layout Subsection
-Discussion
-\end_layout
-
-\begin_layout Standard
-In this section, we briefly review the main advantages of our mobility inversion
- algorithm, compared to the force based algorithm of Whitbeck et al.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "whitbeck2011encounters"
-
-\end_inset
-
-.
- We will also point out the drawbacks of the algorithm.
- We will discuss the performance metrics in the next section.
-\end_layout
-
-\begin_layout Standard
-Simplicity of the front-end is the first advantage of our algorithm.
- The force-based algorithm not only relies on the input contact trace, but
- also many parameters that need to be set.
- These include the rigidity constant 
-\begin_inset Formula $K$
-\end_inset
-
- and the damping factor 
-\begin_inset Formula $\tau$
-\end_inset
-
-=======
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 
@@ -3415,201 +2323,12 @@ Simplicity of the front-end is the first advantage of our algorithm.
 \begin_inset Formula $\tau$
 \end_inset
 
->>>>>>> + ‘#Report.lyx#’
  in the attractive force, the intensity constant 
 \begin_inset Formula $G$
 \end_inset
 
  , cutoff distance 
 \begin_inset Formula $d_{max},$
-<<<<<<< HEAD
-\end_inset
-
-and parameters 
-\begin_inset Formula $\alpha$
-\end_inset
-
- and 
-\begin_inset Formula $\epsilon_{0}$
-\end_inset
-
- that affect the intensity of the repulsive force with distance, as well
- as the strength parameter 
-\begin_inset Formula $D$
-\end_inset
-
- of the drag force.
- There is no general rule for setting these parameters, and for the algorithm
- to perform well, these need to be set in a trial and error fashion.
- On the other hand, the optimization algorithm does not need any external
- parameters other than a maximum speed and transmission range, which are
- natural to consider for every scenario and are present in the force-based
- algorithm nevertheless.
- 
-\end_layout
-
-\begin_layout Standard
-Optimization algorithm can take one or more contact traces, their corresponding
- radio ranges, and an upper bound on speed of movements as input and infer
- a mobility trace that can generate these contacts.
- This has not been foreseen in the force-based algorithm of Whitbeck
-\begin_inset CommandInset citation
-LatexCommand cite
-key "whitbeck2011encounters"
-
-\end_inset
-
-, but can be possibly incorporated with some modifications.
-\end_layout
-
-\begin_layout Standard
-A drawback, present in both algorithms is the radio model.
- It has been discussed in the literature, many other factors including but
- not limited to presence of obstacles, fading, path-loss, etc affect the
- radio model 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kotz2003mistaken"
-
-\end_inset
-
-.
- Despite this, the optimization mobility inversion algorithm is designed
- in a modular manner so that any radio model can be integrated into it provided
- that the an well-behave penalty, possibly in the form of a non-linear inequalit
-y, corresponding the connectivity status of the nodes is suggested
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-In the circular model, for example, this penalty is that the distance between
- two connected nodes is smaller than a transmission range, and the distance
- between two disconnected nodes is larger than this range.
-\end_layout
-
-\end_inset
-
-.
- Since the solver at the heart of our algorithm, BFGS, can solve any nonlinear
- optimization problem, a new contact model that can be described mathematically,
- and can be derived from a contact trace, possibly with additional information,
- can replace the circular model, without affecting the other modules.
-\end_layout
-
-\begin_layout Standard
-A second future improvement to the algorithm concerns complexity.
- The BFGS solver used in the algorithm does not scale linearly with the
- number of nodes, and this can be a serious drawback to the performance
- of the algorithm on large traces.
- The authors do not know of any solver or feasible modification at the moment
- that can address this completely.
- 
-\end_layout
-
-\begin_layout Section
-Performance Evaluation 
-\end_layout
-
-\begin_layout Standard
-In this section, we evaluate the performance of the mobility inversion algorithm
- proposed.
-\end_layout
-
-\begin_layout Subsection
-Metrics
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Metrics"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Before presenting the evaluations, we need to define a performance metric
- to measure how 
-\begin_inset Quotes eld
-\end_inset
-
-good
-\begin_inset Quotes erd
-\end_inset
-
- is the performance of the algorithm on a trace.
- To do this, in the very general framework ,we need to derive measures of
- comparison from the inputs and the outputs of the algorithm.
- Such comparison can be done in three levels as follows.
-\end_layout
-
-\begin_layout Standard
-The lowest level of evaluation is done with mobility-mobility comparison.
- Assuming that we have access to the mobility trace from which the input
- contact trace originated, which is only viable for test purposes, we can
- compare the original input mobility trace and the output mobility trace
- for each location, and report a mean squared error over time:
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Formula $E_{location}=\frac{1}{N^{2}\times T_{m}}\sum_{i,j,t}||X_{original}(i,j,t)-X_{inferred}(i,j,t)||^{2}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-We do not expect a good matching in mobility nevertheless, as the proposed
- feasibility does not have a unique solution, and we have shown that it
- actually has many solutions which makes it almost impossible to pick the
- desired output mobility among all these possible solutions.
- 
-\end_layout
-
-\begin_layout Standard
-In the next level, we compare the contact traces.
- While the input to our algorithm is a contact trace, we can infer an output
- contact trace with the proper transmission range that the algorithm has
- used at the output and a proper radio model We can then compare the two
- corresponding evolving graphs over time based on the number of missing
- links, i.e.
- present in the input contact trace and missing in the inferred contact
- trace, extra links, i.e.
- only seen in the inferred contact trace, and the sum of these two numbers.
- While a low number of link errors in this level is very desired to be seen
- and is sufficient to have a successful mobility inference, it is not necessary
- for our purposes.
- These errors can be defined as a function of time as follows:
-=======
 \end_inset
 
 and parameters 
@@ -3807,23 +2526,6 @@ E_{missing\; link}(t)=\frac{\sum_{i,j}(C_{R}(i,j,t)\wedge(\neg C'_{R}(i,j,t)))}{
 \end_inset
 
 
->>>>>>> + ‘#Report.lyx#’
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-<<<<<<< HEAD
-E_{missing\; link}(t)=\frac{\sum_{i,j}(C_{R}(i,j,t)\wedge(\neg C'_{R}(i,j,t)))}{\sum_{i,j}(C_{R}(i,j,t)\wedge\mathbf{1})}\times100
-=======
-E_{extra\; link}(t)=\frac{\sum_{i,j}((\neg C_{R}(i,j,t))\wedge(C'_{R}(i,j,t))}{\sum_{i,j}(C_{R}(i,j,t)\wedge\mathbf{1})}\times100
->>>>>>> + ‘#Report.lyx#’
-\]
-
-\end_inset
-
-<<<<<<< HEAD
-
 \end_layout
 
 \begin_layout Standard
@@ -3835,9 +2537,6 @@ E_{extra\; link}(t)=\frac{\sum_{i,j}((\neg C_{R}(i,j,t))\wedge(C'_{R}(i,j,t))}{\
 \end_inset
 
 
-=======
-
->>>>>>> + ‘#Report.lyx#’
 \end_layout
 
 \begin_layout Standard
