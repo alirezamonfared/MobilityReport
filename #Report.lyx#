@@ -2544,10 +2544,10 @@ The lowest level of evaluation is done with mobility-mobility comparison.
  contact trace originated, which is only viable for test purposes, we can
  compare the original input mobility trace (original trace) and the output
  mobility trace (inferred trace) for each location.
- To do this, we find the distance between every nodepair at each time step
+ To do this, we find the distance between each nodepair at each time step
  for both traces.
  Then we plot a two-dimensioanl histogram of these distances.
- In the ideal case, one would expect that the histogram whould show values
+ In the ideal case, one would expect that the histogram would show values
  on its diagonal and zeros everywhere else, i.e., the distances between each
  nodepair at each time step is the same for the original and inferred traces.
  We do not expect to see this behavior in our algorithm though.
@@ -2663,8 +2663,20 @@ key "bui2003evolving"
 
  to compare journeys, i.e.
  space-time paths between node pairs over time.
- To do this, we compute the transition time of journeys among each nodepair,
- i.e., the time duration of a journey starting from the first
+ To do this, we compute the transition time of journeys among each node
+ pair at each time step for both original and inferred contact traces ,
+ i.e., the time duration of a journey starting from the first node at a specific
+ time instant and destined for the second.
+ Similar to the mobility-mobility comparisons, we we plot a two-dimensioanl
+ histogram of these journeys.
+ It is expected that the journeys in the original and inferred contact traces
+ show correlation.
+\end_layout
+
+\begin_layout Standard
+The last method of comparison that we use involves running a real simulation
+ on original contact trace and the inferred trace.
+ We perform our simulations using the ONE simula
 \end_layout
 
 \begin_layout Subsection
@@ -3118,7 +3130,7 @@ name "fig:rwpnodepair"
 
 \end_inset
 
-Comparison of nodepair classifiaction for RWP over time.
+Comparison of node pair classifiaction for RWP over time.
 \end_layout
 
 \end_inset
@@ -3145,7 +3157,7 @@ reference "fig:rwpnodepair"
 
 , compares the input contact trace and the trace inferred from the output
  mobility with the same radio range for RWP, in the sense that at each moment
- of time, the number of nodepairs classified as S-pair, ST-pair, and N-pair
+ of time, the number of node pairs classified as S-pair, ST-pair, and N-pair
  are counted and plotted in a box plot.
  Figure 
 \begin_inset CommandInset ref
