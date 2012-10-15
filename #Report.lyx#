@@ -2542,9 +2542,23 @@ good
 The lowest level of evaluation is done with mobility-mobility comparison.
  Assuming that we have access to the mobility trace from which the input
  contact trace originated, which is only viable for test purposes, we can
- compare the original input mobility trace and the output mobility trace
- for each location.
- To do this, we find the distance between every nodepair at each time snaps
+ compare the original input mobility trace (original trace) and the output
+ mobility trace (inferred trace) for each location.
+ To do this, we find the distance between every nodepair at each time step
+ for both traces.
+ Then we plot a two-dimensioanl histogram of these distances.
+ In the ideal case, one would expect that the histogram whould show values
+ on its diagonal and zeros everywhere else, i.e., the distances between each
+ nodepair at each time step is the same for the original and inferred traces.
+ We do not expect to see this behavior in our algorithm though.
+ The reason is that constraints in Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+, are all of the form that pair-wise 
 \end_layout
 
 \begin_layout Standard
