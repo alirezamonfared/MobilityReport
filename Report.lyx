@@ -1773,6 +1773,7 @@ key "HSL"
 \end_inset
 
  as a third-party solver.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2863,12 +2864,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename Figures/RWPLoc1.eps
-	width 40text%
-
-\end_inset
-
 
 \end_layout
 
@@ -2904,17 +2899,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Figures/RPGMLoc.eps
-	width 40text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -2944,17 +2928,6 @@ Error in location inference for RPGM over time.
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Figures/DALoc.eps
-	width 40text%
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -3036,17 +3009,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Figures/RWPLink.eps
-	width 40text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -3081,17 +3043,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Figures/RPGMLink.eps
-	width 40text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -3124,17 +3075,6 @@ Error in contact inference for RPGM over time.
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Figures/DALink.eps
-	width 40text%
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -3212,16 +3152,6 @@ status open
 
 \begin_layout Plain Layout
 \align left
-\begin_inset Graphics
-	filename Figures/RWPEpochReal.eps
-	scale 40
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -3257,17 +3187,6 @@ Input contact trace
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\align left
-\begin_inset Graphics
-	filename Figures/RWPEpcohInf.eps
-	scale 40
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
