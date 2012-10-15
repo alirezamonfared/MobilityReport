@@ -1777,10 +1777,11 @@ key "HSL"
 \end_layout
 
 \begin_layout Standard
-To address the issue of choosing a suitable initial point, , we use the
- same method as above, except that only constraints corresponding to ranges,
- and residence of nodes inside the simulation field will be considered and
- the maximum speed constraint, which necessitates a reasonable set of 
+To address the issue of choosing a suitable initial point, for the first
+ iteration, we use the same method as above, except that only constraints
+ corresponding to ranges, and residence of nodes inside the simulation field
+ will be considered and the maximum speed constraint, which necessitates
+ a reasonable set of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1789,7 +1790,7 @@ previous
 \end_inset
 
  locations, will be ignored.
- Since l-BFGS-B still needs an initial point to seek the stationary point
+ Since l-BFGS still needs an initial point to seek the stationary point
  of the function, we construct a distance matrix by finding the shortest
  path among all node pairs in terms number of hops using the initial connectivit
 y structure, 
@@ -1880,6 +1881,19 @@ and
 
 .
  
+\end_layout
+
+\begin_layout Standard
+Implementation of Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+ is performed in MATLAB interfacing Ipopt, as described above.
+ The code is publicly available for interested readers [ CITATION NEEDED
+ ]
 \end_layout
 
 \begin_layout Subsection
