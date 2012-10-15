@@ -450,3 +450,23 @@
 	title = "{An Implementaion of Limited memory BFGS in MATLAB}"
 }
 
+@article{journals/mp/WachterB06,
+	abstract = "dblp",
+	added-at = "2006-07-20T00:00:00.000+0200",
+	author = "W{\"a}chter, Andreas and Biegler, Lorenz T.",
+	biburl = "http://www.bibsonomy.org/bibtex/2610b9a374d85bf89d5a41292f6533c4c/dblp",
+	date = "2006-07-20",
+	ee = "http://dx.doi.org/10.1007/s10107-004-0559-y",
+	interhash = "3446254d692a322c6a64dd30cd32ed8f",
+	intrahash = "610b9a374d85bf89d5a41292f6533c4c",
+	journal = "Math. Program.",
+	keywords = "dblp",
+	number = 1,
+	pages = "25--57",
+	title = "{On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming.}",
+	url = "http://dblp.uni-trier.de/db/journals/mp/mp106.html#WachterB06",
+	volume = 106,
+	x-fetchedfrom = "Bibsonomy",
+	year = 2006
+}
+
