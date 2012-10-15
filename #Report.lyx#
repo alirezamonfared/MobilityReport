@@ -1754,7 +1754,8 @@ reference "fig:algorithm"
 
 \end_inset
 
-, we have exploited IPOPT 
+, we have exploited Interior Point OPTimizer, pronounced eye-pea-Opt (Ipopt)
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ipopt"
@@ -1763,6 +1764,8 @@ key "ipopt"
 
  as the underlying solver, to perform the iterative task in the first line
  of the for loop.
+ Ipopt is an open source software package for large-scale ​nonlinear optimizatio
+n, implemented in C++.
  
 \end_layout
 
