@@ -1754,8 +1754,15 @@ reference "fig:algorithm"
 
 \end_inset
 
-, we have exploited IPOPT as the underlying solver, to perform the iterative
- task in the first line of the for loop.
+, we have exploited IPOPT 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ipopt"
+
+\end_inset
+
+ as the underlying solver, to perform the iterative task in the first line
+ of the for loop.
  
 \end_layout
 
