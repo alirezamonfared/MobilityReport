@@ -2685,6 +2685,13 @@ key "theONE"
 \end_inset
 
 .
+ In these experiments, we send random packets with a specific time to live
+ (TTL) from a randomly chosen node destined for another randomly chosen
+ node at every time step.
+ Then, we compare the cumulative number of messages that reach their destination
+s before the TTL to total number of messages (packet delivery ratio).
+ For similar settings of such simulation, we expect to observe a similar
+ behavior for the packet delivery ratio over time for both traces.
  
 \end_layout
 
