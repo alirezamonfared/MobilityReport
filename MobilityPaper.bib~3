@@ -417,3 +417,21 @@ k-space is strongly NP-hard}",
 	year = 2006
 }
 
+@article{journals/tosn/BiswasLWY06,
+	added-at = "2012-04-26T00:00:00.000+0200",
+	author = "Biswas, Pratik and Liang, Tzu-Chen and Wang, Ta-Chung and Ye, Yinyu",
+	biburl = "http://www.bibsonomy.org/bibtex/21b342df3c6144397883f3a6e199d5e0a/dblp",
+	ee = "http://doi.acm.org/10.1145/1149286",
+	interhash = "29ca55f916eec646f3631c4030906a0a",
+	intrahash = "1b342df3c6144397883f3a6e199d5e0a",
+	journal = "TOSN",
+	keywords = "dblp",
+	number = 2,
+	pages = "188--220",
+	title = "{Semidefinite programming based algorithms for sensor network localization.}",
+	url = "http://dblp.uni-trier.de/db/journals/tosn/tosn2.html#BiswasLWY06",
+	volume = 2,
+	x-fetchedfrom = "Bibsonomy",
+	year = 2006
+}
+
