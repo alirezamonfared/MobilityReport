@@ -450,6 +450,19 @@
 	title = "{An Implementaion of Limited memory BFGS in MATLAB}"
 }
 
+@article{ipopt,
+	author = "Wachter, Andreas and Biegler, Lorenz T.",
+	date = "2006-07-20",
+	journal = "Math. Program.",
+	keywords = "dblp",
+	number = 1,
+	pages = "25--57",
+	title = "{On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming}",
+	volume = 106,
+	x-fetchedfrom = "Bibsonomy",
+	year = 2006
+}
+
 @misc{HSL,
 	booktitle = "{. A collection of Fortran codes for large scale scientific computation.}",
 	howpublished = " http://www.hsl.rl.ac.uk",
