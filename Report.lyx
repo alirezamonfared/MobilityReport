@@ -1562,7 +1562,7 @@ reference "fig:algorithm"
 
 \begin_layout Standard
 For the latter, we have used the Limited-memory Broyden–Fletcher–Goldfarb–Shanno
- (l-BFGS-B) algorithm 
+ (l-BFGS) algorithm 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "zhu1997algorithm"
@@ -1570,7 +1570,7 @@ key "zhu1997algorithm"
 \end_inset
 
 .
- The l-BFGS-B is a variant of the Broyden–Fletcher–Goldfarb–Shann (BFGS),
+ The l-BFGS is a variant of the Broyden–Fletcher–Goldfarb–Shann (BFGS),
  an approximation of Newton's method that seeks the stationary point of
  a function by finding the zero of its derivative.
  The advantage of the BFGS to its alternative methods is that it does not
@@ -1747,29 +1747,32 @@ Basic BFGS algorithm.
 \end_layout
 
 \begin_layout Standard
-The l-BFGS variant is particularly suited to problems with very large numbers
- of variables and BFGS-B variant handles simple box constraints.
- Also not that in the algorithm, l-BFGS-B needs an initial point to seek
- this stationary point, which is the value 
-\begin_inset Formula $X_{0}$
-\end_inset
-
- given to it in Algorithm 
+In Algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:algorithm"
 
 \end_inset
 
-.
- We have adopted an implementation of l-BFGS-B in MATLAB by D.Kroon 
+, we have exploited Interior Point OPTimizer, pronounced eye-pea-Opt (Ipopt)
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Kroon"
+key "ipopt"
 
 \end_inset
 
-.
+ as the underlying solver, to perform the iterative task in the first line
+ of the for loop.
+ Ipopt is an open source software package for large-scale ​nonlinear optimizatio
+n, implemented in C++ which uses the Harwell Subroutine Library (HSL) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HSL"
+
+\end_inset
+
+ as a third-party solver.
 \end_layout
 
 \begin_layout Standard
