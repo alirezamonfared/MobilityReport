@@ -2558,24 +2558,19 @@ reference "fig:algorithm"
 
 \end_inset
 
-, are all of the form that pair-wise 
-\end_layout
-
-\begin_layout Standard
-We do not expect a good matching in mobility nevertheless, as the proposed
- feasibility does not have a unique solution, and we have shown that it
- actually has many solutions which makes it almost impossible to pick the
- desired output mobility among all these possible solutions.
- 
+, are all of the form that pair-wise distance is either larger or smaller
+ than a given transmission range.
+ This does not give any ability to the algorithm to predict the exact distances,
+ unless the problem has a unique solution, which is not the case.
 \end_layout
 
 \begin_layout Standard
 In the next level, we compare the contact traces.
- While the input to our algorithm is a contact trace, we can infer an output
- contact trace with the proper transmission range that the algorithm has
- used at the output and a proper radio model We can then compare the two
- corresponding evolving graphs over time based on the number of missing
- links, i.e.
+ While the input to our algorithm is a contact trace (original contact trace),
+ we can infer an output contact trace (inferred contact trace) with the
+ proper transmission range that the algorithm has used at the output and
+ a proper radio model We can then compare the two corresponding evolving
+ graphs over time based on the number of missing links, i.e.
  present in the input contact trace and missing in the inferred contact
  trace, extra links, i.e.
  only seen in the inferred contact trace, and the sum of these two numbers.
@@ -2659,14 +2654,7 @@ Where
 \end_layout
 
 \begin_layout Standard
-In the third level of comparisons, we use the definitions from Chen et al.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "chen2011framework"
-
-\end_inset
-
- and Bui et al.
+In the third level of comparisons, we use the definitions Bui et al.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "bui2003evolving"
@@ -2675,92 +2663,7 @@ key "bui2003evolving"
 
  to compare journeys, i.e.
  space-time paths between node pairs over time.
- In its simplest form, we can categorize node pairs at each time instant
- to three groups:
-\end_layout
-
-\begin_layout Itemize
-S-pairs: Two nodes that are always reachable in space at every instant of
- time after the current time.
-\end_layout
-
-\begin_layout Itemize
-ST-pairs: Two nodes that are reachable within a journey of limited duration
- after the current time.
  
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-As discussed by Chen et al.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "chen2011framework"
-
-\end_inset
-
-, A journey, is a space-time path in an evolving graph that connects two
- nodes over the course of time.
- It's represented as 
-\begin_inset Formula $J=(R,R_{\delta})$
-\end_inset
-
- in an evolving graph 
-\begin_inset Formula $G$
-\end_inset
-
-, where 
-\begin_inset Formula $R=e_{1},e_{2},...,e_{k}$
-\end_inset
-
-, the sequence of edges it traverses, and 
-\begin_inset Formula $R_{\delta}=\delta_{1},\delta_{2},...,\delta_{k}$
-\end_inset
-
- the corresponding time instants of edge traversal.
- 
-\begin_inset Formula $R_{\delta}$
-\end_inset
-
- must be such that each edge traversed is in the evolving graph at the time
- of traversal.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-N-pairs: two that are not reachable after the current time.
- 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Note that S-pair,ST-pair, and N-pairs are a function of time, e.g., that two
- nodes can be an ST-pair at a time 
-\begin_inset Formula $t_{1}$
-\end_inset
-
-, but an N-pair at another time 
-\begin_inset Formula $t_{2}$
-\end_inset
-
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We can then compare the percentage of S-,SP-, and N-pairs at every instant
- of time for the input and inferred contact trace.
- This shows the connectivity characteristics of the trace, and can be used
- as a metric to compare the two traces.
 \end_layout
 
 \begin_layout Subsection
