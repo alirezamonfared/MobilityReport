@@ -356,10 +356,8 @@
 
 @article{nphard,
 	author = "Saxe, J. B",
-	publisher = "Carnegie-Mellon
-University, Dept. of Computer Science",
-	title = "{Embeddability of weighted graphs in
-k-space is strongly NP-hard}",
+	publisher = "Carnegie-Mellon University, Dept. of Computer Science",
+	title = "{Embeddability of weighted graphs in k-space is strongly NP-hard}",
 	year = "1980"
 }
 
@@ -436,13 +434,19 @@ k-space is strongly NP-hard}",
 }
 
 @article{colliat1996olap,
-  title={OLAP, relational, and multidimensional database systems},
-  author={Colliat, G.},
-  journal={ACM Sigmod Record},
-  volume={25},
-  number={3},
-  pages={64--69},
-  year={1996},
-  publisher={ACM}
+	author = "Colliat, G.",
+	journal = "ACM Sigmod Record",
+	number = "3",
+	pages = "64--69",
+	publisher = "ACM",
+	title = "{OLAP, relational, and multidimensional database systems}",
+	volume = "25",
+	year = "1996"
+}
+
+@url{Kroon,
+	address = "http://www.sas.el.utwente.nl/open/people/Dirk-Jan\%20Kroon",
+	author = "Kroon, Dirk-Jan",
+	title = "{An Implementaion of Limited memory BFGS in MATLAB}"
 }
 

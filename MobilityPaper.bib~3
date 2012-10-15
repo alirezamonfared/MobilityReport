@@ -435,3 +435,14 @@ k-space is strongly NP-hard}",
 	year = 2006
 }
 
+@article{colliat1996olap,
+  title={OLAP, relational, and multidimensional database systems},
+  author={Colliat, G.},
+  journal={ACM Sigmod Record},
+  volume={25},
+  number={3},
+  pages={64--69},
+  year={1996},
+  publisher={ACM}
+}
+
