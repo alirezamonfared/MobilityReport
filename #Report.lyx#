@@ -2663,7 +2663,8 @@ key "bui2003evolving"
 
  to compare journeys, i.e.
  space-time paths between node pairs over time.
- 
+ To do this, we compute the transition time of journeys among each nodepair,
+ i.e., the time duration of a journey starting from the first
 \end_layout
 
 \begin_layout Subsection
