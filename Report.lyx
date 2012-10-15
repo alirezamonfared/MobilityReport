@@ -2664,8 +2664,28 @@ key "bui2003evolving"
  to compare journeys, i.e.
  space-time paths between node pairs over time.
  To do this, we compute the transition time of journeys among each node
- pair , i.e., the time duration of a journey starting from the first node
- at a specific time instant and destined for the second.
+ pair at each time step for both original and inferred contact traces ,
+ i.e., the time duration of a journey starting from the first node at a specific
+ time instant and destined for the second.
+ Similar to the mobility-mobility comparisons, we we plot a two-dimensioanl
+ histogram of these journeys.
+ It is expected that the journeys in the original and inferred contact traces
+ show correlation.
+\end_layout
+
+\begin_layout Standard
+The last method of comparison that we use involves running a real simulation
+ on original contact trace and the inferred trace.
+ We perform our simulations using the Opportunistic Network Environment
+ simulator (the ONE) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "theONE"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Subsection
