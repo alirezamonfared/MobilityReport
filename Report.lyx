@@ -2538,6 +2538,10 @@ good
  Such comparison can be done in three levels as follows.
 \end_layout
 
+\begin_layout Subsubsection*
+Mobility-level comparison:
+\end_layout
+
 \begin_layout Standard
 The lowest level of evaluation is done with mobility-mobility comparison.
  Assuming that we have access to the mobility trace from which the input
@@ -2775,6 +2779,10 @@ The experiments setting consists of
 \end_layout
 
 \begin_layout Standard
+To get better results, especially in the case of contacts
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -2827,6 +2835,7 @@ status open
 \begin_inset Graphics
 	filename Figures/rpgmdist.eps
 	scale 40
+	clip
 
 \end_inset
 
@@ -2864,6 +2873,7 @@ status open
 \begin_inset Graphics
 	filename Figures/slawdist.eps
 	scale 40
+	clip
 
 \end_inset
 
