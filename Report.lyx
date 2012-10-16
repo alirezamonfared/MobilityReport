@@ -2791,7 +2791,51 @@ The experiments setting consists of
 \end_layout
 
 \begin_layout Standard
-To get better results, especially in the case of contacts
+To get better results, especially in the case of contact-level comparisons,
+ we make a slight modification to the iterative part of Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Basic"
+
+\end_inset
+
+ depicted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:algorithm"
+
+\end_inset
+
+ as follows.
+ If two nodes are connected, their distance should be smaller than 
+\begin_inset Formula $R(1-\epsilon_{in})$
+\end_inset
+
+ and if their are not connected, their distance should be larger than 
+\begin_inset Formula $R(1+\epsilon_{out})$
+\end_inset
+
+.
+ Note that this does not violate any of the assumptions in the algorithm.
+ While connected nodes are still nearer than 
+\begin_inset Formula $R$
+\end_inset
+
+ and disconnected nodes are still farther than 
+\begin_inset Formula $R$
+\end_inset
+
+, this modification allows to remedy for mistakes that the optimizer can
+ make.
+ In all the simulations, we have set 
+\begin_inset Formula $\epsilon_{in}=0.2$
+\end_inset
+
+ and 
+\begin_inset Formula $\epsilon_{out}=1$
+\end_inset
+
+ .
 \end_layout
 
 \begin_layout Standard
@@ -2934,7 +2978,9 @@ reference "fig:slawloc"
 
 \end_inset
 
- shows the histogram for pairwise distances
+ shows the histogram for pairwise distances.
+ As it has been previously stated, we do not expect to see any matching
+ among the 
 \end_layout
 
 \begin_layout Standard
