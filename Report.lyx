@@ -2784,6 +2784,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Figures/rpgmdist.eps
+	lyxscale 40
 	scale 40
 	clip
 
