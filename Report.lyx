@@ -2785,6 +2785,7 @@ status open
 \begin_inset Graphics
 	filename Figures/rpgmdist.eps
 	scale 40
+	clip
 
 \end_inset
 
