@@ -2748,7 +2748,8 @@ key "SLAW"
 \end_inset
 
  which is a fairly new model that tries to capture statistical patterns
- of human mobility including truncated power-law distribu
+ of human mobility including truncated power-law distribution of flights,
+ pause-times and inter-contact times
 \end_layout
 
 \begin_layout Standard
