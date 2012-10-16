@@ -2981,8 +2981,16 @@ reference "fig:slawloc"
  shows the histogram for pairwise distances.
  As it has been previously stated, we do not expect to see a perfect correlation
  between the original and inferred distances.
- Instead, due to the splitwe generally expect to see large distances versus
- large distances and small distances versus small distances.
+ Instead, due to the splitting effect of the transmission range constraints,
+ we generally expect to see large distances versus large distances and small
+ distances versus small distances.
+ It is also worthy to note that many of the distances in the original traces
+ are mapped into a distance of 
+\begin_inset Formula $2R$
+\end_inset
+
+ in the inferred traces.
+ The reason for this behavior 
 \end_layout
 
 \begin_layout Standard
