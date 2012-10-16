@@ -2539,11 +2539,11 @@ good
 \end_layout
 
 \begin_layout Subsubsection*
-Mobility-level comparison:
+Mobility-level Comparison
 \end_layout
 
 \begin_layout Standard
-The lowest level of evaluation is done with mobility-mobility comparison.
+The lowest level of evaluation is done with mobility to mobility comparison.
  Assuming that we have access to the mobility trace from which the input
  contact trace originated, which is only viable for test purposes, we can
  compare the original input mobility trace (original trace) and the output
@@ -2566,6 +2566,10 @@ reference "fig:algorithm"
  than a given transmission range.
  This does not give any ability to the algorithm to predict the exact distances,
  unless the problem has a unique solution, which is not the case.
+\end_layout
+
+\begin_layout Subsubsection*
+Contact-level Comparison
 \end_layout
 
 \begin_layout Standard
@@ -2657,6 +2661,10 @@ Where
 
 \end_layout
 
+\begin_layout Subsubsection*
+Connectivity Characteristics Comparison
+\end_layout
+
 \begin_layout Standard
 In the third level of comparisons, we use the definitions Bui et al.
 \begin_inset CommandInset citation
@@ -2671,10 +2679,14 @@ key "bui2003evolving"
  pair at each time step for both original and inferred contact traces ,
  i.e., the time duration of a journey starting from the first node at a specific
  time instant and destined for the second.
- Similar to the mobility-mobility comparisons, we we plot a two-dimensioanl
+ Similar to the mobility-level comparisons, we we plot a two-dimensioanl
  histogram of these journeys.
  It is expected that the journeys in the original and inferred contact traces
  show correlation.
+\end_layout
+
+\begin_layout Subsubsection*
+Simulation
 \end_layout
 
 \begin_layout Standard
