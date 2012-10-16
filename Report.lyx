@@ -2823,6 +2823,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/rpgmdist.eps
+	scale 40
+
+\end_inset
+
+
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -2852,6 +2860,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figures/slawdist.eps
+	scale 40
+
+\end_inset
+
+
 \begin_inset Caption
 
 \begin_layout Plain Layout
