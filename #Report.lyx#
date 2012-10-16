@@ -2749,7 +2749,9 @@ key "SLAW"
 
  which is a fairly new model that tries to capture statistical patterns
  of human mobility including truncated power-law distribution of flights,
- pause-times and inter-contact times
+ pause-times and inter-contact times, and heterogenously defined areas of
+ individual mobility.
+ One of the main features of th
 \end_layout
 
 \begin_layout Standard
