@@ -22,24 +22,6 @@
 	year = 2003
 }
 
-@inproceedings{SLAW,
-	abstract = "dblp",
-	added-at = "2010-03-07T00:00:00.000+0100",
-	author = "Lee, Kyunghan and Hong, Seongik and Kim, Seong Joon and Rhee, Injong and Chong, Song",
-	booktitle = "{INFOCOM}",
-	crossref = "conf/infocom/2009",
-	date = "2010-03-07",
-	interhash = "c3b557deae905097e573f67512ffcb18",
-	intrahash = "00bcfb5d5d28170b96950856e90b7ede",
-	keywords = "dblp",
-	pages = "855--863",
-	publisher = "IEEE",
-	title = "{SLAW: A New Mobility Model for Human Walks.}",
-	url = "http://dblp.uni-trier.de/db/conf/infocom/infocom2009.html#LeeHKRC09; http://dx.doi.org/10.1109/INFCOM.2009.5061995; http://www.bibsonomy.org/bibtex/200bcfb5d5d28170b96950856e90b7ede/dblp",
-	x-fetchedfrom = "Bibsonomy",
-	year = 2009
-}
-
 @article{kotz2003mistaken,
 	author = "Kotz, D. and Newport, C. and Elliot, C.",
 	journal = "Computer Science Department",
@@ -468,46 +450,22 @@
 	title = "{An Implementaion of Limited memory BFGS in MATLAB}"
 }
 
-@misc{HSL,
-	howpublished = "http://www.hsl.rl.ac.uk",
-	title = "{HSL(2011), A collection of Fortran codes for large scale scientific computation}"
-}
-
-@article{Ipopt,
-	abstract = "dblp",
-	added-at = "2006-07-20T00:00:00.000+0200",
-	author = "W{\"a}chter, Andreas and Biegler, Lorenz T.",
+@article{ipopt,
+	author = "Wachter, Andreas and Biegler, Lorenz T.",
 	date = "2006-07-20",
-	interhash = "3446254d692a322c6a64dd30cd32ed8f",
-	intrahash = "610b9a374d85bf89d5a41292f6533c4c",
 	journal = "Math. Program.",
 	keywords = "dblp",
 	number = 1,
 	pages = "25--57",
-	title = "{On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming.}",
-	url = "http://dblp.uni-trier.de/db/journals/mp/mp106.html#WachterB06; http://dx.doi.org/10.1007/s10107-004-0559-y; http://www.bibsonomy.org/bibtex/2610b9a374d85bf89d5a41292f6533c4c/dblp",
+	title = "{On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming}",
 	volume = 106,
 	x-fetchedfrom = "Bibsonomy",
 	year = 2006
 }
 
-@inproceedings{theONE,
-	address = "New York, NY, USA",
-	author = "Ker{\"a}nen, Ari and Ott, J{\"o}rg and K{\"a}rkk{\"a}inen, Teemu",
-	booktitle = "{SIMUTools '09: Proceedings of the 2nd International Conference on Simulation Tools and Techniques}",
-	isbn = "978-963-9799-45-5",
-	location = "Rome, Italy",
-	publisher = "ICST",
-	title = "{The ONE Simulator for DTN Protocol Evaluation}",
-	year = "2009"
-}
-
-@inproceedings{hong1999group,
-	author = "Hong, X. and Gerla, M. and Pei, G. and Chiang, C.C.",
-	booktitle = "{Proceedings of the 2nd ACM international workshop on Modeling, analysis and simulation of wireless and mobile systems}",
-	organization = "ACM",
-	pages = "53--60",
-	title = "{A group mobility model for ad hoc wireless networks}",
-	year = "1999"
+@misc{HSL,
+	booktitle = "{. A collection of Fortran codes for large scale scientific computation.}",
+	howpublished = " http://www.hsl.rl.ac.uk",
+	title = "{HSL(2011)}"
 }
 
