@@ -2751,7 +2751,7 @@ key "SLAW"
  of human mobility including truncated power-law distribution of flights,
  pause-times and inter-contact times, and heterogenously defined areas of
  individual mobility.
- One of the main features of th
+ One of the main features of this model is that it captures social contexts.
 \end_layout
 
 \begin_layout Standard
@@ -2763,8 +2763,7 @@ The experiments setting consists of
 \begin_inset Formula $1000$
 \end_inset
 
- time steps.
- RWP and RPGM span over a 
+ time steps, spanning over a 
 \begin_inset Formula $1000\times1000\: m^{2}$
 \end_inset
 
@@ -2772,16 +2771,7 @@ The experiments setting consists of
 \begin_inset Formula $10m/s$
 \end_inset
 
-, while DA spans over a 
-\begin_inset Formula $350\times350\: m^{2}$
-\end_inset
-
- field, with a maximum speed of 
-\begin_inset Formula $20m/s$
-\end_inset
-
-,.
- 
+.
 \end_layout
 
 \begin_layout Standard
@@ -2805,9 +2795,7 @@ name "fig:rwploc"
 
 \end_inset
 
-Error in location inference for RWP over time.
- Vertical axis shows the MSE of such error devided by the radio range to
- make the numbers globally comparable.
+Pairwise distance histogram for RWP model
 \end_layout
 
 \end_inset
@@ -2836,9 +2824,7 @@ name "fig:rpgmloc"
 
 \end_inset
 
-Error in location inference for RPGM over time.
- Vertical axis shows the MSE of such error devided by the radio range to
- make the numbers globally comparable.
+Pairwise distance histogram for RPGM model
 \end_layout
 
 \end_inset
@@ -2863,13 +2849,11 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:daloc"
+name "fig:slawloc"
 
 \end_inset
 
-Error in location inference for DA over time.
- Vertical axis shows the MSE of such error devided by the radio range to
- make the numbers globally comparable.
+Pairwise distance histogram for SLAW model
 \end_layout
 
 \end_inset
@@ -2900,34 +2884,11 @@ reference "fig:rpgmloc"
 , and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:daloc"
+reference "fig:slawloc"
 
 \end_inset
 
- show the MSE of the errors in location prediction (
-\begin_inset Formula $E_{location}$
-\end_inset
-
-is section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Metrics"
-
-\end_inset
-
- ).
- We do not expect the algorithm to find the exact locations of the nodes,
- since no initial information has been used, but as it is obvious the errors
- in the case of RPGM and DA are increasing over the time.
- This does not happen with RWP.
- We believe that this behavior is due to erratic behavior of RWP.
- In RPGM and DA, the number of possibilities that match the inferred location
- decrease over the time, and there is a higher correlation between the current
- and previous locations.
- This is much more random in case of RWP.
- For this reason, in the former, our algorithm inevitably has to get closer
- to the original locations over the time, and pick one of the fewer possible
- location sets that are compatible with the input contacts.
+ shows the histogram for pairwise distances
 \end_layout
 
 \begin_layout Standard
