@@ -192,7 +192,7 @@ Ellen Zegura
 status collapsed
 
 \begin_layout Plain Layout
-mathnormalra is with the School of Computer Science, Georgia Institute of
+Ellen Zegura is with the School of Computer Science, Georgia Institute of
  Technology, Atlanta, GA, e-mail: 
 \begin_inset CommandInset href
 LatexCommand href
@@ -380,7 +380,7 @@ While recording contact opportunities, a lot of information is irretrievably
 \end_layout
 
 \begin_layout Standard
-mathnormalace collection and analysis have been reported in the literature
+Contact trace collection and analysis have been reported in the literature
  and have been used extensively to study mobile networks for various settings
  ranging from a campus scenario 
 \begin_inset CommandInset citation
@@ -2827,7 +2827,15 @@ reference "fig:algorithm"
 
 , this modification allows to remedy for mistakes that the optimizer can
  make.
- In all the simulations,
+ In all the simulations, we have set 
+\begin_inset Formula $\epsilon_{in}=0.2$
+\end_inset
+
+ and 
+\begin_inset Formula $\epsilon_{out}=1$
+\end_inset
+
+ .
 \end_layout
 
 \begin_layout Standard
@@ -2970,7 +2978,11 @@ reference "fig:slawloc"
 
 \end_inset
 
- shows the histogram for pairwise distances
+ shows the histogram for pairwise distances.
+ As it has been previously stated, we do not expect to see a perfect correlation
+ between the original and inferred distances.
+ Instead, due to the splitwe generally expect to see large distances versus
+ large distances and small distances versus small distances.
 \end_layout
 
 \begin_layout Standard
