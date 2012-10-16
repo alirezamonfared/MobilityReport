@@ -2725,23 +2725,30 @@ key "conf/infocom/YoonLN03"
 \end_layout
 
 \begin_layout Itemize
-Reference Point Group Mobility (RPGM)  which organizes mobile hosts into
- groups according to their logical relationships with each group having
- a logical center known as reference center whose movement is followed by
- all nodes in the group.
-\end_layout
-
-\begin_layout Itemize
-Disaster Area Model (DA) 
+Reference Point Group Mobility (RPGM) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "aschenbruck2009modeling"
+key "hong1999group"
 
 \end_inset
 
- which is based on an analysis of tactical issues of civil protection and
- has added features like heterogeneous area-based movement, obstacles, and
- joining/leaving of nodes.
+ which organizes mobile hosts into groups according to their logical relationshi
+ps with each group having a logical center known as reference center whose
+ movement is followed by all nodes in the group.
+ This model allows independent random motion behavior for each node, in
+ addition to the group motion
+\end_layout
+
+\begin_layout Itemize
+Self-similar Least Action Walk (SLAW) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SLAW"
+
+\end_inset
+
+ which is a fairly new model that tries to capture statistical patterns
+ of human mobility including truncated power-law distribu
 \end_layout
 
 \begin_layout Standard
