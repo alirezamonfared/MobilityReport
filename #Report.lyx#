@@ -3279,7 +3279,124 @@ reference "fig:slawjourney"
 
 \end_inset
 
- show the histogram 
+ show the histogram for journey durations.
+ As the figures suggest, a strong correlation is observed for RPGM.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rwpONE"
+
+\end_inset
+
+Journey duration histogram for RWP.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rpgmONE"
+
+\end_inset
+
+Journey duration histogram for RPGM.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:slawONE"
+
+\end_inset
+
+Journey duration histogram for SLAW.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rwpONE"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rpgmONE"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:slawONE"
+
+\end_inset
+
+ show the packet delivery ratio versus time for the three mobility models.
+ In all these experiments, we send a 1KB packet from a randomly chosen node
+ to another randomly chosen at every second.
+ The value of TTL for messages are set to 3 minutes, while the traces are
+ 1000 seconds long.
 \end_layout
 
 \begin_layout Section
