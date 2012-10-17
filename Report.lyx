@@ -3027,7 +3027,7 @@ name "fig:rwplink"
 
 \end_inset
 
-Error in contact inference for RWP over time.
+Contact-level errors for RWP over time.
  Extra links are missing in the input, but present in the contacts inferred
  from the output mobility.
  Missing links are present in the input, but missing in the contacts inferred
@@ -3061,7 +3061,7 @@ name "fig:rpgmlink"
 
 \end_inset
 
-Error in contact inference for RPGM over time.
+Contact-level errors for RPGM over time.
  Extra links are missing in the input, but present in the contacts inferred
  from the output mobility.
  Missing links are present in the input, but missing in the contacts inferred
@@ -3095,7 +3095,7 @@ name "fig:slawlink"
 
 \end_inset
 
-Error in contact inference for DA over time.
+Contact-level errors for SLAW over time.
  Extra links are missing in the input, but present in the contacts inferred
  from the output mobility.
  Missing links are present in the input, but missing in the contacts inferred
@@ -3177,23 +3177,21 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align left
 \begin_inset Caption
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:rwpnodepaira"
+name "fig:rwpjourney"
 
 \end_inset
 
-Input contact trace
+Error in contact inference for RWP over time.
+ Extra links are missing in the input, but present in the contacts inferred
+ from the output mobility.
+ Missing links are present in the input, but missing in the contacts inferred
+ from the output mobility.
+ Total link errors is the sum of these.
 \end_layout
 
 \end_inset
@@ -3201,20 +3199,12 @@ Input contact trace
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset space \hfill{}
-\end_inset
-
-
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -3226,43 +3216,54 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:rwpnodepairb"
+name "fig:rpgmjourney"
 
 \end_inset
 
-Contact trace inferred from output mobility
+Error in contact inference for RPGM over time.
+ Extra links are missing in the input, but present in the contacts inferred
+ from the output mobility.
+ Missing links are present in the input, but missing in the contacts inferred
+ from the output mobility.
+ Total link errors is the sum of these.
 \end_layout
 
 \end_inset
 
 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \begin_inset Caption
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:rwpnodepair"
+name "fig:slawjourney"
 
 \end_inset
 
-Comparison of node pair classifiaction for RWP over time.
+Error in contact inference for DA over time.
+ Extra links are missing in the input, but present in the contacts inferred
+ from the output mobility.
+ Missing links are present in the input, but missing in the contacts inferred
+ from the output mobility.
+ Total link errors is the sum of these.
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
