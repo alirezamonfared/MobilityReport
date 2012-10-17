@@ -2978,7 +2978,7 @@ reference "fig:slawloc"
 
 \end_inset
 
- shows the histogram for pairwise distances.
+ show the histogram for pairwise distances.
  As it has been previously stated, we do not expect to see a perfect correlation
  between the original and inferred distances.
  Instead, due to the splitting effect of the transmission range constraints,
@@ -3135,7 +3135,7 @@ reference "fig:slawlink"
 
 \end_inset
 
- shows the contact-level errors.
+ show the contact-level errors.
  Note that in all our simulations, most of the error comes from the missing
  links which are present in the original contact trace but absent in the
  inferred contact trace.
@@ -3258,39 +3258,156 @@ Journey duration histogram for SLAW.
 \end_layout
 
 \begin_layout Standard
-Figure 
+Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:rwpnodepair"
+reference "fig:rwpjourney"
 
 \end_inset
 
-, compares the input contact trace and the trace inferred from the output
- mobility with the same radio range for RWP, in the sense that at each moment
- of time, the number of node pairs classified as S-pair, ST-pair, and N-pair
- are counted and plotted in a box plot.
- Figure 
+, 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:rwpnodepaira"
+reference "fig:rpgmjourney"
 
 \end_inset
 
- shows this count for the input contact trace, and figure 
+, and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:rwpnodepairb"
+reference "fig:slawjourney"
 
 \end_inset
 
- shows it for the inferred trace.
- This last results shows that despite errors present in the contact level
- comparison, when compared for connectivity characteristics, our algorithm
- finds an output mobility trace that has the same properties with a high
- precision.
- This ensures that the inferred set of locations can be used in any experiment,
- instead of the original location that had resulted in the input contact
- trace, and yet the same behavior will be observed.
+ show the histogram for journey durations.
+ As the figures suggest, a strong correlation is observed for RPGM.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rwpONE"
+
+\end_inset
+
+Journey duration histogram for RWP.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rpgmONE"
+
+\end_inset
+
+Journey duration histogram for RPGM.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:slawONE"
+
+\end_inset
+
+Journey duration histogram for SLAW.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rwpONE"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rpgmONE"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:slawONE"
+
+\end_inset
+
+ show the packet delivery ratio versus time for the three mobility models.
+ As stated earlier, all simulations are performed using the ONE simulator
+ for Delay Tolerant Networks.
+ We send a 1KB packet from a randomly chosen node to another randomly chosen
+ at every second.
+ The value of TTL for messages are set to 3 minutes, while the traces are
+ 1000 seconds long.
+ We have used the Probabilistic ROuting Protocol using History of Encounters
+ and Transitivity (PROPHET) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "prophet"
+
+\end_inset
+
+ as the routing protocol for the simulator.
 \end_layout
 
 \begin_layout Section
