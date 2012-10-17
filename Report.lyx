@@ -3091,7 +3091,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:dalink"
+name "fig:slawlink"
 
 \end_inset
 
@@ -3131,20 +3131,43 @@ reference "fig:rpgmlink"
 , and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:dalink"
+reference "fig:slawlink"
 
 \end_inset
 
- show the errors resulted in comparing the input contact trace, and the
- contact trace resulted from the inferred mobility.As we can see these errors
- have some spikes in case of RPGM and is more smooth for RWP and DA.
- This is mostly due to the grouped nature of RPGM and presence of obvious
- communities in that.
- Also it's obvious that the errors for DA are much smaller than the other
- tow models.
- This is due to the fact that most nodes in DA model are wandering in a
- dense area, and number of connections are surprisingly high compared to
- the RWP and RPGM, resulting in a denser connectivity graph.
+ shows the contact-level errors.
+ Note that in all our simulations, most of the error comes from the missing
+ links which are present in the original contact trace but absent in the
+ inferred contact trace.
+ Part of this is due to the fact that a value of 
+\begin_inset Formula $\epsilon_{out}=1$
+\end_inset
+
+ gives a safety margin of 
+\begin_inset Formula $2R-R=R$
+\end_inset
+
+ to the solver for extra links error while a value of 
+\begin_inset Formula $\epsilon_{in}=0.5$
+\end_inset
+
+ gives it a safety margin of 
+\begin_inset Formula $R-0.5R=0.5R$
+\end_inset
+
+ for missing link errors.
+ Nevertheless, in all our simulations the total number of link errors is
+ less than 100 out of the 1225 possible links, which is a reasonably good
+ performance compared to the existing algorithm of Whitbeck et.
+ al 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whitbeck2011encounters"
+
+\end_inset
+
+, and given the fact that the optimization algorithm has not been given
+ any location information.
 \end_layout
 
 \begin_layout Standard
