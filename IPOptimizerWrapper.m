@@ -54,9 +54,7 @@ function XInf = IPOptimizerWrapper( InputFile, Options )
 %                    the InputFile to which enteries of the extraced
 %                    connectivity graph correspond.(This is usually guseed
 %                    from the InputFile, but some reading modes require it to be
-%                    explicitly set).
-
-%       
+%                    explicitly set).  
 
 %% Initializations
 if (~isfield(Options, 'Box'))
