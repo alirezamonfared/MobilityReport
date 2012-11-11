@@ -5,5 +5,70 @@ For Technical details of the algorithm please read the accompanying paper/
 -------------------------------------
 INSTALLATION
 
-Requirements:
-You need to have Ipopt to run this 
+(a)Requirements:
+1- MATLAB:
+MATLAB® is a high-level language and interactive environment for numerical computation, visualization, and programming.
+It's a commercial product. If you do not have an academic licencse for MATLA, you can purchase a (student) license at
+http://www.mathworks.com/products/matlab/
+
+
+2- IPopt:
+Ipopt (Interior Point OPTimizer, pronounced eye-pea-Opt) is a software package for large-scale ​nonlinear optimization. 
+Ipopt is open source, you can download and build it on your system. For details please visti:
+http://www.coin-or.org/Ipopt/documentation/node10.html
+
+It is recommended that you use SVN to get the trunk version of Ipopt at:
+https://projects.coin-or.org/Ipopt/browser/trunk?order=name
+
+3 - HSL libraries:
+Ipopt uses HSL libraries to solve optimization problems. Most of HSL libraries are commercial, but academic licensisng
+is avaialble free of charge. Detials on obtaining HSL libraries is given in Ipopt website. please visit:
+http://www.coin-or.org/Ipopt/documentation/node16.html
+
+
+(For the trunk version, the corresponding instructions are:
+https://projects.coin-or.org/svn/BuildTools/ThirdParty/HSL/stable/1.4/INSTALL.HSL
+)
+
+(b)Installation:
+1-
+Matlab can be eaily installed on a Windows, Linux or Mac using the steps provided by MathWorks.
+
+2-
+For ipopt, it is recommeneded that you install on a linux machine. You may need to change the configure script
+based on the requirements of your operating systems. More details are avaialble on Ipopt website or you can ask
+specific questions on Ipopt mailing list (http://list.coin-or.org/mailman/listinfo/ipopt)
+For ubuntu 12.04 64-Bit, we have used the foloowing configure script:
+
+./configure --prefix=$HOME/Applications/IpOpt/install --with-matlab-home=/usr/local/MATLAB/R2012a CXX='g++-4.6 -m64' CC='gcc-4.6 -m64' F77='gfortran -m64' ADD_CXXFLAGS="-fPIC -fexceptions -DFUNNY_LAPACK_FINT" ADD_CFLAGS="-fPIC -fexceptions" ADD_FFLAGS="-fPIC -fexceptions" --with-blas="-L/usr/lib/atlas-base/atlas/ -lblas" --with-lapack="-L/usr/lib/atlas-base/atlas/ -llapack" --without-mumps --disable-shared --enable-static
+
+3- You also need to build the Matlab interface for Ipopt. Instructions to do so are availabe at:
+https://projects.coin-or.org/Ipopt/wiki/MatlabInterface
+
+We have experienced incompatibilities and crashes in Matlab in our linux system due to the fact that MATLAB and Ipopt may use
+different versions of BLAS and LAPACK librarie. One suggestion to solve this is to use the 'Atlas' implementation of
+BLAS and LAPACK which is avaialble on Linux systems free of charge (http://math-atlas.sourceforge.net/)
+After installing Atlas libraries, you need to tell the Ipopt configure script where the libraries are. In a regular
+linux machine, you need the following options: 
+
+--with-blas="-L/usr/lib/atlas-base/atlas/ -lblas" --with-lapack="-L/usr/lib/atlas-base/atlas/ -llapack"
+
+Also set the option ADD_CXXFLAGS="-DFUNNY_LAPACK_FINT" for compatibility reasons.
+You also need to set the environment variables for MATLAB to use the Atlas implementations. To do so, in the
+same terminal windows from which you run MATLAb, set the variables before running it, as follows:
+
+export LAPACK_VERSION=/usr/lib/atlas-base/atlas/liblapack.so
+export BLAS_VERSION=/usr/lib/atlas-base/atlas/libblas.so
+
+Finally, do not forget to set the path for the mex file that you created from Ipopt. An example of doing so is
+as follows:
+
+export LD_LIBRARY_PATH="/home/IpOpt/install/lib:$LD_LIBRARY_PATH"
+
+You should now be able to run the examples in the Ipopt MATALB directory:
+(./Ipopt/contrib/MatlabInterface/examples)
+
+4- To test the mobility inference code, you can either write your own examples or you can run either of our test files:
+"TestIpopt.m" : Gives you three options to run the algorithm for RWP, RPGM or SLAW as seen in the paper.
+"TestHaggle.m": Run this file directly to reproduce the results for HaggleInfocom2005 trace
+
