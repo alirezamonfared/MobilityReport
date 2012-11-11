@@ -34,6 +34,9 @@ elseif Response == 3
     Options.Vm = 33;
 else
     disp('Only valid Options are 1,2, and 3')
+    dis('1 = RandomWaypoint')
+    dis('2 = Reference Point Group Mobility')
+    dis('3 = Self Similar Least Action Walks')
 end
 
 %% MAIN RUN
