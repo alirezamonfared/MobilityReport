@@ -1,24 +1,24 @@
 clc
 clear all
 tic
-addpath('../shared_functions/')
+addpath('./Utilities/')
 
 %% RWP
-InputFile = '../InputStore/RWPLocs1Links.one'
+InputFile = './Inputs/RWPLinks.one'
 Options.OutputFile = './Results/RWPInferredNIEps.one'
 Options.epsIn = 0.2;
 Options.epsOut = 1;
 Options.Vm = 10;
 
 %% RPGM
-% InputFile = '../InputStore/RPGMLocs1Links.one'
+% InputFile = './Inputs/RPGMLinks.one'
 % Options.OutputFile = './Results/RPGMInferredNIEps.one'
 % Options.epsIn = 0.2;
 % Options.epsOut = 1;
 % Options.Vm = 10;
 
 %% SLAW
-% InputFile = '../InputStore/SLAWLocs1.one'
+% InputFile = './Inputs/SLAWLocs.one'
 % Options.OutputFile = './Results/SLAWInferredNIEps.one'
 % Options.InputIsContacts = false;
 % Options.epsIn = 0.2;
