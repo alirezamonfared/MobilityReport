@@ -10,7 +10,10 @@ function  [X TimeSequence Nodes Box] = ImportONE(Filename, Options);
 %                     mobility trace or 'KeepIDs' to make exact correspondence in the
 %                     enteries of the outputted 2xNxT matrix and the IDs seen in the
 %                     mobiltiy trace.
-%                       
+%                     *NodeIDsStartFromOne; Is only used with the mode
+%                     KeepIds and is used to indicate that IDs in the
+%                     original trace are in range 1..N (instead of
+%                     0...N-1).
 %   Outputs:
 %       *X: dxNxTm matrix of the locations over time
 %       *TimeSequence: A vector containing the moments of time in the input
