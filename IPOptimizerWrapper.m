@@ -35,6 +35,9 @@ function XInf = IPOptimizerWrapper( InputFile, Options )
 %                    connected and dsiconnected nodes. It's foreseen for
 %                    the furture version. Do not change in this version.
 %                    (Default: 0.5).
+%                    *Mode: Monility inference mode. 'MaximalRange' is the 
+%                    mode used in this version. Other modes will be
+%                    implemented later (default: MaximalRange).
 %                   
 
 %       
