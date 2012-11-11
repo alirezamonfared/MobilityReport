@@ -1,13 +1,6 @@
  function [ X info ] = IPOptimizer( CG, X0, Options )
-%IPOPTIMIZER uses Ipopt package to solve one instant of the optimization
-%for  a given connectivity graph
-%   Detailed explanation goes here
-%   Needs Options.Map, Options.Threshold, Options.Box 
-
-% FIXME THIS IS NOT PORTABLE
-% you need to change this line to the correct address where you have
-% installed IpOpt. This can be also found in the file startup.m in your 
-% '<DIR>/Ipopt/contrib/MatlabInterface/examples' directory
+%IPOPTIMIZER Location from connectivity problem solver
+%   [ X info ] = IPOPTIMIZER ( CG, X0, Options ) performs non-metric multidimensional scaling on the
 addpath /home/alireza/Applications/IpOpt/install/lib
 
 %% Linearizing  the dxN matrix, X0
