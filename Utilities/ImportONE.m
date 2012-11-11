@@ -5,7 +5,12 @@ function  [X TimeSequence Nodes Box] = ImportONE(Filename, Options);
 %   <Time><NodeID><Location> into a dxNxTm matrix of mobility
 %   Inputs: * Filename: name of the ONE file containing the mobility
 %   information(filetype is detected based on extension)
-%           *Options: 
+%           *Options: *Mode: Can be set to 'NewIDs' to create IDs in the
+%                     range 0...N-1 corresponding to every newly seen ID in teh given
+%                     mobility trace or 'KeepIDs' to make exact correspondence in the
+%                     enteries of the outputted 2xNxT matrix and the IDs seen in the
+%                     mobiltiy trace.
+%                       
 %   Outputs:
 %       *X: dxNxTm matrix of the locations over time
 %       *TimeSequence: A vector containing the moments of time in the input
