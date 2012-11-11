@@ -47,6 +47,11 @@ function XInf = IPOptimizerWrapper( InputFile, Options )
 %                    reading mode of contact traces, an explicit value of T
 %                    corresponds the number of timesteps that one desires
 %                    the extracted contact trace to have.
+%                    *TimeSequence: The sequence of timestamps read from
+%                    the InputFile to which enteries of the extraced
+%                    connectivity graph correspond.(This is usually guseed
+%                    from the InputFile, but some reading modes require it to be
+%                    explicitly set.
 
 %       
 
