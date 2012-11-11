@@ -38,7 +38,15 @@ function XInf = IPOptimizerWrapper( InputFile, Options )
 %                    *Mode: Monility inference mode. 'MaximalRange' is the 
 %                    mode used in this version. Other modes will be
 %                    implemented later (default: MaximalRange).
-%                   
+%                    *N: Number of nodes. (This is usually guseed from the
+%                    InputFile, but some reading modes require it to be
+%                    explicitly set)
+%                    *T: Number of timesteps. (This is usually guseed from the
+%                    InputFile, but some reading modes require it to be
+%                    explicitly set. For example in the 'Continuous'
+%                    reading mode of contact traces, an explicit value of T
+%                    corresponds the number of timesteps that one desires
+%                    the extracted contact trace to have.
 
 %       
 
