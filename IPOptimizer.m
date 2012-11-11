@@ -27,7 +27,8 @@
 %                    It is used for future development of upcoming versions
 %                    of our optimizer. For this version, if you call
 %                    IpOptmizierWrapper.m, 'Map' will be automatically set.
-%                     
+%   Output: X is a 2xN matrix of inferred locations corresponding to CG
+%           info is the status returend by Ipopt.
 addpath /home/alireza/Applications/IpOpt/install/lib
 
 %% Linearizing  the dxN matrix, X0
