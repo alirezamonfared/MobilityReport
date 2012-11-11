@@ -1,15 +1,17 @@
-function  [X TimeSequence Nodes Box]= ImportONE(Filename, Options);
-%Matricize(Filename) Imports a Mobility file either in the CSV format of
-% <NodeID>,<Time>,<...Location...> or the ONE mobility format
-% <Time><NodeID><Location> into a dxNxTm matrix of mobility
-%   Filename: name of the csv or ONE file containing the mobility
+function  [X TimeSequence Nodes Box] = ImportONE(Filename, Options);
+%IMPORTONE Import a mobility trace trace.
+%   [X TimeSequence Nodes Box] = IMPORTONE( InputFile,Options ) Imports a 
+%   Mobility file in the ONE mobility format
+%   <Time><NodeID><Location> into a dxNxTm matrix of mobility
+%   Inputs: * Filename: name of the ONE file containing the mobility
 %   information(filetype is detected based on extension)
-%   Returns:
-%       X: dxNxTm matrix of the locations over time
-%       TimeSequence: A vector containing the moments of time in the input
+%           *Options: 
+%   Outputs:
+%       *X: dxNxTm matrix of the locations over time
+%       *TimeSequence: A vector containing the moments of time in the input
 %       file
-%       Nodes: A vector containing Node IDs in ther input
-%       Box: Size of the square simulation field.
+%       *Nodes: A vector containing Node IDs in ther input
+%       *Box: Size of the square simulation field in 1x2 vetor.
 
 
 %% Parameters Initializations
