@@ -1,6 +1,33 @@
  function [ X info ] = IPOptimizer( CG, X0, Options )
 %IPOPTIMIZER Location from connectivity problem solver
-%   [ X info ] = IPOPTIMIZER ( CG, X0, Options ) performs non-metric multidimensional scaling on the
+%   [ X info ] = IPOPTIMIZER ( CG, X0, Options ) solves the problem of
+%   finding locations from a given connectivity graph.
+%   NOTE: You do not need to call this function or worry about it if you
+%   don't want to make changes to the original algorithm. All the calls to
+%   Ipoptimizer are wrapped in IpoptimizerWrapper.
+%   Inputs: CG is the NxN adjacency matrix that shows connectivity
+%           sturcture at the current time.
+%           X0 is the initial location for the solver that is passed to
+%           Ipopt
+%           Options: Ipoptions: Opotions passed to Ipopt
+%                    Vm: Maximum Speed (m/s)
+%                    R: Transmission Range (m)
+%                    Box: 1x2 array containing the dimensions of simulaiotn
+%                    field.
+%                    EpsIn: Safety margin for connection constraints. We
+%                    assume that connected nodes are nearer than
+%                    R(1-EpsIn).
+%                    EpsOut: Safety margin for disconnection constraints. We
+%                    assume that disconnected nodes are farther than
+%                    R(1+EpsOut).
+%                    DeltaT: Time difference between the current and
+%                    previous snapshots of the connectivity graph
+%                    Map: a 2xM array were the first row contains packet
+%                    delivery ratios and the second row contains distances.
+%                    It is used for future development of upcoming versions
+%                    of our optimizer. For this version, if you call
+%                    IpOptmizierWrapper.m, 'Map' will be automatically set.
+%                     
 addpath /home/alireza/Applications/IpOpt/install/lib
 
 %% Linearizing  the dxN matrix, X0
@@ -11,9 +38,6 @@ N = size(CG,1);
 if ~isfield(Options,'IpOptions')
     IpOptions.ipopt.hessian_approximation = 'limited-memory';
     IpOptions.ipopt.mu_strategy           = 'adaptive';
-    %IpOptions.ipopt.tol                   = 1e-7;
-    %IpOptions.ipopt.constr_viol_tol       = Options.Vm * Options.DeltaT;
-    %IpOptions.ipopt.tol                   = Options.Vm * Options.DeltaT;
     IpOptions.ipopt.max_iter              = 300;
     IpOptions.ipopt.linear_solver         = 'ma27'; % We use ma77 linear solver
 else
@@ -27,8 +51,6 @@ IpOptions.ub(1:N) = Options.Box(1); % X values == X(1:N)
 IpOptions.ub(N+1:2*N) = Options.Box(2); % Y balues == X(N+1:2N)
 
 %% Setting Constraint Bounds
-%IpOptions.cl = zeros(1,N*(N+1)/2);    % N(N-1)/2 range constraints + N speed constraints
-%IpOptions.cl = ones(1,N*(N+1)/2)*(-Inf);    % N(N-1)/2 range constraints + N speed constraints
 IpOptions.cl = ones(1,N*(N+1)/2)*(-eps);    % N(N-1)/2 range constraints + N speed constraints
 IpOptions.cu = ones(1,N*(N+1)/2)*Inf; % N(N-1)/2 range constraints + N speed constraints
 % Setting constraints bounds
