@@ -13,7 +13,7 @@ Response = input('Choose your synthetic trace: ')
 if Response == 1
     % RWP
     InputFile = './Inputs/RWPLinks.one'
-    Options.OutputFile = './Results/RWPInferredNIEps.one'
+    Options.OutputFile = './Results/RWPInferred.one'
     Options.Box = [1000 1000];
     Options.epsIn = 0.2;
     Options.epsOut = 1;
@@ -23,7 +23,7 @@ if Response == 1
 elseif Response == 2
     % RPGM
     InputFile = './Inputs/RPGMLinks.one'
-    Options.OutputFile = './Results/RPGMInferredNIEps.one'
+    Options.OutputFile = './Results/RPGMInferred.one'
     Options.Box = [1000 1000];
     Options.epsIn = 0.2;
     Options.epsOut = 1;
@@ -33,7 +33,7 @@ elseif Response == 2
 elseif Response == 3
     % SLAW
     InputFile = './Inputs/SLAWLocs.one'
-    Options.OutputFile = './Results/SLAWInferredNIEps.one'
+    Options.OutputFile = './Results/SLAWInferred.one'
     Options.InputIsContacts = false;
     Options.Box = [2000 2000];
     Options.epsIn = 0.2;
