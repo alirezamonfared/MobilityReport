@@ -1,0 +1,9 @@
+This is the source code for the mobility inference algorithms.
+For Technical details of the algorithm please read the accompanying paper/
+
+
+-------------------------------------
+INSTALLATION
+
+Requirements:
+You need to have Ipopt to run this 
