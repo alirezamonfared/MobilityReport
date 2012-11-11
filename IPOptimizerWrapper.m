@@ -13,21 +13,28 @@ function XInf = IPOptimizerWrapper( InputFile, Options )
 %                    *Box: 1x2 array containing the dimensions of simulaiotn
 %                    field (Default [1000 1000]).
 %                    *InputIsContacts: If set to false, means that input
-%                    trace is a mobiltiy trace (Defaul: false)
+%                    trace is a mobiltiy trace (Defaul: false).
+%                    *OutputFile: Name of the file to store the output
+%                    mobiltiy trace (Default: './Results/Results.one').
 %                    *epsIn: Safety margin for connection constraints. We
 %                    assume that connected nodes are nearer than
-%                    R(1-epsIn).
+%                    R(1-epsIn) (Default: 0).
 %                    *epsOut: Safety margin for disconnection constraints. We
 %                    assume that disconnected nodes are farther than
-%                    R(1+epsOut).
+%                    R(1+epsOut) (Default: 0).
 %                    *TraceMode: Mode to read InputFile using
 %                    ImportONELinks (see its help for more info) Choices
-%                    are 'Continuous', 'Discrete', and 'ReadAll'.
+%                    are 'Continuous', 'Discrete', and 'ReadAll' (Default:
+%                    Discrete).
 %                    *Map: a 2xM array were the first row contains packet
 %                    delivery ratios and the second row contains distances.
 %                    It is used for future development of upcoming versions
 %                    of our optimizer. For this version, if you call
 %                    'Map' will be automatically set.
+%                    *Threshold: Splitting packet delivery ratio of
+%                    connected and dsiconnected nodes. It's foreseen for
+%                    the furture version. Do not change in this version.
+%                    (Default: 0.5).
 %                   
 
 %       
