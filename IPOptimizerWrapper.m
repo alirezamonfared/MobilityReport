@@ -168,7 +168,7 @@ XInf = zeros(2,N,T);
 
 %% Find X0 using MDS-MAP, or from a given initial point
 if ~isfield(Options,'X0')
-    Options.DistanceFilling = 'hopCount'; % CHANGE ME FIX ME later
+    Options.DistanceFilling = 'hopCount'; % FIX ME later
     X0 = MDSMAP(CGs(:,:,1), Options);
     XInf(:,:,1) = X0;
     Options = rmfield(Options,'DistanceFilling');
