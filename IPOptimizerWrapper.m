@@ -12,6 +12,9 @@ function XInf = IPOptimizerWrapper( InputFile, Options )
 %                    *R: Transmission Range (m) (Default: 100)
 %                    *Box: 1x2 array containing the dimensions of simulaiotn
 %                    field (Default [1000 1000]).
+%                    *X0: Initial location of the ndoes. If not given, we
+%                    will find a suitable initial point using the
+%                    Mulitdimensional Scaling mechanism.
 %                    *InputIsContacts: If set to false, means that input
 %                    trace is a mobiltiy trace (Defaul: false).
 %                    *OutputFile: Name of the file to store the output
