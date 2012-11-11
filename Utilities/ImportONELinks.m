@@ -14,7 +14,11 @@ function  [CGs TimeSequence] = ImportONELinks( Filename,Options )
 %           seconds. A 'Discrete' trace reader, reports connectivity graphs 
 %           for T=0...Tm-1 Assuming that data is updated every second. In
 %           this mode, timsatmaps in the ONE file should be integers.
-%           'ReadAll' is a special mode that 
+%           'ReadAll' is a special mode that reads all teh time instants in
+%           the original file and creates one snapshot for each. Note that
+%           'ReadAll' is different from 'Discrete', in the sense that it
+%           does not assume that we need to report for all time instants in
+%           0...T-1
 %           *DiscreteTimeStartFromOne: In a standard ONE format file with
 %           discrete timestamps, timestamps start from 0.0, if the input
 %           file has discrete timestamps starting from 1.0, set this to
