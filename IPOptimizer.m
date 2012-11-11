@@ -61,16 +61,12 @@ for i = 1 : N
     for j = i+1 : N
         if CG(i,j) == 1
             % packet delivery ration is between Th and 1
-            % sigma = Options.Threshold + (1-Options.Threshold).*rand(1);
-            % D = interp1(Options.Map(:,1), Options.Map(:,2), sigma);
             sigma = round((Options.Threshold + (1-Options.Threshold).*rand(1))*100)/100; % Round to two decimal places
             D = Ds(find(Sigmas == sigma, 1, 'first')); % Look up
             IpOptions.cu(k) = (D*(1-Options.epsIn)+eps)^2;             % Upper bounds on constraints.
             k = k + 1;
         elseif CG(i,j) == 0
             % packet delivery ration is between 0 and Th
-            % sigma = Options.Threshold.*rand(1);
-            % D = interp1(Options.Map(:,1), Options.Map(:,2), sigma);
             sigma = round((Options.Threshold.*rand(1))*100)/100;  % Round to two decimal places
             D = Ds(find(Sigmas == sigma, 1, 'first')); % Look up
             IpOptions.cl(k) = (D*(1+Options.epsOut)-eps)^2;             % Lower bounds on constraints.
@@ -91,8 +87,6 @@ funcs.constraints       = @constraints;
 funcs.gradient          = @gradient;
 funcs.jacobian          = @jacobian;
 funcs.jacobianstructure = @jacobianstructure;
-% funcs.hessian           = @hessian;
-% funcs.hessianstructure  = @hessianstructure;
 
 %% Run IPOPT.
 [ X info ] = ipopt(X0,funcs,IpOptions);
@@ -196,81 +190,3 @@ Cols(4*N1+N+1:4*N1+2*N) = I2+N;
 Vals(4*N1+N+1:4*N1+2*N) = 1;
 
 J = sparse(Rows, Cols, Vals,N*(N+1)/2, 2*N, 2*N^2);
-
-%% Hessian
-function H = hessian (X, sigma, lambda, auxdata)  
-[N X0 I J]= deal(auxdata{:});
-H = sigma * zeros(2*N,2*N);
-k = 1;
-for i = 1 : N
-    for j = i+1 : N
-        Hk = zeros(2*N,2*N);
-        Hk(i,i)     = 2;
-        %Hk(i,j)     = 2;
-        %Hk(i,i+N)   = 2;
-        %Hk(i,j+N)   = 2;
-        Hk(j,i)     = 2;
-        Hk(j,j)     = 2;
-        %Hk(j,i+N)   = 2;
-        %Hk(j,j+N)   = 2;
-        Hk(i+N,i)   = 2;
-        Hk(i+N,j)   = 2;
-        Hk(i+N,i+N) = 2;
-        %Hk(i+N,j+N) = 2;
-        Hk(j+N,i)   = 2;
-        Hk(j+N,j)   = 2;
-        Hk(j+N,i+N) = 2;
-        Hk(j+N,j+N) = 2;
-        %Hk = tril(Hk);
-        H = H + lambda(k) * Hk;
-        k = k + 1;
-    end
-end
-for i = 1:N
-    Hk = zeros(2*N,2*N);
-    Hk(i,i)     = 2;
-    %Hk(i,i+N)   = 2;
-    Hk(i+N,i)   = 2;
-    Hk(i+N,i+N) = 2;
-    %Hk = tril(Hk);
-    H = H + lambda(k) * Hk;
-    k = k + 1;
-end
-H = sparse(H);
-
-
-function H = hessianstructure (auxdata)
-[N X0 I J]= deal(auxdata{:});
-H = zeros(2*N,2*N);
-k = 1;
-for i = 1 : N
-    for j = i+1 : N
-        H(i,i)     = 1;
-        %H(i,j)     = 1;
-        %H(i,i+N)   = 1;
-        %H(i,j+N)   = 1;
-        H(j,i)     = 1;
-        H(j,j)     = 1;
-        %H(j,i+N)   = 1;
-        %H(j,j+N)   = 1;
-        H(i+N,i)   = 1;
-        H(i+N,j)   = 1;
-        H(i+N,i+N) = 1;
-        %H(i+N,j+N) = 1;
-        H(j+N,i)   = 1;
-        H(j+N,j)   = 1;
-        H(j+N,i+N) = 1;
-        H(j+N,j+N) = 1;
-        %H = tril(H);
-        k = k + 1;
-    end
-end
-for i = 1:N
-    H(i,i)     = 1;
-    %H(i,i+N)   = 1;
-    H(i+N,i)   = 1;
-    H(i+N,i+N) = 1;
-    %H = tril(H);
-    k = k + 1;
-end
-H = sparse(H);
