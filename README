@@ -72,6 +72,34 @@ You should now be able to run the examples in the Ipopt MATALB directory:
 "TestIpopt.m" : Gives you three options to run the algorithm for RWP, RPGM or SLAW as seen in the paper.
 "TestHaggle.m": Run this file directly to reproduce the results for HaggleInfocom2005 trace
 
-
+--------------------------------------------------------
+CODE HEIRARCHY:
+       +--------------+                        +-------------+
+       | TestIpopt.m  |                        |TestHaggle.m |
+       +-------+------+                        +------+------+
+               |                                      |
+               |                                      |
+               |                                      |
+               |                                      |
+               |     +---------------------+          |
+               +-----+IpoptimizerWrapper.m +----------+
+                     +----------+----------+
+                                |
+                                |
+                                |
+                      +---------v----------+
+                      |IpoptimizerRelaxed.m|
+                      +---------+----------+
+                                |
+                                |
+                          +-----v-----+
+                          |Ipoptimizer++-------------------+
+                          +-----+-----+                    |
+                                |                          |
+                +---------------v---------------+          |
+                | Functions in Utilities folder |          |
+                +---------------+---------------+          |
+                                |                          |
+                                +--------------------------+
 -----------------------------------------------------------
 Contact alireza@gatech.edu if you have any difficulty using the source code.
