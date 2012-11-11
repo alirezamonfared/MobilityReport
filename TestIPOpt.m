@@ -6,9 +6,9 @@ addpath('./Utilities/')
 
 disp('This is the test file for Mobility Inference Using optimization.')
 disp('To recreate the mobility traces in the paper choose one of the following traces')
-dis('1 = RandomWaypoint')
-dis('2 = Reference Point Group Mobility')
-dis('3 = Self Similar Least Action Walks')
+disp('1 = RandomWaypoint')
+disp('2 = Reference Point Group Mobility')
+disp('3 = Self Similar Least Action Walks')
 Response = input('Choose your synthetic trace: ')
 if Response == 1
     % RWP
@@ -43,9 +43,9 @@ elseif Response == 3
     Options.TraceMode = 'ReadAll';
 else
     disp('Only valid Options are 1,2, and 3')
-    dis('1 = RandomWaypoint')
-    dis('2 = Reference Point Group Mobility')
-    dis('3 = Self Similar Least Action Walks')
+    disp('1 = RandomWaypoint')
+    disp('2 = Reference Point Group Mobility')
+    disp('3 = Self Similar Least Action Walks')
 end
 
 %% MAIN RUN
