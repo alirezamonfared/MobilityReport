@@ -24,7 +24,15 @@ function  [CGs TimeSequence] = ImportONELinks( Filename,Options )
 %           file has discrete timestamps starting from 1.0, set this to
 %           true. Note that this is only needed if timestamps are discrete
 %           *Symmetric: If set to true, ensures a symmetric connectivity
-%           graph. i.e. if i-->j then j-->i
+%           graph. i.e. if i-->j then j-->i.
+%           *T: the desired number of timesteps for a Continuous trace to
+%           be read. The corresponding DeltaT is set as DeltaT =
+%           TraceLength / T.
+%           *DeltaT: the timediffenrece between cinsecutive connectivity
+%           snapshpts. DeltaT is 1 for discrete mode, it can be explicity
+%           set for Continuous mode, or can be implicitly set by giving the
+%           number of desired timesteps. For ReadAll mode it needs not to
+%           be set.
 %   Warning: This utility needs the node IDs to go from 1...N or 0..N-1
 %            (based on the value of Options.NodeIDsStartFromOne), if
 %            node IDs are custom numbers in another range, you need to
