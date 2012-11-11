@@ -137,7 +137,7 @@ for t = 2 : T
     % For each step, X0 is the solution from previous step.
     Options.DeltaT = TimeSequence(t) - TimeSequence(t-1);
     
-    % warm-start
+    % warm-start / See Ipopt Options for more info.
     Options.IpOptions.ipopt.warm_start_init_point = 'yes';
     if (strcmp(Options.IpOptions.ipopt.warm_start_init_point,'yes') && t > 2)
         Options.IpOptions.zl = info.zl;
