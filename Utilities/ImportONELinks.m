@@ -1,9 +1,11 @@
 function  [CGs TimeSequence] = ImportONELinks( Filename,Options )
-%ImportONELinks( Filename,Options ) Opens the ONE Link format: <Time> <CONN> <SrcID> <DstID>
-%<UP/DOWN>, and returns CGs of dimensions N x N x tm where N is the number of the nodes
-% and tm is the maximum time. Value of each entry of CGs is 1 is the link
-% is 'UP' and 0 is the link is 'DOWN'
-%       Filename: name of the ONE file containing the link trace
+%IMPORTONELINKS Import a contact trace.
+%   [CGs TimeSequence] = IMPORTONELINKS( Filename,Options ) Opens the ONE 
+%   Link format: <Time> <CONN> <SrcID> <DstID> <UP/DOWN>, 
+%   and returns CGs of dimensions N x N x tm where N is the number of the nodes
+%   and tm is the maximum time. Value of each entry of CGs is 1 is the link
+%   is 'UP' and 0 is the link is 'DOWN'
+%       Inputs: Filename: name of the ONE file containing the link trace
 %       Options: options used in the import utility
 %           *NodeIDsStartFromOne: In a standard ONE format file, node IDs
 %           start from 1, if the input file has node IDs starting from
@@ -39,6 +41,10 @@ function  [CGs TimeSequence] = ImportONELinks( Filename,Options )
 %            pre-process your trace to make node IDs go from 0..N-1 before
 %            feeding it to the utility, and remeber the mapping for future
 %            purposes.
+%       Output: CGs: a NxNxT connectivity graph corresponding to the
+%       snapshots of the connectivity in the given contact trace.
+%               TimeSequence: A 1xT vector recording the original
+%               timestamps in the InputFile.
 
 if nargin < 2
     Options = [];
