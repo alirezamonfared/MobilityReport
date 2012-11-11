@@ -1,11 +1,11 @@
-function  [CGs TimeSequence] = ImportONELinks( Filename,Options )
+function  [CGs TimeSequence] = ImportONELinks( InputFile,Options )
 %IMPORTONELINKS Import a contact trace.
-%   [CGs TimeSequence] = IMPORTONELINKS( Filename,Options ) Opens the ONE 
+%   [CGs TimeSequence] = IMPORTONELINKS( InputFile,Options ) Opens the ONE 
 %   Link format: <Time> <CONN> <SrcID> <DstID> <UP/DOWN>, 
 %   and returns CGs of dimensions N x N x tm where N is the number of the nodes
 %   and tm is the maximum time. Value of each entry of CGs is 1 is the link
 %   is 'UP' and 0 is the link is 'DOWN'
-%       Inputs: Filename: name of the ONE file containing the link trace
+%       Inputs: InputFile: name of the ONE file containing the link trace
 %       Options: options used in the import utility
 %           *NodeIDsStartFromOne: In a standard ONE format file, node IDs
 %           start from 1, if the input file has node IDs starting from
@@ -82,12 +82,12 @@ end
 
 if (~isfield(Options,'DeltaT') && isfield(Options,'T'))
     % First Line
-    Command = sprintf('sed q %s', Filename);
+    Command = sprintf('sed q %s', InputFile);
     [status,result] = system(Command);
     result = regexp(result,'\s','split');
     T1 = str2double(result(1));
     % Last Line
-    Command = sprintf('sed ''$!d'' %s', Filename);
+    Command = sprintf('sed ''$!d'' %s', InputFile);
     [status,result] = system(Command);
     result = regexp(result,'\s','split');
     T2 = str2double(result(1));
@@ -103,7 +103,7 @@ if (~isfield(Options,'N'))
     Options.N = 1;
 end
 
-fid = fopen(Filename);
+fid = fopen(InputFile);
 
     function Splitted = SplitString(Str)
         Parts = regexp(Str,'\s','split');
