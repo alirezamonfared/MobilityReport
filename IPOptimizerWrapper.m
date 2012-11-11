@@ -57,39 +57,16 @@ Options = rmfield(Options,'Mode');
 %% Set the IPOPT options.
 MaxR = sqrt(Options.Box(1)^2+Options.Box(2)^2);
 tols = [1e-6;MaxR;MaxR];
-%tols = [1e-6;Inf;Inf]; VeyBadChoice
 
 Options.IpOptions.ipopt.print_level = 0;
 Options.IpOptions.ipopt.hessian_approximation = 'limited-memory';
 Options.IpOptions.ipopt.mu_strategy           = 'adaptive';
 Options.IpOptions.ipopt.tol                   = sum(tols);
-%Options.IpOptions.ipopt.acceptable_tol        = 1e-6;
 Options.IpOptions.ipopt.constr_viol_tol       = tols(1);
-%Options.IpOptions.ipopt.tol                   = Options.Vm * Options.DeltaT;
-%Options.IpOptions.ipopt.acceptable_tol                   = 1000;
 Options.IpOptions.ipopt.compl_inf_tol          = tols(2);
 Options.IpOptions.ipopt.dual_inf_tol           = tols(3);
-%Options.IpOptions.ipopt.acceptable_compl_inf_tol= 1000;
-%Options.IpOptions.ipopt.acceptable_dual_inf_tol= 1000;
-%Options.IpOptions.ipopt.max_iter              = 300;
-%Options.IpOptions.ipopt.nlp_scaling_method    = 'none';
-%Options.IpOptions.ipopt.hessian_constant      = 'yes';
-%Options.IpOptions.ipopt.check_derivatives_for_naninf = 'yes';
-%Options.IpOptions.ipopt.derivative_test       = 'first-order';
 Options.IpOptions.ipopt.hessian_constant = 'yes';
-  
-% NEW OPTIONS
-% Options.IpOptions.ipopt.bound_frac = eps;
-% Options.IpOptions.ipopt.bound_push = eps;
-% %Options.IpOptions.ipopt.mehrotra_algorithm = 'yes';
-% Options.IpOptions.ipopt.mu_oracle = 'probing';
-% Options.IpOptions.ipopt.fixed_mu_oracle = 'probing';
-% Options.IpOptions.ipopt.alpha_for_y = 'bound-mult';
-% Options.IpOptions.ipopt.recalc_y = 'yes';
-% Options.IpOptions.ipopt.warm_start_init_point = 'yes';
-% Options.IpOptions.ipopt.expect_infeasible_problem = 'yes';
-
-Options.IpOptions.ipopt.linear_solver         = 'ma57'; % We use ma77 linear solver
+  Options.IpOptions.ipopt.linear_solver         = 'ma57'; % We use ma77 linear solver
     
 %% Read ONE contact trace into a NxNxT connectivity graph, or from Options.CGs 
 % which is a NxNxT matrix
@@ -149,8 +126,6 @@ end
 [Options.I, Options.J] = GetIndices(N);
 
 %% Find Other X s using Ipopt
-%X0 = X0';
-%T = 50;
 [ XInf(:,:,1) info ] = IPOptimizerRelaxed( CGs(:,:,1), X0, Options );
 str = sprintf('t = %d', 1);
 disp(str)
@@ -161,7 +136,6 @@ for t = 2 : T
     disp(str)
     % For each step, X0 is the solution from previous step.
     Options.DeltaT = TimeSequence(t) - TimeSequence(t-1);
-    %[ XInf(:,:,t) info ] = IPOptimizer( CGs(:,:,t), XInf(:,:,t-1), Options );
     
     % warm-start
     Options.IpOptions.ipopt.warm_start_init_point = 'yes';
