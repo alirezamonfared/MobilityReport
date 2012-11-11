@@ -4,7 +4,8 @@ function X = MDSMAP( CG, Options )
 %   This functino can give the coordinates in a BOX(1) x BOX(2) gird with one
 %   corner on origin
 %   Ref: http://dl.acm.org/citation.cfm?id=778439
-
+%   Internal function
+    
 if nargin < 2
     Options = [];
 end
