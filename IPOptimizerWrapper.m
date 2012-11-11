@@ -1,7 +1,32 @@
 function XInf = IPOptimizerWrapper( InputFile, Options )
-%IPOPTIMIZERWRAPPER Accepts a contact tracec in One Format and creates a
-% mobility trace as output, also in ONE format.
-%   Detailed explanation goes here
+%IPOPTIMIZERWRAPPER Optimizer for mobility inference
+%   XInf = IPOPTIMIZERWRAPPER ( InputFile, Options ) infers a mobility
+%   trace based on the given InputFile and specified Options.
+%   Inputs: InpuutFile: the name of the file containing the ONE trace for
+%           the input. Note that input should be a contact trace in ONE format.(
+%           the input can also be a mobility trace in ONE format. This mode is only
+%           useful in simulations and to use it Optiosn.InputIsContacts needs to
+%           be set to false.
+%           Options: Ipoptions: Opotions passed to Ipopt
+%                    Vm: Maximum Speed (m/s)
+%                    R: Transmission Range (m)
+%                    Box: 1x2 array containing the dimensions of simulaiotn
+%                    field.
+%                    EpsIn: Safety margin for connection constraints. We
+%                    assume that connected nodes are nearer than
+%                    R(1-EpsIn).
+%                    EpsOut: Safety margin for disconnection constraints. We
+%                    assume that disconnected nodes are farther than
+%                    R(1+EpsOut).
+%                    DeltaT: Time difference between the current and
+%                    previous snapshots of the connectivity graph
+%                    Map: a 2xM array were the first row contains packet
+%                    delivery ratios and the second row contains distances.
+%                    It is used for future development of upcoming versions
+%                    of our optimizer. For this version, if you call
+%                    'Map' will be automatically set.
+
+%       
 
 %% Initializations
 if (~isfield(Options, 'Box'))
