@@ -11,7 +11,7 @@ function  [X TimeSequence Nodes Box] = ImportONE(Filename, Options);
 %       *TimeSequence: A vector containing the moments of time in the input
 %       file
 %       *Nodes: A vector containing Node IDs in ther input
-%       *Box: Size of the square simulation field in 1x2 vetor.
+%       *Box: Size of the square simulation field in 1x2 vector.
 
 
 %% Parameters Initializations
