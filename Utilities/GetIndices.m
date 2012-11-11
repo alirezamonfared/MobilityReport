@@ -1,4 +1,5 @@
 function [I J]  = GetIndices(N)
+% Internal function
 I = zeros(N*(N-1)/2,1);
 J = zeros(N*(N-1)/2,1);
 k = 1;
