@@ -55,6 +55,9 @@ function XInf = IPOptimizerWrapper( InputFile, Options )
 %                    connectivity graph correspond.(This is usually guseed
 %                    from the InputFile, but some reading modes require it to be
 %                    explicitly set).  
+%       Output: XInf: a 2xNxT matrix of inferred locations (Note that A
+%       mobility trace in ONE format is also used at the location specified
+%       by Options.OutputFile).
 
 %% Initializations
 if (~isfield(Options, 'Box'))
