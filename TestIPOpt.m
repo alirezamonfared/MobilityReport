@@ -3,6 +3,13 @@ clear all
 tic
 addpath('./Utilities/')
 
+
+disp('This is the test file for Mobility Inference Using optimization.')
+disp('To recreate the mobility traces in the paper choose one of the following traces')
+dis('1 = RandomWaypoint')
+dis('2 = Reference Point Group Mobility')
+dis('3 = Self Similar Least Action Walks')
+strResponse = input('Choose your synthetic trace: ', 's')
 %% RWP
 InputFile = './Inputs/RWPLinks.one'
 Options.OutputFile = './Results/RWPInferredNIEps.one'
@@ -25,13 +32,6 @@ Options.Vm = 10;
 % Options.epsOut = 1;
 % Options.Vm = 33;
 
-%% GaussMarkov
-% InputFile = '../InputStore/GMLocs1.one'
-% Options.OutputFile = './Results/GMInferredNIEps.one'
-% Options.InputIsContacts = false;
-% Options.epsIn = 0.2;
-% Options.epsOut = 1;
-% Options.Vm = 10;
 
 %% MAIN RUN
 % [X TimeSequence Nodes Box]= ImportONE('../InputStore/RWPLocs1.one');
