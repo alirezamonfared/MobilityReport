@@ -8,10 +8,12 @@ function XInf = IPOptimizerWrapper( InputFile, Options )
 %           useful in simulations and to use it Optiosn.InputIsContacts needs to
 %           be set to false.
 %           Options: *Ipoptions: Opotions passed to Ipopt
-%                    *Vm: Maximum Speed (m/s)
-%                    *R: Transmission Range (m)
+%                    *Vm: Maximum Speed (m/s) (Default: 10)
+%                    *R: Transmission Range (m) (Default: 100)
 %                    *Box: 1x2 array containing the dimensions of simulaiotn
-%                    field.
+%                    field (Default [1000 1000]).
+%                    *InputIsContacts: If set to false, means that input
+%                    trace is a mobiltiy trace (Defaul: false)
 %                    *epsIn: Safety margin for connection constraints. We
 %                    assume that connected nodes are nearer than
 %                    R(1-epsIn).
