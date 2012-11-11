@@ -19,6 +19,7 @@ if Response == 1
     Options.epsOut = 1;
     Options.Vm = 10;
     Options.R = 100;
+    Options.TraceMode = 'Discrete';
 elseif Response == 2
     % RPGM
     InputFile = './Inputs/RPGMLinks.one'
@@ -28,6 +29,7 @@ elseif Response == 2
     Options.epsOut = 1;
     Options.Vm = 10;
     Options.R = 100;
+    Options.TraceMode = 'Discrete';
 elseif Response == 3
     % SLAW
     InputFile = './Inputs/SLAWLocs.one'
@@ -38,6 +40,7 @@ elseif Response == 3
     Options.epsOut = 1;
     Options.Vm = 33;
     Options.R = 60;
+    Options.TraceMode = 'ReadAll';
 else
     disp('Only valid Options are 1,2, and 3')
     dis('1 = RandomWaypoint')
@@ -47,7 +50,6 @@ end
 
 %% MAIN RUN
 Options.Mode = 'MaximalRange';
-Options.TraceMode = 'Discrete';
 
 IPOptimizerWrapper( InputFile, Options );
 toc
