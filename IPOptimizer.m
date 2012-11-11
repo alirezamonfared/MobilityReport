@@ -9,20 +9,20 @@
 %           sturcture at the current time.
 %           X0 is the initial location for the solver that is passed to
 %           Ipopt
-%           Options: Ipoptions: Opotions passed to Ipopt
-%                    Vm: Maximum Speed (m/s)
-%                    R: Transmission Range (m)
-%                    Box: 1x2 array containing the dimensions of simulaiotn
+%           Options: *Ipoptions: Opotions passed to Ipopt
+%                    *Vm: Maximum Speed (m/s)
+%                    *R: Transmission Range (m)
+%                    *Box: 1x2 array containing the dimensions of simulaiotn
 %                    field.
-%                    EpsIn: Safety margin for connection constraints. We
+%                    *EpsIn: Safety margin for connection constraints. We
 %                    assume that connected nodes are nearer than
 %                    R(1-EpsIn).
-%                    EpsOut: Safety margin for disconnection constraints. We
+%                    *EpsOut: Safety margin for disconnection constraints. We
 %                    assume that disconnected nodes are farther than
 %                    R(1+EpsOut).
-%                    DeltaT: Time difference between the current and
+%                    *DeltaT: Time difference between the current and
 %                    previous snapshots of the connectivity graph
-%                    Map: a 2xM array were the first row contains packet
+%                    *Map: a 2xM array were the first row contains packet
 %                    delivery ratios and the second row contains distances.
 %                    It is used for future development of upcoming versions
 %                    of our optimizer. For this version, if you call
