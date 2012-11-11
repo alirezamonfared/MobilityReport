@@ -40,9 +40,6 @@ else
 end
 
 %% MAIN RUN
-% [X TimeSequence Nodes Box]= ImportONE('../InputStore/RWPLocs1.one');
-% Options.X0 = X(:,:,1);
-
 Options.Box = [1000 1000];
 Options.Mode = 'MaximalRange';
 Options.R = 100;
