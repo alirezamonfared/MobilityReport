@@ -5,19 +5,21 @@ function  [CGs TimeSequence] = ImportONELinks( Filename,Options )
 % is 'UP' and 0 is the link is 'DOWN'
 %       Filename: name of the ONE file containing the link trace
 %       Options: options used in the import utility
-%           NodeIDsStartFromOne: In a standard ONE format file, node IDs
+%           *NodeIDsStartFromOne: In a standard ONE format file, node IDs
 %           start from 1, if the input file has node IDs starting from
 %           1, set this to true
-%           TraceMode: A continuous trace reader reads the timestamps in
-%           the file and reports their corresponding connectivities (Options)
-%           are 'Continuous' and 'Discrete' (trace goes from 0....Tm-1). A
-%           discrete mode reports connectivity graphs for T=0...Tm-1. In
-%           this mode, timsatmaps in the ONE file should be integers
-%           DiscreteTimeStartFromOne: In a standard ONE format file with
+%           *TraceMode: A 'Continuous' trace reader reads the timestamps in
+%           the file and reports their corresponding connectivities. It
+%           uses Options.DeltaT to aggregate all contacts every DeltaT
+%           seconds. A 'Discrete' trace reader, reports connectivity graphs 
+%           for T=0...Tm-1 Assuming that data is updated every second. In
+%           this mode, timsatmaps in the ONE file should be integers.
+%           'ReadAll' is a special mode that 
+%           *DiscreteTimeStartFromOne: In a standard ONE format file with
 %           discrete timestamps, timestamps start from 0.0, if the input
 %           file has discrete timestamps starting from 1.0, set this to
 %           true. Note that this is only needed if timestamps are discrete
-%           Symmetric: If set to true, ensures a symmetric connectivity
+%           *Symmetric: If set to true, ensures a symmetric connectivity
 %           graph. i.e. if i-->j then j-->i
 %   Warning: This utility needs the node IDs to go from 1...N or 0..N-1
 %            (based on the value of Options.NodeIDsStartFromOne), if
@@ -142,9 +144,9 @@ if (strcmp(Options.TraceMode,'Continuous'))
     TimeSequence(TimeStep) = CurrentTime;
     CGs(:,:,TimeStep) = CurrentCG;
     
-    % Discrete Mode
-    % It this mode we assume that time goes from 1:T and we generate a
-    % Connectivity graph for every value of timestamp in this range
+% Discrete Mode
+% It this mode we assume that time goes from 1:T and we generate a
+% Connectivity graph for every value of timestamp in this range
 elseif (strcmp(Options.TraceMode,'Discrete'))
     TimeStep = 1;
     while 1
@@ -166,11 +168,11 @@ elseif (strcmp(Options.TraceMode,'Discrete'))
     end
     TimeSequence = 0:S(1)-1;
     % ReadAll Mode
-    % In this mode, we assume a continuous trace but read all the moments in
-    % the trace. It is equivalent to setting Options.DeltaT to time difference
-    % of every two consecutive mmoments in the trace
-    % It is useful for discrete traces that have moments with custom timestamps
-    % instead of 1:T style seen in the discrete mode
+% In this mode, we assume a continuous trace but read all the moments in
+% the trace. It is equivalent to setting Options.DeltaT to time difference
+% of every two consecutive mmoments in the trace
+% It is useful for discrete traces that have moments with custom timestamps
+% instead of 1:T style seen in the discrete mode
 elseif (strcmp(Options.TraceMode,'ReadAll'))
     TimeStep = 1;
     FirstLine = true;
